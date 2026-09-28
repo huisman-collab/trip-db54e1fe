@@ -31,6 +31,8 @@
   @media(min-width:560px){.stats{grid-template-columns:repeat(4,1fr)}}
   .stat .v{font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
   .stat .k{font-size:13px;color:var(--mute);margin-top:4px}
+  .stat .v small{font-size:14px;font-weight:500;color:var(--mute);letter-spacing:0}
+  .milesnote{font-size:13px;color:var(--mute);margin:14px 0 0}
   h2{margin:48px 0 10px;font-size:13px;font-weight:600;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
   .updates{list-style:none;margin:0;padding:0}
   .updates li{display:flex;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:15px;min-width:0}
@@ -52,7 +54,7 @@
   .note{font-size:13px;color:var(--faint);margin:10px 0 0}
   .waiting{margin:0;font-size:15px;color:var(--mute);max-width:32em}
   .err{font-size:13px;color:#b91c1c;margin:16px 0 0}
-  .pos{width:16px;height:16px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.15),0 0 0 7px rgba(37,99,235,.18)}
+  .pos{width:20px;height:20px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.15),0 0 0 7px rgba(37,99,235,.18)}
   .start{width:10px;height:10px;border-radius:50%;background:#fff;border:2.5px solid var(--ink)}
   .leaflet-container{font:inherit}
 </style>
@@ -72,6 +74,7 @@
     <div id="map"></div>
 
     <div class="stats" id="stats"></div>
+    <p class="milesnote" id="milesnote" hidden></p>
 
     <h2 id="updatesH">Recent updates</h2>
     <ul class="updates" id="updates"></ul>
@@ -122,7 +125,8 @@
   };
   const byTime = arr => [...(arr || [])].filter(x => x && ts(x.time)).sort((a, b) => ts(a.time) - ts(b.time));
 
-  let data = null, map = null, layer = null, userMoved = false;
+  let data = null, map = null, layer = null;
+  const FOCUS_ZOOM = 12;  // road-level zoom around the last known location
 
   function compute(d) {
     const trip = d.trip || {};
@@ -141,10 +145,27 @@
     }
     if (open) stopped += (until || now) - ts(open.time);
 
+    // Miles: latest odometer reading - start_odo, plus the driving-distance estimates update.py stored
+    // (leg_mi) for legs after that reading. A leg that straddles the reading counts pro rata by time.
     const startOdo = num(trip.start_odo);
-    let cur = startOdo;
-    for (const x of [...checks, ...fuel]) { const o = num(x.odo); if (o !== null && (cur === null || o > cur)) cur = o; }
-    const miles = startOdo !== null && cur !== null ? Math.max(0, cur - startOdo) : null;
+    const reads = [];
+    if (startOdo !== null && start) reads.push({t: start, o: startOdo});
+    for (const x of [...checks, ...fuel]) { const o = num(x.odo); if (o !== null) reads.push({t: ts(x.time), o}); }
+    reads.sort((a, b) => (a.t - b.t) || (a.o - b.o));
+    const lastRead = reads[reads.length - 1] || null;
+    const cur = lastRead ? lastRead.o : startOdo;
+    const odoMiles = startOdo !== null && cur !== null ? Math.max(0, cur - startOdo) : null;
+    const arr = l => ts(l.arrived) || ts(l.time);
+    const alocs = [...locs].sort((a, b) => arr(a) - arr(b));
+    let estSince = 0, estLegs = 0;
+    if (lastRead) for (let i = 1; i < alocs.length; i++) {
+      const leg = num(alocs[i].leg_mi) || 0, t0 = arr(alocs[i - 1]), t1 = arr(alocs[i]);
+      if (!leg || t1 <= lastRead.t) continue;
+      estSince += leg * (t0 >= lastRead.t ? 1 : (t1 - lastRead.t) / (t1 - t0));
+      estLegs++;
+    }
+    const miles = odoMiles !== null ? odoMiles + estSince : null;
+    const estimated = estLegs > 0;
 
     // MPG, full-tank method.
     let gal = 0, cost = 0, mMiles = 0, mGal = 0, acc = 0;
@@ -162,8 +183,10 @@
 
     const lastLoc = locs[locs.length - 1] || null;
     const lastAny = [...locs, ...checks, ...fuel].map(x => ts(x.time)).sort((a, b) => b - a)[0] || null;
-    return {trip, locs, checks, fills, start, end, elapsed, stopped, stops, startOdo, cur, miles, gal, cost,
-      mpg: mGal ? mMiles / mGal : null, cpm: miles ? cost / miles : null, lastLoc, lastAny};
+    // MPG and cost per mile use odometer + fuel data only, never the estimates.
+    return {trip, locs, checks, fills, start, end, elapsed, stopped, stops, startOdo, cur, lastRead, odoMiles,
+      miles, estSince, estimated, gal, cost,
+      mpg: mGal ? mMiles / mGal : null, cpm: odoMiles ? cost / odoMiles : null, lastLoc, lastAny};
   }
 
   function drawMap(s) {
@@ -177,7 +200,6 @@
         maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
       map.attributionControl.setPrefix(false);
-      map.on("dragstart", () => { userMoved = true; });
       layer = L.layerGroup().addTo(map);
     }
     layer.clearLayers();
@@ -187,12 +209,15 @@
       L.polyline(ll, {color: "#2563eb", weight: 4, opacity: .75, lineJoin: "round"}).addTo(layer);
       L.marker(ll[0], {icon: dotIcon("start"), interactive: false, keyboard: false}).addTo(layer);
     }
-    L.marker(ll[ll.length - 1], {icon: dotIcon("pos"), keyboard: false, zIndexOffset: 1000}).addTo(layer);
-    if (!userMoved) {
-      if (ll.length === 1) map.setView(ll[0], 11);
-      else map.fitBounds(L.latLngBounds(ll), {padding: [28, 28], maxZoom: 13});
-    }
-    setTimeout(() => map.invalidateSize(), 50);
+    const last = ll[ll.length - 1], lp = s.locs[s.locs.length - 1];
+    L.marker(last, {icon: L.divIcon({className: "", html: '<div class="pos"></div>', iconSize: [20, 20], iconAnchor: [10, 10]}),
+      keyboard: false, zIndexOffset: 1000, title: "Last known location"})
+      .bindTooltip(`${esc(lp.place || "Last known location")} · ${esc(whenShort(ts(lp.time)))}`, {direction: "top", offset: [0, -12]})
+      .addTo(layer);
+    // Every load and every refresh: center + zoom on the last known location (ignores prior pan/zoom).
+    map.invalidateSize({pan: false});
+    map.setView(last, FOCUS_ZOOM, {animate: false});
+    setTimeout(() => { map.invalidateSize({pan: false}); map.setView(last, FOCUS_ZOOM, {animate: false}); }, 50);
   }
 
   function render() {
@@ -224,10 +249,16 @@
 
     const stat = (v, k) => `<div class="stat"><div class="v">${esc(v)}</div><div class="k">${esc(k)}</div></div>`;
     $("stats").innerHTML =
-      stat(s.miles != null ? n0(s.miles) : "—", "Miles") +
+      `<div class="stat"><div class="v">${s.miles == null ? "—" : s.estimated
+        ? `~${esc(n0(s.miles))} <small>mi (est.)</small>` : `${esc(n0(s.miles))} <small>mi</small>`}</div><div class="k">Miles</div></div>` +
       stat(dur(s.elapsed), "Time on road") +
       stat(s.mpg ? s.mpg.toFixed(1) : "—", "MPG") +
       stat(s.fills.length ? money(s.cost) : "$0", "Fuel cost");
+
+    const mn = $("milesnote");
+    mn.hidden = s.miles == null || !s.lastRead;
+    if (!mn.hidden) mn.textContent = `Odometer ${n1(s.lastRead.o)} at ${whenShort(s.lastRead.t)}` +
+      (s.estimated ? ` + ~${n0(s.estSince)} mi est. since (driving distance between location updates)` : " (exact)");
 
     const recent = [...s.checks].reverse().slice(0, 5);
     $("updatesH").hidden = $("updates").hidden = !recent.length;
@@ -241,7 +272,7 @@
       ["Driving time", dur(moving)],
       ["Stopped time", s.elapsed != null ? `${dur(s.stopped)} · ${s.stops} stop${s.stops === 1 ? "" : "s"}` : "—"],
       ["Vehicle", t.vehicle || "—"],
-      ["Odometer", s.cur != null ? n1(s.cur) + (s.startOdo != null ? ` (start ${n1(s.startOdo)})` : "") : "—"],
+      ["Odometer (last reading)", s.cur != null ? n1(s.cur) + (s.startOdo != null ? ` (start ${n1(s.startOdo)})` : "") : "—"],
       ["Fuel", s.fills.length ? `${s.gal.toFixed(1)} gal · ${s.fills.length} fill-up${s.fills.length === 1 ? "" : "s"}` : "No fill-ups yet"],
       ["Avg price", s.gal ? money(s.cost / s.gal) + "/gal" : "—"],
       ["Cost per mile", s.cpm ? "$" + s.cpm.toFixed(3) : "—"],

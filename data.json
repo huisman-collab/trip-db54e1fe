@@ -1,7 +1,7 @@
 {
   "trip": {
     "id": 28,
-    "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
+    "title": "Trip 28 · Road trip — destination open-ended",
     "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
@@ -15,21 +15,27 @@
       "lat": 40.8882064,
       "lng": -74.0227727,
       "place": "724 Chestnut Ave, Teaneck, NJ",
-      "battery": null
+      "battery": null,
+      "leg_mi": null,
+      "leg_method": null
     },
     {
       "time": "2026-09-28T15:48:22-04:00",
       "lat": 40.914176,
       "lng": -74.0104,
       "place": "New Bridge Rd, Bergenfield, NJ",
-      "battery": 80
+      "battery": 80,
+      "leg_mi": 2.65,
+      "leg_method": "osrm"
     },
     {
       "time": "2026-09-28T16:24:17-04:00",
       "lat": 41.248562,
       "lng": -74.167649,
       "place": "NY State Thruway, Southfields, NY",
-      "battery": 88
+      "battery": 88,
+      "leg_mi": 28.66,
+      "leg_method": "osrm"
     }
   ],
   "checkins": [
