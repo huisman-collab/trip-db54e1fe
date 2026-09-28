@@ -1,0 +1,23 @@
+{
+  "trip": {
+    "id": 28,
+    "title": "Trip 28 · Road trip — Niagara Falls & Michigan (open-ended)",
+    "status": "on_road",
+    "start_time": "2026-09-28T15:45:00-04:00",
+    "end_time": null,
+    "vehicle": "Ford Edge",
+    "start_odo": 165179.2,
+    "full_tank_start": true
+  },
+  "locations": [],
+  "checkins": [
+    {
+      "time": "2026-09-28T15:45:00-04:00",
+      "text": "Trip started",
+      "odo": 165179.2,
+      "place": null,
+      "status": "on_road"
+    }
+  ],
+  "fuel": []
+}
