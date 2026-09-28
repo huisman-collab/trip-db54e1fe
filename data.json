@@ -16,8 +16,7 @@
       "lng": -74.0227727,
       "place": "724 Chestnut Ave, Teaneck, NJ",
       "battery": null,
-      "leg_mi": null,
-      "leg_method": null
+      "leg_mi": null
     },
     {
       "time": "2026-09-28T15:48:22-04:00",
@@ -25,8 +24,7 @@
       "lng": -74.0104,
       "place": "New Bridge Rd, Bergenfield, NJ",
       "battery": 80,
-      "leg_mi": 2.65,
-      "leg_method": "osrm"
+      "leg_mi": 2.65
     },
     {
       "time": "2026-09-28T16:24:17-04:00",
@@ -34,8 +32,7 @@
       "lng": -74.167649,
       "place": "NY State Thruway, Southfields, NY",
       "battery": 88,
-      "leg_mi": 28.66,
-      "leg_method": "osrm"
+      "leg_mi": 28.66
     },
     {
       "time": "2026-09-28T16:51:00-04:00",
@@ -43,8 +40,7 @@
       "lng": -74.078005,
       "place": "NY State Thruway, New Paltz, NY",
       "battery": 94,
-      "leg_mi": 32.64,
-      "leg_method": "osrm"
+      "leg_mi": 32.64
     }
   ],
   "checkins": [
@@ -57,7 +53,7 @@
     },
     {
       "time": "2026-09-28T16:45:47-04:00",
-      "text": "Dash photo: 165,238.6 mi, avg 26.2 MPG, 309 mi to E, 73 mph",
+      "text": "Odometer 165,238.6 · 309 mi to empty",
       "odo": 165238.6,
       "place": null
     }
