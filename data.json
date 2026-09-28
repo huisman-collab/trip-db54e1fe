@@ -41,6 +41,14 @@
       "place": "NY State Thruway, New Paltz, NY",
       "battery": 94,
       "leg_mi": 32.64
+    },
+    {
+      "time": "2026-09-28T17:29:17-04:00",
+      "lat": 41.708081,
+      "lng": -74.075907,
+      "place": "NY State Thruway, New Paltz, NY",
+      "battery": 100,
+      "leg_mi": 6.07
     }
   ],
   "checkins": [
