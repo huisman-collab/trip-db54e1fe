@@ -65,6 +65,14 @@
       "place": "Rte 4, Paramus, NJ",
       "battery": 100,
       "leg_mi": 26.65
+    },
+    {
+      "time": "2026-09-28T19:04:40-04:00",
+      "lat": 40.904775,
+      "lng": -73.994756,
+      "place": "Gramercy Place, Teaneck, NJ",
+      "battery": 100,
+      "leg_mi": 5.34
     }
   ],
   "checkins": [
