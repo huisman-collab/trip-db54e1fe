@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 · Road trip — destination open-ended",
-    "status": "on_road",
+    "status": "stopped",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -118,6 +118,19 @@
       "odo": null,
       "place": "NY State Thruway, Southfields, NY",
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-28T18:40:00-04:00",
+      "text": "Home in Teaneck — stopped, will head out again later",
+      "odo": null,
+      "place": "Teaneck, NJ"
+    },
+    {
+      "time": "2026-09-28T18:50:54-04:00",
+      "text": "Stopped",
+      "odo": null,
+      "place": "Rte 4, Paramus, NJ",
+      "status": "stopped"
     }
   ],
   "fuel": []
