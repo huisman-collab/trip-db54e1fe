@@ -284,9 +284,7 @@
     const fb = s.legs.filter(g => g.method && g.method !== "osrm").length;
     // Always shown as an estimate: latest odometer miles + estimated legs since (even if 0 legs).
     const estMiles = s.miles != null ? s.miles : (s.legs.length ? s.legMiles : null);
-    const odoRead = s.lastRead && !s.lastRead.isStart ? s.lastRead : null;
-    const milesSub = estMiles == null ? "" : [odoRead ? `odometer ${n1(s.odoMiles)} mi at ${whenShort(odoRead.t)}` : `GPS legs ${n1(s.legMiles)} mi`,
-      stale ? `as of ${whenShort(lastSeen)}` : "", fb ? `${fb} leg${fb > 1 ? "s" : ""} straight-line` : ""].filter(Boolean).join(" · ");
+    const milesSub = estMiles != null && stale ? `as of ${whenShort(lastSeen)}` : "";
     const milesV = estMiles == null ? "—" : `~${esc(n0(estMiles))} <small>mi (est.)</small>`;
     $("stats").innerHTML =
       stat(milesV, "Miles", milesSub) +
@@ -310,7 +308,6 @@
         ? ` = odometer ${esc(n1(s.odoMiles))} mi (${esc(n1(s.lastRead.o))} at ${esc(whenShort(s.lastRead.t))}) + ~${esc(n1(s.estSince))} mi est. road driving since`
         : " (GPS legs only)"),
       `GPS-only estimate (all legs, road driving distance): ~${esc(n1(s.legMiles))} mi`,
-      `Odometer: ${odoRead ? `${esc(n1(s.odoMiles))} mi — reading ${esc(n1(odoRead.o))} at ${esc(whenShort(odoRead.t))}` : "no reading since the start"}`,
     ].join("<br>");
 
     const rows = [
@@ -323,7 +320,6 @@
       s.end ? ["Finished", whenZ(s.end)] : null,
       ["Vehicle", t.vehicle || "—"],
       ["Start odometer", s.startOdo != null ? n1(s.startOdo) : "—"],
-      ["Last odometer reading", s.lastRead ? `${n1(s.lastRead.o)} · ${whenShort(s.lastRead.t)}` : "—"],
     ].filter(Boolean);
     $("kv").innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
 
