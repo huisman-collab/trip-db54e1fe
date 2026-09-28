@@ -62,6 +62,12 @@
       "text": "Turned around near New Paltz — heading back to Teaneck for passports, will head out again later",
       "odo": null,
       "place": null
+    },
+    {
+      "time": "2026-09-28T17:09:14-04:00",
+      "text": "Odometer 165,264.6 · 296 mi to empty",
+      "odo": 165264.6,
+      "place": null
     }
   ],
   "fuel": []
