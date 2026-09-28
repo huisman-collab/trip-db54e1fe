@@ -33,7 +33,7 @@
   .fallback{color:#b45309;font-weight:600}
   .stat.wide{grid-column:span 2}
   @media(max-width:359px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  .stat .sub{font-size:12.5px;color:var(--mute);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .stat .sub{font-size:12.5px;line-height:1.3;color:var(--mute);margin-top:2px;overflow-wrap:anywhere}
   .stat .v{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
   .stat .k{font-size:13px;color:var(--mute);margin-top:4px}
   .stat .v small{font-size:14px;font-weight:500;color:var(--mute);letter-spacing:0}
@@ -163,7 +163,7 @@
     // (leg_mi) for legs after that reading. A leg that straddles the reading counts pro rata by time.
     const startOdo = num(trip.start_odo);
     const reads = [];
-    if (startOdo !== null && start) reads.push({t: start, o: startOdo});
+    if (startOdo !== null && start) reads.push({t: start, o: startOdo, isStart: true});
     for (const x of [...checks, ...fuel]) { const o = num(x.odo); if (o !== null) reads.push({t: ts(x.time), o}); }
     reads.sort((a, b) => (a.t - b.t) || (a.o - b.o));
     const lastRead = reads[reads.length - 1] || null;
@@ -282,11 +282,14 @@
     const lastSeen = s.lastLoc ? ts(s.lastLoc.time) : null;
     const stale = lastSeen && Date.now() - lastSeen > 20 * 60000;
     const fb = s.legs.filter(g => g.method && g.method !== "osrm").length;
-    const milesSub = s.miles == null ? "" : [s.estimated ? "incl. est. legs" : "from odometer",
+    // Always shown as an estimate: latest odometer miles + estimated legs since (even if 0 legs).
+    const estMiles = s.miles != null ? s.miles : (s.legs.length ? s.legMiles : null);
+    const odoRead = s.lastRead && !s.lastRead.isStart ? s.lastRead : null;
+    const milesSub = estMiles == null ? "" : [odoRead ? `odometer ${n1(s.odoMiles)} mi at ${whenShort(odoRead.t)}` : `GPS legs ${n1(s.legMiles)} mi`,
       stale ? `as of ${whenShort(lastSeen)}` : "", fb ? `${fb} leg${fb > 1 ? "s" : ""} straight-line` : ""].filter(Boolean).join(" · ");
-    const milesV = s.miles == null ? "—" : s.estimated ? `~${esc(n0(s.miles))} <small>mi</small>` : `${esc(n0(s.miles))} <small>mi</small>`;
+    const milesV = estMiles == null ? "—" : `~${esc(n0(estMiles))} <small>mi (est.)</small>`;
     $("stats").innerHTML =
-      stat(milesV, s.estimated ? "Miles (est.)" : "Miles", milesSub) +
+      stat(milesV, "Miles", milesSub) +
       stat(esc(s.locs.length > 1 ? dur(s.moveMs) : "—"), "Driving time") +
       stat(esc(s.locs.length ? dur(s.stopMs) : "—"), "Stopped time", s.stopCount ? `${s.stopCount} stop${s.stopCount === 1 ? "" : "s"}` : "") +
       stat(s.avgSpeed ? `${esc(n0(s.avgSpeed))} <small>mph</small>` : "—", "Avg moving speed") +
@@ -301,9 +304,14 @@
 
     // ---- Details ----
     const mn = $("milesnote");
-    mn.hidden = s.miles == null || !s.lastRead;
-    if (!mn.hidden) mn.textContent = `Miles: odometer ${n1(s.lastRead.o)} at ${whenShort(s.lastRead.t)} (${n1(s.odoMiles)} mi since start)` +
-      (s.estimated ? ` + ~${n1(s.estSince)} mi estimated road driving distance since = ~${n1(s.miles)} mi` : " — exact, no estimated legs since");
+    mn.hidden = estMiles == null;
+    if (!mn.hidden) mn.innerHTML = [
+      `<b>Estimate: ~${esc(n1(estMiles))} mi</b>` + (s.lastRead
+        ? ` = odometer ${esc(n1(s.odoMiles))} mi (${esc(n1(s.lastRead.o))} at ${esc(whenShort(s.lastRead.t))}) + ~${esc(n1(s.estSince))} mi est. road driving since`
+        : " (GPS legs only)"),
+      `GPS-only estimate (all legs, road driving distance): ~${esc(n1(s.legMiles))} mi`,
+      `Odometer: ${odoRead ? `${esc(n1(s.odoMiles))} mi — reading ${esc(n1(odoRead.o))} at ${esc(whenShort(odoRead.t))}` : "no reading since the start"}`,
+    ].join("<br>");
 
     const rows = [
       ["MPG", s.mpg ? s.mpg.toFixed(1) + " (odometer + full fills)" : "— (needs a full fill-up)"],
