@@ -1,7 +1,7 @@
 {
   "trip": {
     "id": 28,
-    "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
+    "title": "Trip 28 · Road trip — destination open-ended",
     "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
@@ -23,6 +23,13 @@
       "lng": -74.0104,
       "place": "New Bridge Rd, Bergenfield, NJ",
       "battery": 80
+    },
+    {
+      "time": "2026-09-28T16:24:17-04:00",
+      "lat": 41.270564,
+      "lng": -74.153334,
+      "place": "NY State Thruway, Southfields, NY",
+      "battery": 89
     }
   ],
   "checkins": [
