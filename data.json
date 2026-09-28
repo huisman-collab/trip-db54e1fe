@@ -1,7 +1,7 @@
 {
   "trip": {
     "id": 28,
-    "title": "Trip 28 · Road trip — Niagara Falls & Michigan (open-ended)",
+    "title": "Trip 28 \u00b7 Road trip \u2014 Niagara Falls & Michigan (open-ended)",
     "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
@@ -10,6 +10,13 @@
     "full_tank_start": true
   },
   "locations": [
+    {
+      "time": "2026-09-28T15:45:00-04:00",
+      "lat": 40.8882064,
+      "lng": -74.0227727,
+      "place": "724 Chestnut Ave, Teaneck, NJ",
+      "battery": null
+    },
     {
       "time": "2026-09-28T15:48:22-04:00",
       "lat": 40.914176,
@@ -23,7 +30,7 @@
       "time": "2026-09-28T15:45:00-04:00",
       "text": "Trip started",
       "odo": 165179.2,
-      "place": null,
+      "place": "724 Chestnut Ave, Teaneck, NJ",
       "status": "on_road"
     }
   ],
