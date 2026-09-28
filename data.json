@@ -45,6 +45,12 @@
       "odo": 165179.2,
       "place": "724 Chestnut Ave, Teaneck, NJ",
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-28T16:45:47-04:00",
+      "text": "Dash photo: 165,238.6 mi, avg 26.2 MPG, 309 mi to E, 73 mph",
+      "odo": 165238.6,
+      "place": null
     }
   ],
   "fuel": []
