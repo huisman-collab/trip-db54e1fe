@@ -81,6 +81,14 @@
       "place": "715 Linden Ave, Teaneck, NJ",
       "battery": 97,
       "leg_mi": 2.24
+    },
+    {
+      "time": "2026-09-28T19:55:23-04:00",
+      "lat": 40.887771,
+      "lng": -74.020895,
+      "place": "665 American Legion Dr, Teaneck, NJ",
+      "battery": 93,
+      "leg_mi": 0.12
     }
   ],
   "checkins": [
