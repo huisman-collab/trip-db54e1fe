@@ -57,6 +57,14 @@
       "place": "NY State Thruway, Southfields, NY",
       "battery": 100,
       "leg_mi": 32.76
+    },
+    {
+      "time": "2026-09-28T18:29:00-04:00",
+      "lat": 40.919228,
+      "lng": -74.066322,
+      "place": "Rte 4, Paramus, NJ",
+      "battery": 100,
+      "leg_mi": 26.65
     }
   ],
   "checkins": [
