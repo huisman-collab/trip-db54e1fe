@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 · Road trip — destination open-ended",
-    "status": "stopped",
+    "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -97,6 +97,19 @@
       "odo": null,
       "place": "NY State Thruway, Southfields, NY",
       "status": "stopped"
+    },
+    {
+      "time": "2026-09-28T18:06:00-04:00",
+      "text": "Back on the road",
+      "odo": null,
+      "place": null
+    },
+    {
+      "time": "2026-09-28T18:06:54-04:00",
+      "text": "On the road",
+      "odo": null,
+      "place": "NY State Thruway, Southfields, NY",
+      "status": "on_road"
     }
   ],
   "fuel": []
