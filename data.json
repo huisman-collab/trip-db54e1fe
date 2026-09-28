@@ -36,6 +36,15 @@
       "battery": 88,
       "leg_mi": 28.66,
       "leg_method": "osrm"
+    },
+    {
+      "time": "2026-09-28T16:51:00-04:00",
+      "lat": 41.691984,
+      "lng": -74.078005,
+      "place": "NY State Thruway, New Paltz, NY",
+      "battery": 94,
+      "leg_mi": 32.64,
+      "leg_method": "osrm"
     }
   ],
   "checkins": [
