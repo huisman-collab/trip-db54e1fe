@@ -26,9 +26,11 @@
   .dot.on_road{background:#16a34a}
   .dot.stopped{background:#f59e0b}
   .dot.finished{background:var(--ink)}
-  #map{height:62vh;min-height:320px;max-height:560px;margin:32px 0 0;border-radius:14px;background:#f5f6f7;z-index:0}
+  #map{height:170px;margin:24px 0 0;border-radius:14px;background:#f5f6f7;z-index:0}
   .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 14px;margin:28px 0 0}
+  @media(min-width:560px){#map{height:220px}}
   .stat{min-width:0}
+  .fallback{color:#b45309;font-weight:600}
   .stat.wide{grid-column:span 2}
   @media(max-width:359px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .stat .sub{font-size:12.5px;color:var(--mute);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -77,9 +79,9 @@
   </section>
 
   <section id="live" hidden>
-    <div id="map"></div>
-
     <div class="stats" id="stats"></div>
+
+    <div id="map"></div>
 
     <h2 id="updatesH">Recent updates</h2>
     <ul class="updates" id="updates"></ul>
@@ -88,7 +90,7 @@
       <summary>Details</summary>
       <p class="milesnote" id="milesnote" hidden></p>
       <dl class="kv" id="kv"></dl>
-      <h3>Legs (driving-distance estimates)</h3>
+      <h3>Legs · driving distance (OSRM road routing)</h3>
       <div class="tablewrap" id="legwrap" style="margin-top:6px"></div>
       <h3>Fill-ups</h3>
       <div class="tablewrap" id="fuelwrap" style="margin-top:6px"></div>
@@ -277,9 +279,14 @@
       `<div class="k">${esc(k)}</div>${sub ? `<div class="sub" title="${esc(sub)}">${esc(sub)}</div>` : ""}</div>`;
     const lastFill = s.fills[s.fills.length - 1];
     const batt = s.lastLoc && s.lastLoc.battery != null ? s.lastLoc.battery : null;
+    const lastSeen = s.lastLoc ? ts(s.lastLoc.time) : null;
+    const stale = lastSeen && Date.now() - lastSeen > 20 * 60000;
+    const fb = s.legs.filter(g => g.method && g.method !== "osrm").length;
+    const milesSub = s.miles == null ? "" : [s.estimated ? "incl. est. legs" : "from odometer",
+      stale ? `as of ${whenShort(lastSeen)}` : "", fb ? `${fb} leg${fb > 1 ? "s" : ""} straight-line` : ""].filter(Boolean).join(" · ");
     const milesV = s.miles == null ? "—" : s.estimated ? `~${esc(n0(s.miles))} <small>mi</small>` : `${esc(n0(s.miles))} <small>mi</small>`;
     $("stats").innerHTML =
-      stat(milesV, s.estimated ? "Miles (est.)" : "Miles", s.miles == null ? "" : s.estimated ? "incl. est. legs" : "from odometer") +
+      stat(milesV, s.estimated ? "Miles (est.)" : "Miles", milesSub) +
       stat(esc(s.locs.length > 1 ? dur(s.moveMs) : "—"), "Driving time") +
       stat(esc(s.locs.length ? dur(s.stopMs) : "—"), "Stopped time", s.stopCount ? `${s.stopCount} stop${s.stopCount === 1 ? "" : "s"}` : "") +
       stat(s.avgSpeed ? `${esc(n0(s.avgSpeed))} <small>mph</small>` : "—", "Avg moving speed") +
@@ -296,7 +303,7 @@
     const mn = $("milesnote");
     mn.hidden = s.miles == null || !s.lastRead;
     if (!mn.hidden) mn.textContent = `Miles: odometer ${n1(s.lastRead.o)} at ${whenShort(s.lastRead.t)} (${n1(s.odoMiles)} mi since start)` +
-      (s.estimated ? ` + ~${n1(s.estSince)} mi estimated driving since = ~${n1(s.miles)} mi` : " — exact, no estimated legs since");
+      (s.estimated ? ` + ~${n1(s.estSince)} mi estimated road driving distance since = ~${n1(s.miles)} mi` : " — exact, no estimated legs since");
 
     const rows = [
       ["MPG", s.mpg ? s.mpg.toFixed(1) + " (odometer + full fills)" : "— (needs a full fill-up)"],
@@ -312,10 +319,10 @@
     ].filter(Boolean);
     $("kv").innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
 
-    const METHOD = {osrm: "OSRM driving", "haversine_x1.2": "straight line ×1.2"};
+    const METHOD = {osrm: "Driving (OSRM)", "haversine_x1.2": "Straight line ×1.2 — OSRM failed"};
     $("legwrap").innerHTML = s.legs.length ? `<table><thead><tr><th>Arrived</th><th>To</th><th class="n">Miles</th><th class="n">Time</th><th>Method</th></tr></thead><tbody>` +
       [...s.legs].reverse().map(g => `<tr><td>${esc(whenShort(g.at))}</td><td title="from ${esc(g.from || "")}">${esc(g.to || "")}</td>` +
-        `<td class="n">${esc(g.mi.toFixed(1))}</td><td class="n">${esc(dur(g.dt))}</td><td>${esc(METHOD[g.method] || g.method || "—")}</td></tr>`).join("") +
+        `<td class="n">${esc(g.mi.toFixed(1))}</td><td class="n">${esc(dur(g.dt))}</td><td${g.method === "osrm" ? "" : ' class="fallback"'}>${esc(METHOD[g.method] || g.method || "—")}</td></tr>`).join("") +
       `</tbody><tfoot><tr><td></td><td>Total</td><td class="n">${esc(s.legMiles.toFixed(1))}</td><td class="n">${esc(dur(s.moveMs))}</td><td></td></tr></tfoot></table>`
       : `<p class="note">No legs yet.</p>`;
 
