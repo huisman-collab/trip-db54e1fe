@@ -115,6 +115,14 @@
       "place": "NY State Thruway, Sloatsburg, NY",
       "battery": 83,
       "leg_mi": 39.0
+    },
+    {
+      "time": "2026-09-29T14:48:49-04:00",
+      "lat": 41.554874,
+      "lng": -74.080693,
+      "place": "NY State Thruway, Wallkill, NY",
+      "battery": 91,
+      "leg_mi": 38.41
     }
   ],
   "checkins": [
