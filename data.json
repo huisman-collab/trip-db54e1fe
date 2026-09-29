@@ -147,6 +147,14 @@
       "place": "NY-10, Stamford, NY",
       "battery": 100,
       "leg_mi": 14.6
+    },
+    {
+      "time": "2026-09-29T16:49:38-04:00",
+      "lat": 42.432248,
+      "lng": -74.597393,
+      "place": "146 Scotch Valley Rd, Stamford, NY",
+      "battery": 100,
+      "leg_mi": 2.11
     }
   ],
   "checkins": [
