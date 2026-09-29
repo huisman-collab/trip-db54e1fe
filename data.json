@@ -107,6 +107,14 @@
       "place": "Garden State Pkwy, Woodcliff Lake, NJ",
       "battery": 80,
       "leg_mi": 12.02
+    },
+    {
+      "time": "2026-09-29T14:20:50-04:00",
+      "lat": 41.146585,
+      "lng": -74.187085,
+      "place": "NY State Thruway, Sloatsburg, NY",
+      "battery": 83,
+      "leg_mi": 39.0
     }
   ],
   "checkins": [
