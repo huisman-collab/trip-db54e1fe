@@ -281,6 +281,15 @@
       "price_per_gal": 4.099,
       "station": null,
       "full": true
+    },
+    {
+      "time": "2026-09-29T18:52:00-04:00",
+      "odo": 165539.1,
+      "gallons": 7.258,
+      "total_cost": 32.15,
+      "price_per_gal": 4.43,
+      "station": null,
+      "full": true
     }
   ]
 }
