@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 · Road trip — destination open-ended",
-    "status": "stopped",
+    "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -149,13 +149,13 @@
       "leg_mi": 14.6
     },
     {
-      "time": "2026-09-29T17:18:44-04:00",
+      "time": "2026-09-29T16:22:00-04:00",
       "lat": 42.432248,
       "lng": -74.597393,
       "place": "146 Scotch Valley Rd, Stamford, NY",
       "battery": 97,
       "leg_mi": 2.11,
-      "arrived": "2026-09-29T16:49:38-04:00"
+      "arrived": "2026-09-29T16:22:00-04:00"
     }
   ],
   "checkins": [
@@ -239,11 +239,24 @@
       "status": "on_road"
     },
     {
-      "time": "2026-09-29T17:18:51-04:00",
+      "time": "2026-09-29T16:22:00-04:00",
       "text": "Stopped",
+      "odo": 165495.1,
+      "place": "Stamford, NY",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-29T17:54:00-04:00",
+      "text": "On the road",
       "odo": null,
       "place": "146 Scotch Valley Rd, Stamford, NY",
-      "status": "stopped"
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-29T17:54:00-04:00",
+      "text": "Back on the road",
+      "odo": null,
+      "place": "Stamford, NY"
     }
   ],
   "fuel": [
