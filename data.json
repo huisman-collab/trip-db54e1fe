@@ -123,6 +123,14 @@
       "place": "NY State Thruway, Wallkill, NY",
       "battery": 91,
       "leg_mi": 38.41
+    },
+    {
+      "time": "2026-09-29T15:19:00-04:00",
+      "lat": 41.996429,
+      "lng": -74.09896,
+      "place": "NY-28, Glenford, NY",
+      "battery": 98,
+      "leg_mi": 41.45
     }
   ],
   "checkins": [
