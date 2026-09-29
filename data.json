@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 · Road trip — destination open-ended",
-    "status": "stopped",
+    "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -156,6 +156,14 @@
       "battery": 98,
       "leg_mi": 2.11,
       "arrived": "2026-09-29T16:22:00-04:00"
+    },
+    {
+      "time": "2026-09-29T19:46:30-04:00",
+      "lat": 43.1175624,
+      "lng": -75.6408299,
+      "place": "I-90, Oneida, NY",
+      "battery": 100,
+      "leg_mi": 107.16
     }
   ],
   "checkins": [
@@ -270,6 +278,19 @@
       "text": "Stopping for gas",
       "odo": 165539.1,
       "place": null
+    },
+    {
+      "time": "2026-09-29T18:52:00-04:00",
+      "text": "Back on the road",
+      "odo": null,
+      "place": null,
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-29T19:45:00-04:00",
+      "text": "On the road",
+      "odo": 165601,
+      "place": "I-90, Oneida, NY"
     }
   ],
   "fuel": [
