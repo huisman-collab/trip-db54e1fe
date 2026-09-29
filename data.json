@@ -99,6 +99,14 @@
       "leg_mi": 0.2,
       "arrived": "2026-09-28T20:32:42-04:00",
       "exclude_stop_time": true
+    },
+    {
+      "time": "2026-09-29T14:07:37-04:00",
+      "lat": 41.029195,
+      "lng": -74.068882,
+      "place": "Garden State Pkwy, Woodcliff Lake, NJ",
+      "battery": 80,
+      "leg_mi": 12.02
     }
   ],
   "checkins": [
