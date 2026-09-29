@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 · Road trip — destination open-ended",
-    "status": "on_road",
+    "status": "stopped",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -149,12 +149,13 @@
       "leg_mi": 14.6
     },
     {
-      "time": "2026-09-29T16:49:38-04:00",
+      "time": "2026-09-29T17:18:44-04:00",
       "lat": 42.432248,
       "lng": -74.597393,
       "place": "146 Scotch Valley Rd, Stamford, NY",
-      "battery": 100,
-      "leg_mi": 2.11
+      "battery": 97,
+      "leg_mi": 2.11,
+      "arrived": "2026-09-29T16:49:38-04:00"
     }
   ],
   "checkins": [
@@ -236,6 +237,13 @@
       "odo": null,
       "place": "715 Linden Ave, Teaneck, NJ",
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-29T17:18:51-04:00",
+      "text": "Stopped",
+      "odo": null,
+      "place": "146 Scotch Valley Rd, Stamford, NY",
+      "status": "stopped"
     }
   ],
   "fuel": [
