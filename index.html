@@ -153,9 +153,12 @@
     for (const c of checks) {
       if (!c.status) continue;
       if (c.status === "stopped") { if (!open) { open = c; stops++; } }
-      else if (open) { stopped += ts(c.time) - ts(open.time); open = null; }
+      else if (open) {
+        if (!open.exclude_stop_time) stopped += ts(c.time) - ts(open.time);
+        open = null;
+      }
     }
-    if (open) stopped += (until || now) - ts(open.time);
+    if (open && !open.exclude_stop_time) stopped += (until || now) - ts(open.time);
 
     // Miles: latest odometer reading - start_odo, plus the leg miles stored in data.json
     // (leg_mi) for legs after that reading. A leg that straddles the reading counts pro rata by time.
@@ -184,7 +187,9 @@
     const legs = [];
     alocs.forEach((l, i) => {
       const a = arr(l), seen = ts(l.time) || a, span = Math.max(0, seen - a);
-      stopMs += span; if (span >= 5 * 60000) stopCount++;
+      // exclude_stop_time: still counts as a stop, but layover duration is omitted (e.g. overnight home)
+      if (!l.exclude_stop_time) stopMs += span;
+      if (span >= 5 * 60000) stopCount++;
       if (i === 0) return;
       const prev = alocs[i - 1], mi = num(l.leg_mi) || 0, dt = Math.max(0, a - (ts(prev.time) || arr(prev)));
       if (mi > 0) { moveMs += dt; legMiles += mi; }
