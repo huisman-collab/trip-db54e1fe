@@ -166,5 +166,15 @@
       "status": "stopped"
     }
   ],
-  "fuel": []
+  "fuel": [
+    {
+      "time": "2026-09-29T13:38:00-04:00",
+      "odo": 165347.6,
+      "gallons": 6.385,
+      "total_cost": 26.17,
+      "price_per_gal": 4.099,
+      "station": null,
+      "full": true
+    }
+  ]
 }
