@@ -1267,6 +1267,14 @@
       "place": "I-96, Grand Ledge, MI 48837, USA",
       "battery": 100,
       "leg_mi": 3.18
+    },
+    {
+      "time": "2026-09-30T07:58:49-04:00",
+      "lat": 42.8012051,
+      "lng": -84.7430542,
+      "place": "I-96, Eagle, MI 48822, USA",
+      "battery": 100,
+      "leg_mi": 3.94
     }
   ],
   "checkins": [
