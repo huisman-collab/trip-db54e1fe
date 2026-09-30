@@ -547,6 +547,14 @@
       "place": "Niagara Falls, ON, Canada",
       "battery": 100,
       "leg_mi": 2.46
+    },
+    {
+      "time": "2026-09-30T02:25:49-04:00",
+      "lat": 43.1539189,
+      "lng": -79.155172,
+      "place": "Queen Elizabeth Wy, Niagara-on-the-Lake, ON, Canada",
+      "battery": 100,
+      "leg_mi": 7.58
     }
   ],
   "checkins": [
