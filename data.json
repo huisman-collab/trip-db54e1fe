@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
-    "status": "stopped",
+    "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -939,6 +939,22 @@
       "place": "I-69, Smiths Creek, MI 48074, USA",
       "battery": 99,
       "leg_mi": 3.92
+    },
+    {
+      "time": "2026-09-30T06:13:48-04:00",
+      "lat": 42.9714371,
+      "lng": -82.6812556,
+      "place": "I-69, Goodells, MI 48027, USA",
+      "battery": 99,
+      "leg_mi": 6.05
+    },
+    {
+      "time": "2026-09-30T06:15:59-04:00",
+      "lat": 42.9723662,
+      "lng": -82.7135969,
+      "place": "I-69, Goodells, MI 48027, USA",
+      "battery": 99,
+      "leg_mi": 2.05
     }
   ],
   "checkins": [
@@ -1210,6 +1226,13 @@
       "odo": 166003.5,
       "place": "Michigan Welcome Center, Port Huron",
       "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T05:57:00-04:00",
+      "text": "On the road - Michigan Welcome Center",
+      "odo": null,
+      "place": "Michigan Welcome Center, Port Huron",
+      "status": "on_road"
     }
   ],
   "fuel": [
