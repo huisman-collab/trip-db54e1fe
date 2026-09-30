@@ -1347,6 +1347,14 @@
       "place": "I-96, Saranac, MI 48881, USA",
       "battery": 100,
       "leg_mi": 3.61
+    },
+    {
+      "time": "2026-09-30T08:25:50-04:00",
+      "lat": 42.8795854,
+      "lng": -85.286223,
+      "place": "I-96, Lowell, MI 49331, USA",
+      "battery": 100,
+      "leg_mi": 2.86
     }
   ],
   "checkins": [
