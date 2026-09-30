@@ -220,6 +220,14 @@
       "place": "I-90, Waterloo, NY",
       "battery": 100,
       "leg_mi": 6.51
+    },
+    {
+      "time": "2026-09-29T20:45:48-04:00",
+      "lat": 42.954935,
+      "lng": -76.9771802,
+      "place": "I-90, Phelps, NY",
+      "battery": 100,
+      "leg_mi": 6.55
     }
   ],
   "checkins": [
