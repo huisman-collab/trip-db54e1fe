@@ -1027,6 +1027,14 @@
       "place": "I-69, Metamora, MI 48455, USA",
       "battery": 100,
       "leg_mi": 3.91
+    },
+    {
+      "time": "2026-09-30T06:41:27-04:00",
+      "lat": 43.0172186,
+      "lng": -83.2904467,
+      "place": "I-69, Lapeer, MI 48446, USA",
+      "battery": 100,
+      "leg_mi": 3.71
     }
   ],
   "checkins": [
