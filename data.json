@@ -450,6 +450,14 @@
       "place": "Niagara St, Niagara Falls, NY",
       "battery": 99,
       "leg_mi": 0.22
+    },
+    {
+      "time": "2026-09-30T01:25:30-04:00",
+      "lat": 43.0859914,
+      "lng": -79.0764744,
+      "place": "5208 Niagara River Pkwy, Niagara Falls, ON, Canada",
+      "battery": 99,
+      "leg_mi": 1.07
     }
   ],
   "checkins": [
