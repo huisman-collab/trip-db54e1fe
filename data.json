@@ -723,6 +723,14 @@
       "place": "ON-402, Mount Brydges, ON N0L 1W0, Canada",
       "battery": 100,
       "leg_mi": 7.35
+    },
+    {
+      "time": "2026-09-30T04:38:05-04:00",
+      "lat": 42.9926705,
+      "lng": -81.6152239,
+      "place": "ON-402, Exeter, ON, Canada",
+      "battery": 100,
+      "leg_mi": 9.85
     }
   ],
   "checkins": [
