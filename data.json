@@ -587,6 +587,14 @@
       "place": "Queen Elizabeth Wy, Hamilton, ON L8E 5X8, Canada",
       "battery": 100,
       "leg_mi": 10.03
+    },
+    {
+      "time": "2026-09-30T02:58:30-04:00",
+      "lat": 43.3031277,
+      "lng": -79.7997195,
+      "place": "Burlington Bay James N. Allan Skyway, Burlington, ON L7S 1A1, Canada",
+      "battery": 100,
+      "leg_mi": 8.49
     }
   ],
   "checkins": [
