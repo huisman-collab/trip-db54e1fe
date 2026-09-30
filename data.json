@@ -851,6 +851,14 @@
       "place": "Michigan Welcome Center, Port Huron",
       "battery": 100,
       "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T05:35:35-04:00",
+      "lat": 42.988876,
+      "lng": -82.4738079,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.0
     }
   ],
   "checkins": [
@@ -1027,48 +1035,48 @@
     },
     {
       "time": "2026-09-30T00:02:02-04:00",
-      "text": "Stopping for gas",
+      "text": "Stopped",
       "odo": 165767.0,
       "place": null,
       "status": "stopped"
     },
     {
       "time": "2026-09-30T00:05:04-04:00",
-      "text": "Back on the road",
+      "text": "On the road",
       "odo": null,
       "place": null,
       "status": "on_road"
     },
     {
       "time": "2026-09-30T00:32:41-04:00",
-      "text": "Heading to Niagara Falls to see the illuminated falls",
+      "text": "Niagara Falls",
       "odo": null,
       "place": null
     },
     {
       "time": "2026-09-30T00:39:50-04:00",
-      "text": "Arrived at Niagara Falls State Park to see the illuminated falls",
+      "text": "Stopped - Niagara Falls State Park",
       "odo": 165797.3,
       "place": "Niagara Falls State Park, NY",
       "status": "stopped"
     },
     {
       "time": "2026-09-30T01:14:46-04:00",
-      "text": "Back on the road, heading to the bridge crossing into Canada",
+      "text": "On the road - Niagara Falls",
       "odo": null,
       "place": "Niagara Falls, NY",
       "status": "on_road"
     },
     {
       "time": "2026-09-30T01:27:54-04:00",
-      "text": "Short roadside stop at a falls viewpoint; time is when the stop was reported",
+      "text": "Stopped - Niagara Falls viewpoint",
       "odo": null,
       "place": "Falls viewpoint, Niagara Falls, ON, Canada",
       "status": "stopped"
     },
     {
       "time": "2026-09-30T01:45:00-04:00",
-      "text": "Estimated restart of back-and-forth driving at the falls, based on last near-stationary fix before sustained movement; user confirmed driving, exact time unknown",
+      "text": "On the road - Niagara Falls (time estimated)",
       "odo": null,
       "place": "Niagara Falls, ON, Canada",
       "status": "on_road",
@@ -1076,49 +1084,49 @@
     },
     {
       "time": "2026-09-30T02:01:40-04:00",
-      "text": "Back on the road toward Wyoming, Michigan; user ETA 8 AM. Back-and-forth driving at the falls confirmed; exact driving/parked times during visit not supplied",
+      "text": "On the road - Niagara Falls",
       "odo": 165803.0,
       "place": "Niagara Falls, ON, Canada",
       "status": "on_road"
     },
     {
       "time": "2026-09-30T04:47:23-04:00",
-      "text": "Short roadside stretch break off ON-402; time is when the break was reported",
+      "text": "Stopped - Warwick",
       "odo": 165972.4,
       "place": "Warwick, ON, Canada",
       "status": "stopped"
     },
     {
       "time": "2026-09-30T04:50:15-04:00",
-      "text": "Back on the road after a short stretch break; heading toward the US border. Time is when restart was reported",
+      "text": "On the road - Warwick",
       "odo": null,
       "place": "Warwick, ON, Canada",
       "status": "on_road"
     },
     {
       "time": "2026-09-30T05:16:00-04:00",
-      "text": "On Blue Water Bridge, about to cross into the US",
+      "text": "On the road - Blue Water Bridge",
       "odo": 166000.4,
       "place": "Blue Water Bridge",
       "status": "on_road"
     },
     {
       "time": "2026-09-30T05:18:55-04:00",
-      "text": "Waiting in the US border line, with four or five cars ahead; time is when the wait was reported",
+      "text": "Border crossing - stopped",
       "odo": null,
       "place": "Blue Water Bridge, Port Huron, Michigan",
       "status": "stopped"
     },
     {
       "time": "2026-09-30T05:28:55-04:00",
-      "text": "Past US customs; continuing toward the Michigan Welcome Center. Time is when clearance was reported",
+      "text": "Border crossing - on the road",
       "odo": null,
       "place": "Port Huron, Michigan",
       "status": "on_road"
     },
     {
       "time": "2026-09-30T05:28:55-04:00",
-      "text": "Stopping at the Michigan Welcome Center; another welcome center visited. Time is when the stop was reported",
+      "text": "Stopped - Michigan Welcome Center",
       "odo": 166003.5,
       "place": "Michigan Welcome Center, Port Huron",
       "status": "stopped"
