@@ -228,6 +228,14 @@
       "place": "I-90, Phelps, NY",
       "battery": 100,
       "leg_mi": 6.55
+    },
+    {
+      "time": "2026-09-29T20:51:25-04:00",
+      "lat": 42.9745431,
+      "lng": -77.1026888,
+      "place": "I-90, Clifton Springs, NY",
+      "battery": 100,
+      "leg_mi": 6.62
     }
   ],
   "checkins": [
