@@ -1851,6 +1851,22 @@
       "place": "31 W 10th St, Holland, MI 49423, USA",
       "battery": 100,
       "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T11:59:46-04:00",
+      "lat": 42.7889412,
+      "lng": -86.1085799,
+      "place": "31 W 10th St, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0.02
+    },
+    {
+      "time": "2026-09-30T12:02:04-04:00",
+      "lat": 42.7888913,
+      "lng": -86.1088548,
+      "place": "31 W 10th St, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0.01
     }
   ],
   "checkins": [
