@@ -1635,6 +1635,14 @@
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
       "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T09:57:58-04:00",
+      "lat": 42.9141232,
+      "lng": -85.7332559,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
     }
   ],
   "checkins": [
