@@ -2523,6 +2523,38 @@
       "place": "Paul B. Henry Fwy, Grand Rapids, MI 49512, USA",
       "battery": 84,
       "leg_mi": 3.27
+    },
+    {
+      "time": "2026-09-30T16:02:40-04:00",
+      "lat": 42.8581239,
+      "lng": -85.5064592,
+      "place": "Paul B. Henry Fwy, Grand Rapids, MI 49512, USA",
+      "battery": 84,
+      "leg_mi": 1.67
+    },
+    {
+      "time": "2026-09-30T16:05:00-04:00",
+      "lat": 42.8830183,
+      "lng": -85.4723277,
+      "place": "I-96, Grand Rapids, MI 49512, USA",
+      "battery": 84,
+      "leg_mi": 2.44
+    },
+    {
+      "time": "2026-09-30T16:07:21-04:00",
+      "lat": 42.878415,
+      "lng": -85.4107929,
+      "place": "I-96, Lowell, MI 49331, USA",
+      "battery": 85,
+      "leg_mi": 3.13
+    },
+    {
+      "time": "2026-09-30T16:09:43-04:00",
+      "lat": 42.8785511,
+      "lng": -85.3795941,
+      "place": "I-96, Lowell, MI 49331, USA",
+      "battery": 85,
+      "leg_mi": 1.58
     }
   ],
   "checkins": [
@@ -2878,4 +2910,4 @@
       "full": true
     }
   ]
-}
+    }
