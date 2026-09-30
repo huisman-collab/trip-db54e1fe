@@ -307,7 +307,7 @@
       stat(esc(s.locs.length > 1 ? dur(s.moveMs) : "—"), "Driving") +
       stat(esc(s.locs.length ? dur(s.stopMs) : "—"), "Stopped") +
       stat(s.avgSpeed ? `${esc(n0(s.avgSpeed))} <small>mph</small>` : "—", "Avg speed") +
-      stat(batt != null ? `${esc(batt)}<small>%</small>` : "—", "Battery") +
+      stat(s.mpg ? esc(s.mpg.toFixed(1)) : "—", "MPG") +
       stat(s.fills.length ? `${esc(n1(s.gal))} <small>gal</small>` : "—", "Trip fill-ups",
         s.fills.length ? `${money(s.cost)} total` : "");
 
