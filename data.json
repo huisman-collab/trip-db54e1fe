@@ -1939,6 +1939,38 @@
       "place": "Unnamed Road, Holland, MI 49423, USA",
       "battery": 100,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:30:43-04:00",
+      "lat": 42.7907661,
+      "lng": -86.1034608,
+      "place": "Unnamed Road, Holland, MI 49423, USA",
+      "battery": null,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:33:07-04:00",
+      "lat": 42.7909059,
+      "lng": -86.1026191,
+      "place": "Unnamed Road, Holland, MI 49423, USA",
+      "battery": null,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:35:41-04:00",
+      "lat": 42.7907866,
+      "lng": -86.1024445,
+      "place": "121 E 8th St, Holland, MI 49423, USA",
+      "battery": null,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:38:26-04:00",
+      "lat": 42.7910351,
+      "lng": -86.1004638,
+      "place": "170-178 Columbia Ave, Holland, MI 49423, USA",
+      "battery": 99,
+      "leg_mi": 0
     }
   ],
   "checkins": [
