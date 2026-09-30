@@ -931,6 +931,14 @@
       "place": "I-69, Smiths Creek, MI 48074, USA",
       "battery": 98,
       "leg_mi": 3.29
+    },
+    {
+      "time": "2026-09-30T06:10:35-04:00",
+      "lat": 42.9878822,
+      "lng": -82.5881679,
+      "place": "I-69, Smiths Creek, MI 48074, USA",
+      "battery": 99,
+      "leg_mi": 3.92
     }
   ],
   "checkins": [
