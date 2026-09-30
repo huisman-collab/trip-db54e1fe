@@ -627,6 +627,14 @@
       "place": "ON-403, Alberton, ON L0R 1A0, Canada",
       "battery": 100,
       "leg_mi": 3.26
+    },
+    {
+      "time": "2026-09-30T03:24:36-04:00",
+      "lat": 43.1681988,
+      "lng": -80.1891289,
+      "place": "ON-403, Brantford, ON, Canada",
+      "battery": 100,
+      "leg_mi": 9.45
     }
   ],
   "checkins": [
