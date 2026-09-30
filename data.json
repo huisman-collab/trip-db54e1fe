@@ -955,6 +955,14 @@
       "place": "I-69, Goodells, MI 48027, USA",
       "battery": 99,
       "leg_mi": 2.05
+    },
+    {
+      "time": "2026-09-30T06:18:36-04:00",
+      "lat": 42.9794497,
+      "lng": -82.7754902,
+      "place": "I-69, Memphis, MI 48041, USA",
+      "battery": 99,
+      "leg_mi": 3.96
     }
   ],
   "checkins": [
