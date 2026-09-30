@@ -2491,6 +2491,22 @@
       "place": "Paul B. Henry Fwy, Grandville, MI 49418, USA",
       "battery": 82,
       "leg_mi": 3.0
+    },
+    {
+      "time": "2026-09-30T15:53:28-04:00",
+      "lat": 42.852572,
+      "lng": -85.7348698,
+      "place": "Paul B. Henry Fwy, Byron Center, MI 49315, USA",
+      "battery": 82,
+      "leg_mi": 1.65
+    },
+    {
+      "time": "2026-09-30T15:55:41-04:00",
+      "lat": 42.8487179,
+      "lng": -85.6687753,
+      "place": "Paul B. Henry Fwy, Grand Rapids, MI 49548, USA",
+      "battery": 83,
+      "leg_mi": 3.36
     }
   ],
   "checkins": [
@@ -2846,4 +2862,4 @@
       "full": true
     }
   ]
-    }
+}
