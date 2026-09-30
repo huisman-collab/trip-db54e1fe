@@ -1139,6 +1139,14 @@
       "place": "I-69, Durand, MI 48429, USA",
       "battery": 100,
       "leg_mi": 3.28
+    },
+    {
+      "time": "2026-09-30T07:18:34-04:00",
+      "lat": 42.9218257,
+      "lng": -84.021732,
+      "place": "I-69, Durand, MI 48429, USA",
+      "battery": 100,
+      "leg_mi": 3.71
     }
   ],
   "checkins": [
