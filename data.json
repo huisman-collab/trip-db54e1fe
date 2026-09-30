@@ -1803,6 +1803,22 @@
       "place": "I-196BL, Zeeland, MI 49464, USA",
       "battery": 100,
       "leg_mi": 1.52
+    },
+    {
+      "time": "2026-09-30T11:42:18-04:00",
+      "lat": 42.8123691,
+      "lng": -86.0230779,
+      "place": "148-116 W Main Ave, Zeeland, MI 49464, USA",
+      "battery": 100,
+      "leg_mi": 0.55
+    },
+    {
+      "time": "2026-09-30T11:44:42-04:00",
+      "lat": 42.8089952,
+      "lng": -86.0454704,
+      "place": "10683-10733 Chicago Dr, Zeeland, MI 49464, USA",
+      "battery": 100,
+      "leg_mi": 1.16
     }
   ],
   "checkins": [
