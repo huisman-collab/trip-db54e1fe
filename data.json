@@ -1763,6 +1763,22 @@
       "place": "I-196, Grandville, MI 49418, USA",
       "battery": 100,
       "leg_mi": 2.79
+    },
+    {
+      "time": "2026-09-30T11:30:24-04:00",
+      "lat": 42.853959,
+      "lng": -85.8459129,
+      "place": "I-196, Hudsonville, MI 49426, USA",
+      "battery": 100,
+      "leg_mi": 3.3
+    },
+    {
+      "time": "2026-09-30T11:32:39-04:00",
+      "lat": 42.8341051,
+      "lng": -85.9076831,
+      "place": "I-196, Hudsonville, MI 49426, USA",
+      "battery": 100,
+      "leg_mi": 3.42
     }
   ],
   "checkins": [
