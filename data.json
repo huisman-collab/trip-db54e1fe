@@ -779,6 +779,22 @@
       "place": "ON-402, Wyoming, ON N0N 1T0, Canada",
       "battery": 100,
       "leg_mi": 6.09
+    },
+    {
+      "time": "2026-09-30T05:01:27-04:00",
+      "lat": 42.9914662,
+      "lng": -82.1083205,
+      "place": "ON-402, Plympton-Wyoming, ON N0N 1J5, Canada",
+      "battery": 100,
+      "leg_mi": 3.74
+    },
+    {
+      "time": "2026-09-30T05:05:29-04:00",
+      "lat": 42.9923249,
+      "lng": -82.1643981,
+      "place": "ON-402, Plympton-Wyoming, ON N0N 1E0, Canada",
+      "battery": 100,
+      "leg_mi": 3.54
     }
   ],
   "checkins": [
