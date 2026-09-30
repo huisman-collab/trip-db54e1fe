@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 · Road trip — destination open-ended",
-    "status": "on_road",
+    "status": "stopped",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -401,6 +401,13 @@
       "text": "On the road",
       "odo": 165636.7,
       "place": null
+    },
+    {
+      "time": "2026-09-29T21:16:00-04:00",
+      "text": "Extended break",
+      "odo": 165696.1,
+      "place": null,
+      "status": "stopped"
     }
   ],
   "fuel": [
