@@ -1163,6 +1163,14 @@
       "place": "I-69, Bancroft, MI 48414, USA",
       "battery": 100,
       "leg_mi": 4.31
+    },
+    {
+      "time": "2026-09-30T07:26:51-04:00",
+      "lat": 42.840565,
+      "lng": -84.2141026,
+      "place": "I-69, Perry, MI 48872, USA",
+      "battery": 100,
+      "leg_mi": 6.01
     }
   ],
   "checkins": [
