@@ -1,7 +1,7 @@
 {
   "trip": {
     "id": 28,
-    "title": "Trip 28 · Road trip — destination open-ended",
+    "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
     "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
@@ -365,6 +365,14 @@
       "place": "I-90, Buffalo, NY",
       "battery": 100,
       "leg_mi": 11.39
+    },
+    {
+      "time": "2026-09-30T00:19:50-04:00",
+      "lat": 43.00234,
+      "lng": -78.81463,
+      "place": "Youngmann Memorial Hwy, Buffalo, NY",
+      "battery": 100,
+      "leg_mi": 7.15
     }
   ],
   "checkins": [
@@ -377,19 +385,19 @@
     },
     {
       "time": "2026-09-28T16:45:47-04:00",
-      "text": "Odometer 165,238.6 · 309 mi to empty",
+      "text": "Odometer 165,238.6 \u00b7 309 mi to empty",
       "odo": 165238.6,
       "place": null
     },
     {
       "time": "2026-09-28T17:08:40-04:00",
-      "text": "Turned around near New Paltz — heading back to Teaneck, will head out again later",
+      "text": "Turned around near New Paltz \u2014 heading back to Teaneck, will head out again later",
       "odo": null,
       "place": null
     },
     {
       "time": "2026-09-28T17:09:14-04:00",
-      "text": "Odometer 165,264.6 · 296 mi to empty",
+      "text": "Odometer 165,264.6 \u00b7 296 mi to empty",
       "odo": 165264.6,
       "place": null
     },
@@ -421,7 +429,7 @@
     },
     {
       "time": "2026-09-28T18:40:00-04:00",
-      "text": "Home in Teaneck — stopped, will head out again later",
+      "text": "Home in Teaneck \u2014 stopped, will head out again later",
       "odo": null,
       "place": "Teaneck, NJ",
       "exclude_stop_time": true
