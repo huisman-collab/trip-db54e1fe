@@ -1,0 +1,1 @@
+{"name":"trip28-gallery-stage","main":"gallery-worker.mjs","compatibility_date":"2026-09-30","workers_dev":true,"d1_databases":[{"binding":"DB","database_name":"trip28-gallery-stage","database_id":"5b7f4fbb-2470-49f8-8f8c-3748f3122c91"}],"observability":{"enabled":false}}
