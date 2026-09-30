@@ -1355,6 +1355,14 @@
       "place": "I-96, Lowell, MI 49331, USA",
       "battery": 100,
       "leg_mi": 2.86
+    },
+    {
+      "time": "2026-09-30T08:28:25-04:00",
+      "lat": 42.8768316,
+      "lng": -85.3437575,
+      "place": "I-96, Lowell, MI 49331, USA",
+      "battery": 100,
+      "leg_mi": 2.92
     }
   ],
   "checkins": [
