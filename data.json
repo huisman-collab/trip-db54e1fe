@@ -915,6 +915,14 @@
       "place": "3555, I-94, Port Huron, MI 48060, USA",
       "battery": 99,
       "leg_mi": 0.35
+    },
+    {
+      "time": "2026-09-30T06:04:00-04:00",
+      "lat": 42.9779556,
+      "lng": -82.4763446,
+      "place": "Unnamed Road, Port Huron, MI 48060, USA",
+      "battery": 98,
+      "leg_mi": 0.91
     }
   ],
   "checkins": [
