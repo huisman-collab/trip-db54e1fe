@@ -979,6 +979,38 @@
       "place": "I-69, Capac, MI 48014, USA",
       "battery": 99,
       "leg_mi": 4.16
+    },
+    {
+      "time": "2026-09-30T06:26:11-04:00",
+      "lat": 42.9941039,
+      "lng": -82.9701981,
+      "place": "I-69, Capac, MI 48014, USA",
+      "battery": 100,
+      "leg_mi": 3.98
+    },
+    {
+      "time": "2026-09-30T06:28:59-04:00",
+      "lat": 43.0006991,
+      "lng": -83.0295688,
+      "place": "I-69, Imlay City, MI 48444, USA",
+      "battery": 100,
+      "leg_mi": 3.79
+    },
+    {
+      "time": "2026-09-30T06:31:40-04:00",
+      "lat": 42.9989914,
+      "lng": -83.0889334,
+      "place": "I-69, Imlay City, MI 48444, USA",
+      "battery": 100,
+      "leg_mi": 3.75
+    },
+    {
+      "time": "2026-09-30T06:33:57-04:00",
+      "lat": 42.9970885,
+      "lng": -83.117817,
+      "place": "I-69, Imlay City, MI 48444, USA",
+      "battery": 100,
+      "leg_mi": 1.83
     }
   ],
   "checkins": [
