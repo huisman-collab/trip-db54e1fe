@@ -1395,6 +1395,30 @@
       "place": "I-96, Grand Rapids, MI 49546, USA",
       "battery": 100,
       "leg_mi": 3.02
+    },
+    {
+      "time": "2026-09-30T08:42:02-04:00",
+      "lat": 42.961197,
+      "lng": -85.5763741,
+      "place": "I-96, Grand Rapids, MI 49546, USA",
+      "battery": 100,
+      "leg_mi": 2.93
+    },
+    {
+      "time": "2026-09-30T08:45:03-04:00",
+      "lat": 42.9762457,
+      "lng": -85.6262587,
+      "place": "I-196, Grand Rapids, MI 49503, USA",
+      "battery": 100,
+      "leg_mi": 2.73
+    },
+    {
+      "time": "2026-09-30T08:47:26-04:00",
+      "lat": 42.9728255,
+      "lng": -85.6760891,
+      "place": "537-529 Scribner Ave NW, Grand Rapids, MI 49504, USA",
+      "battery": 100,
+      "leg_mi": 2.53
     }
   ],
   "checkins": [
