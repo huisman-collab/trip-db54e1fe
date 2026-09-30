@@ -268,6 +268,14 @@
       "place": "I-90, Victor, NY",
       "battery": 100,
       "leg_mi": 1.35
+    },
+    {
+      "time": "2026-09-29T21:21:05-04:00",
+      "lat": 43.0563273,
+      "lng": -77.471084,
+      "place": "I-490, Pittsford, NY",
+      "battery": 100,
+      "leg_mi": 6.26
     }
   ],
   "checkins": [
