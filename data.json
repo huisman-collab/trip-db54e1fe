@@ -539,6 +539,14 @@
       "place": "5201 Marineland Pkwy, Allanburg, ON, Canada",
       "battery": 100,
       "leg_mi": 1.12
+    },
+    {
+      "time": "2026-09-30T02:19:27-04:00",
+      "lat": 43.0704539,
+      "lng": -79.1182327,
+      "place": "Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 2.46
     }
   ],
   "checkins": [
