@@ -835,6 +835,14 @@
       "place": "Blue Water Brg, Port Huron, MI 48060, USA",
       "battery": 100,
       "leg_mi": 0.76
+    },
+    {
+      "time": "2026-09-30T05:28:51-04:00",
+      "lat": 42.9888789,
+      "lng": -82.4738092,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 2.56
     }
   ],
   "checkins": [
@@ -1092,6 +1100,20 @@
       "odo": null,
       "place": "Blue Water Bridge, Port Huron, Michigan",
       "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T05:28:55-04:00",
+      "text": "Past US customs; continuing toward the Michigan Welcome Center. Time is when clearance was reported",
+      "odo": null,
+      "place": "Port Huron, Michigan",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T05:28:55-04:00",
+      "text": "Stopping at the Michigan Welcome Center; another welcome center visited. Time is when the stop was reported",
+      "odo": 166003.5,
+      "place": "Michigan Welcome Center, Port Huron",
+      "status": "stopped"
     }
   ],
   "fuel": [
@@ -1123,4 +1145,4 @@
       "full": true
     }
   ]
-}
+    }
