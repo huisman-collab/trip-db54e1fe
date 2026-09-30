@@ -1499,6 +1499,70 @@
       "place": "2828-2800 Wilson Ave SW, Grandville, MI 49418, USA",
       "battery": 100,
       "leg_mi": 0.02
+    },
+    {
+      "time": "2026-09-30T09:18:28-04:00",
+      "lat": 42.9134659,
+      "lng": -85.7623773,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.03
+    },
+    {
+      "time": "2026-09-30T09:20:47-04:00",
+      "lat": 42.9131126,
+      "lng": -85.7626132,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.03
+    },
+    {
+      "time": "2026-09-30T09:26:06-04:00",
+      "lat": 42.9133744,
+      "lng": -85.7626706,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.02
+    },
+    {
+      "time": "2026-09-30T09:29:44-04:00",
+      "lat": 42.9133808,
+      "lng": -85.7626738,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:31:50-04:00",
+      "lat": 42.913454,
+      "lng": -85.7618319,
+      "place": "2801-2813 Church Ave SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.04
+    },
+    {
+      "time": "2026-09-30T09:32:37-04:00",
+      "lat": 42.9135327,
+      "lng": -85.7521117,
+      "place": "East Grandville, Grandville, MI, USA",
+      "battery": 100,
+      "leg_mi": 0.49
+    },
+    {
+      "time": "2026-09-30T09:34:38-04:00",
+      "lat": 42.9136631,
+      "lng": -85.7385189,
+      "place": "2958-2954 M-11, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.69
+    },
+    {
+      "time": "2026-09-30T09:35:21-04:00",
+      "lat": 42.9136631,
+      "lng": -85.7385189,
+      "place": "2958-2954 M-11, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
     }
   ],
   "checkins": [
@@ -1782,6 +1846,20 @@
       "time": "2026-09-30T08:55:48-04:00",
       "text": "Stopped - Grandville",
       "odo": 166187.6,
+      "place": "Grandville, Michigan",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T09:31:28-04:00",
+      "text": "On the road - Grandville",
+      "odo": 166187.7,
+      "place": "Grandville, Michigan",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T09:34:25-04:00",
+      "text": "Stopped - Grandville",
+      "odo": 166189.2,
       "place": "Grandville, Michigan",
       "status": "stopped"
     }
