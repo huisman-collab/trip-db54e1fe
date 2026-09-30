@@ -301,6 +301,14 @@
       "place": "I-390, Rochester, NY",
       "battery": 94,
       "leg_mi": 5.45
+    },
+    {
+      "time": "2026-09-29T23:25:26-04:00",
+      "lat": 43.0418713,
+      "lng": -77.7118161,
+      "place": "I-90, West Henrietta, NY",
+      "battery": 95,
+      "leg_mi": 6.2
     }
   ],
   "checkins": [
@@ -496,4 +504,4 @@
       "full": true
     }
   ]
-}
+    }
