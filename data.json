@@ -397,6 +397,15 @@
       "place": "Niagara Falls State Park, NY",
       "battery": 100,
       "leg_mi": 3.07
+    },
+    {
+      "time": "2026-09-30T00:44:51-04:00",
+      "lat": 43.08746,
+      "lng": -79.0664,
+      "place": "Niagara Falls State Park, NY",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during confirmed sightseeing stop; no driving miles added"
     }
   ],
   "checkins": [
