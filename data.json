@@ -1907,6 +1907,22 @@
       "place": "36-2 W 8th St, Holland, MI 49423, USA",
       "battery": 100,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:20:26-04:00",
+      "lat": 42.7905301,
+      "lng": -86.1092326,
+      "place": "186 S River Ave #2, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:22:41-04:00",
+      "lat": 42.7903107,
+      "lng": -86.1088921,
+      "place": "188-192 S River Ave, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0
     }
   ],
   "checkins": [
