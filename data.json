@@ -643,6 +643,14 @@
       "place": "ON-403, Brantford, ON N3V 1E7, Canada",
       "battery": 100,
       "leg_mi": 8.93
+    },
+    {
+      "time": "2026-09-30T03:37:49-04:00",
+      "lat": 43.1440449,
+      "lng": -80.4511745,
+      "place": "ON-403, Brant, ON N0J 1V0, Canada",
+      "battery": 100,
+      "leg_mi": 7.87
     }
   ],
   "checkins": [
