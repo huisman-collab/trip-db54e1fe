@@ -138,7 +138,7 @@
 
   let data = null, map = null, layer = null;
   const arr = l => ts(l.arrived) || ts(l.time);
-  const FOCUS_ZOOM = 12;  // road-level zoom around the last known location
+  const FOCUS_ZOOM = 8;  // regional view around the last known location
 
   function compute(d) {
     const trip = d.trip || {};
