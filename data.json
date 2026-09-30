@@ -212,6 +212,14 @@
       "place": "I-90, Cayuga, NY",
       "battery": 100,
       "leg_mi": 6.6
+    },
+    {
+      "time": "2026-09-29T20:40:39-04:00",
+      "lat": 42.9678144,
+      "lng": -76.8504258,
+      "place": "I-90, Waterloo, NY",
+      "battery": 100,
+      "leg_mi": 6.51
     }
   ],
   "checkins": [
