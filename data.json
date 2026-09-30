@@ -1251,6 +1251,14 @@
       "place": "I-69, DeWitt, MI 48820, USA",
       "battery": 100,
       "leg_mi": 3.74
+    },
+    {
+      "time": "2026-09-30T07:53:10-04:00",
+      "lat": 42.803409,
+      "lng": -84.6336173,
+      "place": "I-69, Lansing, MI 48906, USA",
+      "battery": 100,
+      "leg_mi": 3.56
     }
   ],
   "checkins": [
