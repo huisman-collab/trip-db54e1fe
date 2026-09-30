@@ -2595,6 +2595,22 @@
       "place": "I-96, Saranac, MI 48881, USA",
       "battery": 89,
       "leg_mi": 2.08
+    },
+    {
+      "time": "2026-09-30T16:24:17-04:00",
+      "lat": 42.8794054,
+      "lng": -85.1180808,
+      "place": "I-96, Ionia, MI 48846, USA",
+      "battery": 89,
+      "leg_mi": 1.32
+    },
+    {
+      "time": "2026-09-30T16:26:32-04:00",
+      "lat": 42.8793343,
+      "lng": -85.0656953,
+      "place": "I-96, Portland, MI 48875, USA",
+      "battery": 90,
+      "leg_mi": 2.65
     }
   ],
   "checkins": [
@@ -2950,4 +2966,4 @@
       "full": true
     }
   ]
-    }
+}
