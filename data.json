@@ -244,6 +244,14 @@
       "place": "I-90, Shortsville, NY",
       "battery": 100,
       "leg_mi": 6.62
+    },
+    {
+      "time": "2026-09-29T21:02:37-04:00",
+      "lat": 42.9951573,
+      "lng": -77.3560524,
+      "place": "I-90, Farmington, NY",
+      "battery": 100,
+      "leg_mi": 6.36
     }
   ],
   "checkins": [
