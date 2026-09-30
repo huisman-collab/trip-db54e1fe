@@ -1387,6 +1387,14 @@
       "place": "I-96, Grand Rapids, MI 49546, USA",
       "battery": 100,
       "leg_mi": 3.01
+    },
+    {
+      "time": "2026-09-30T08:39:12-04:00",
+      "lat": 42.9230865,
+      "lng": -85.5508291,
+      "place": "I-96, Grand Rapids, MI 49546, USA",
+      "battery": 100,
+      "leg_mi": 3.02
     }
   ],
   "checkins": [
