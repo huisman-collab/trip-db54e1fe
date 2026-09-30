@@ -691,6 +691,14 @@
       "place": "ON-401, London, ON N6M 1H6, Canada",
       "battery": 100,
       "leg_mi": 9.29
+    },
+    {
+      "time": "2026-09-30T04:13:33-04:00",
+      "lat": 42.9393449,
+      "lng": -81.1633139,
+      "place": "ON-401, London, ON, Canada",
+      "battery": 100,
+      "leg_mi": 3.7
     }
   ],
   "checkins": [
