@@ -1419,6 +1419,22 @@
       "place": "537-529 Scribner Ave NW, Grand Rapids, MI 49504, USA",
       "battery": 100,
       "leg_mi": 2.53
+    },
+    {
+      "time": "2026-09-30T08:50:10-04:00",
+      "lat": 42.9575322,
+      "lng": -85.7063534,
+      "place": "I-196, Grand Rapids, MI 49504, USA",
+      "battery": 100,
+      "leg_mi": 1.86
+    },
+    {
+      "time": "2026-09-30T08:52:42-04:00",
+      "lat": 42.9295434,
+      "lng": -85.7404222,
+      "place": "I-196, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 2.59
     }
   ],
   "checkins": [
