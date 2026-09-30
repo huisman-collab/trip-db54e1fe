@@ -317,6 +317,14 @@
       "place": "I-90, Churchville, NY",
       "battery": 96,
       "leg_mi": 8.26
+    },
+    {
+      "time": "2026-09-29T23:34:59-04:00",
+      "lat": 43.029177,
+      "lng": -77.9689656,
+      "place": "I-90, Le Roy, NY",
+      "battery": 96,
+      "leg_mi": 4.95
     }
   ],
   "checkins": [
@@ -512,4 +520,4 @@
       "full": true
     }
   ]
-}
+    }
