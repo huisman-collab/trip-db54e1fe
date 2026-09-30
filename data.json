@@ -1339,6 +1339,14 @@
       "place": "I-96, Saranac, MI 48881, USA",
       "battery": 100,
       "leg_mi": 3.48
+    },
+    {
+      "time": "2026-09-30T08:23:09-04:00",
+      "lat": 42.8795336,
+      "lng": -85.229766,
+      "place": "I-96, Saranac, MI 48881, USA",
+      "battery": 100,
+      "leg_mi": 3.61
     }
   ],
   "checkins": [
