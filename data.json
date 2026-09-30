@@ -2,14 +2,14 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
-    "status": "on_road",
+    "status": "stopped",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
     "start_odo": 165179.2,
     "full_tank_start": true,
     "destination": "Zeeland, Michigan",
-    "eta": "2026-09-30T11:40:40-04:00"
+    "eta": null
   },
   "locations": [
     {
@@ -1867,6 +1867,22 @@
       "place": "31 W 10th St, Holland, MI 49423, USA",
       "battery": 100,
       "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T12:04:58-04:00",
+      "lat": 42.788946,
+      "lng": -86.1084912,
+      "place": "31 W 10th St, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0.02
+    },
+    {
+      "time": "2026-09-30T12:07:36-04:00",
+      "lat": 42.7893033,
+      "lng": -86.1072314,
+      "place": "Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0
     }
   ],
   "checkins": [
@@ -2172,6 +2188,11 @@
       "text": "On the road - Grandville",
       "place": "Grandville, Michigan",
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T11:52:59-04:00",
+      "status": "stopped",
+      "text": "Stopped - Holland"
     }
   ],
   "fuel": [
