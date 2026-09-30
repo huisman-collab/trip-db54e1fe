@@ -2739,6 +2739,22 @@
       "place": "5451 W Saginaw Hwy E, Lansing, MI 48917, USA",
       "battery": 98,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T17:16:20-04:00",
+      "lat": 42.7388057,
+      "lng": -84.6267782,
+      "place": "5433 W Saginaw Hwy, Lansing, MI 48917, USA",
+      "battery": 98,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T17:18:18-04:00",
+      "lat": 42.738873,
+      "lng": -84.6267912,
+      "place": "5451 L W Saginaw Hwy, Lansing, MI 48917, USA",
+      "battery": 98,
+      "leg_mi": 0
     }
   ],
   "checkins": [
@@ -3099,4 +3115,4 @@
       "full": true
     }
   ]
-}
+    }
