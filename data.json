@@ -2123,6 +2123,38 @@
       "place": "De Zwaan Path, Holland, MI 49423, USA",
       "battery": 92,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T13:35:55-04:00",
+      "lat": 42.7984892,
+      "lng": -86.095292,
+      "place": "De Zwaan Path, Holland, MI 49423, USA",
+      "battery": 92,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T13:38:18-04:00",
+      "lat": 42.7985864,
+      "lng": -86.095709,
+      "place": "De Zwaan Path, Holland, MI 49423, USA",
+      "battery": 91,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T13:40:42-04:00",
+      "lat": 42.7986556,
+      "lng": -86.095814,
+      "place": "De Zwaan Path, Holland, MI 49423, USA",
+      "battery": 91,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T13:43:03-04:00",
+      "lat": 42.7987555,
+      "lng": -86.0958522,
+      "place": "De Zwaan Path, Holland, MI 49423, USA",
+      "battery": 91,
+      "leg_mi": 0
     }
   ],
   "checkins": [
@@ -2473,4 +2505,4 @@
       "full": true
     }
   ]
-    }
+}
