@@ -381,6 +381,14 @@
       "place": "I-190, Grand Island, NY",
       "battery": 100,
       "leg_mi": 9.69
+    },
+    {
+      "time": "2026-09-30T00:33:33-04:00",
+      "lat": 43.07877,
+      "lng": -79.01797,
+      "place": "Niagara Scenic Pkwy, Niagara Falls, NY",
+      "battery": 100,
+      "leg_mi": 6.49
     }
   ],
   "checkins": [
@@ -568,6 +576,12 @@
       "odo": null,
       "place": null,
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T00:32:41-04:00",
+      "text": "Heading to Niagara Falls to see the illuminated falls",
+      "odo": null,
+      "place": null
     }
   ],
   "fuel": [
