@@ -963,6 +963,14 @@
       "place": "I-69, Memphis, MI 48041, USA",
       "battery": 99,
       "leg_mi": 3.96
+    },
+    {
+      "time": "2026-09-30T06:21:06-04:00",
+      "lat": 42.980006,
+      "lng": -82.8427941,
+      "place": "I-69, Memphis, MI 48041, USA",
+      "battery": 99,
+      "leg_mi": 4.25
     }
   ],
   "checkins": [
