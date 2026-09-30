@@ -2411,6 +2411,22 @@
       "place": "144 9th St, Holland, MI 49423, USA",
       "battery": 79,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T15:00:34-04:00",
+      "lat": 42.7894899,
+      "lng": -86.1004546,
+      "place": "144 9th St, Holland, MI 49423, USA",
+      "battery": 79,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T15:02:59-04:00",
+      "lat": 42.7896704,
+      "lng": -86.1020781,
+      "place": "Anderson-Werkman Financial Center, 100 E 8th St, Holland, MI 49423, USA",
+      "battery": 79,
+      "leg_mi": 0
     }
   ],
   "checkins": [
@@ -2761,4 +2777,4 @@
       "full": true
     }
   ]
-    }
+}
