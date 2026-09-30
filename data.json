@@ -2467,6 +2467,30 @@
       "place": "Holland, MI 49423, USA",
       "battery": 77,
       "leg_mi": 0.74
+    },
+    {
+      "time": "2026-09-30T15:46:29-04:00",
+      "lat": 42.8441091,
+      "lng": -85.8838966,
+      "place": "I-196, Hudsonville, MI 49426, USA",
+      "battery": 81,
+      "leg_mi": 11.27
+    },
+    {
+      "time": "2026-09-30T15:49:23-04:00",
+      "lat": 42.8611659,
+      "lng": -85.8226715,
+      "place": "Unnamed Road, Hudsonville, MI 49426, USA",
+      "battery": 81,
+      "leg_mi": 3.32
+    },
+    {
+      "time": "2026-09-30T15:51:32-04:00",
+      "lat": 42.847061,
+      "lng": -85.7666256,
+      "place": "Paul B. Henry Fwy, Grandville, MI 49418, USA",
+      "battery": 82,
+      "leg_mi": 3.0
     }
   ],
   "checkins": [
@@ -2822,4 +2846,4 @@
       "full": true
     }
   ]
-}
+    }
