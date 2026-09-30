@@ -1035,6 +1035,14 @@
       "place": "I-69, Lapeer, MI 48446, USA",
       "battery": 100,
       "leg_mi": 3.71
+    },
+    {
+      "time": "2026-09-30T06:44:09-04:00",
+      "lat": 43.0304763,
+      "lng": -83.3453349,
+      "place": "I-69, Lapeer, MI 48446, USA",
+      "battery": 100,
+      "leg_mi": 3.65
     }
   ],
   "checkins": [
