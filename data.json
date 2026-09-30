@@ -164,6 +164,14 @@
       "place": "I-90, Oneida, NY",
       "battery": 100,
       "leg_mi": 107.16
+    },
+    {
+      "time": "2026-09-29T20:01:03-04:00",
+      "lat": 43.0937952,
+      "lng": -75.9804862,
+      "place": "I-90, Kirkville, NY",
+      "battery": 100,
+      "leg_mi": 17.6
     }
   ],
   "checkins": [
