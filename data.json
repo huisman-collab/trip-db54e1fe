@@ -595,6 +595,14 @@
       "place": "Burlington Bay James N. Allan Skyway, Burlington, ON L7S 1A1, Canada",
       "battery": 100,
       "leg_mi": 8.49
+    },
+    {
+      "time": "2026-09-30T03:02:54-04:00",
+      "lat": 43.3322734,
+      "lng": -79.83916,
+      "place": "ON-403, Burlington, ON L7P 0V1, Canada",
+      "battery": 100,
+      "leg_mi": 3.53
     }
   ],
   "checkins": [
