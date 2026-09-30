@@ -2323,6 +2323,30 @@
       "place": "Holland, MI 49423, USA",
       "battery": 84,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:35:09-04:00",
+      "lat": 42.7958192,
+      "lng": -86.0926933,
+      "place": "Holland, MI 49423, USA",
+      "battery": 83,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:37:30-04:00",
+      "lat": 42.7951306,
+      "lng": -86.0930025,
+      "place": "Holland, MI 49423, USA",
+      "battery": 82,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:39:48-04:00",
+      "lat": 42.7942518,
+      "lng": -86.0936347,
+      "place": "133 Lincoln Ave, Holland, MI 49423, USA",
+      "battery": 81,
+      "leg_mi": 0
     }
   ],
   "checkins": [
