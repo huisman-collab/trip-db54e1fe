@@ -1,1 +1,1 @@
-{"name":"trip28-gallery-stage","main":"gallery-worker.mjs","compatibility_date":"2026-09-30","workers_dev":true,"d1_databases":[{"binding":"DB","database_name":"trip28-gallery-stage","database_id":"5b7f4fbb-2470-49f8-8f8c-3748f3122c91"}],"observability":{"enabled":false}}
+{"name": "trip28-gallery", "main": "gallery-worker.mjs", "compatibility_date": "2026-09-30", "workers_dev": true, "d1_databases": [{"binding": "DB", "database_name": "trip28-gallery", "database_id": "f97a4972-962e-4414-9605-0ae59ae69e1e"}], "observability": {"enabled": false}, "preview_urls": false}
