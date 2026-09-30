@@ -1131,6 +1131,14 @@
       "place": "I-69, Lennon, MI 48449, USA",
       "battery": 100,
       "leg_mi": 1.97
+    },
+    {
+      "time": "2026-09-30T07:15:54-04:00",
+      "lat": 42.9488354,
+      "lng": -83.976126,
+      "place": "I-69, Durand, MI 48429, USA",
+      "battery": 100,
+      "leg_mi": 3.28
     }
   ],
   "checkins": [
