@@ -148,17 +148,36 @@
     const until = end || (trip.status === "not_started" ? null : now);
     const elapsed = start && until ? until - start : null;
 
-    // Stopped time from the status check-ins that update.py writes.
-    let stopped = 0, stops = 0, open = null;
+    // Confirmed stop intervals, not gaps between GPS samples.
+    const stopIntervals = [];
+    let open = null;
     for (const c of checks) {
-      if (!c.status) continue;
-      if (c.status === "stopped") { if (!open) { open = c; stops++; } }
-      else if (open) {
-        if (!open.exclude_stop_time) stopped += ts(c.time) - ts(open.time);
+      if (c.exclude_stop_time) continue;
+      const status = c.status || (c.text === "Back on the road" ? "on_road" : c.exclude_stop_time ? "stopped" : null);
+      if (status === "stopped") { if (!open) open = c; }
+      else if (status && open) {
+        stopIntervals.push({a: +ts(open.time), b: +ts(c.time), excluded: !!open.exclude_stop_time});
         open = null;
       }
     }
-    if (open && !open.exclude_stop_time) stopped += (until || now) - ts(open.time);
+    if (open) stopIntervals.push({a: +ts(open.time), b: +(until || now), excluded: !!open.exclude_stop_time});
+    for (const l of locs) {
+      const a = +arr(l);
+      let b = +ts(l.time);
+      if (b > a) {
+        const resume = checks.find(c => +ts(c.time) > a && (c.status === "on_road" || c.text === "Back on the road"));
+        if (resume) b = +ts(resume.time);
+      }
+      if (b > a) stopIntervals.push({a, b, excluded: !!l.exclude_stop_time});
+    }
+    const mergedStops = [];
+    for (const interval of stopIntervals.sort((a,b) => a.a-b.a)) {
+      const last = mergedStops[mergedStops.length-1];
+      if (last && interval.a <= last.b) { last.b = Math.max(last.b, interval.b); last.excluded = last.excluded && interval.excluded; }
+      else mergedStops.push({...interval});
+    }
+    const stopped = mergedStops.filter(x => !x.excluded).reduce((n,x) => n+x.b-x.a,0);
+    const stops = mergedStops.length;
 
     // Miles: latest odometer reading - start_odo, plus the leg miles stored in data.json
     // (leg_mi) for legs after that reading. A leg that straddles the reading counts pro rata by time.
@@ -180,21 +199,21 @@
     }
     const miles = odoMiles !== null ? odoMiles + estSince : null;
 
-    // Moving vs stopped time from location points. Each point has an arrival time (arrived, or time)
-    // and a last-seen time (time; bumped while the car sits still). Arrival -> last seen = stationary;
-    // last seen at the previous point -> arrival at the next = moving.
-    let moveMs = 0, stopMs = 0, stopCount = 0, legMiles = 0;
+    // A GPS leg's time excludes any confirmed stop that overlaps it.
+    let moveMs = 0, stopMs = stopped, stopCount = stops, legMiles = 0;
     const legs = [];
     alocs.forEach((l, i) => {
-      const a = arr(l), seen = ts(l.time) || a, span = Math.max(0, seen - a);
-      // exclude_stop_time: still counts as a stop, but layover duration is omitted (e.g. overnight home)
-      if (!l.exclude_stop_time) stopMs += span;
-      if (span >= 5 * 60000) stopCount++;
       if (i === 0) return;
-      const prev = alocs[i - 1], mi = num(l.leg_mi) || 0, dt = Math.max(0, a - (ts(prev.time) || arr(prev)));
+      const a = +arr(l), prev = alocs[i-1], from = +(ts(prev.time) || arr(prev));
+      const mi = num(l.leg_mi) || 0;
+      const pause = mergedStops.reduce((n,x) => n+Math.max(0,Math.min(a,x.b)-Math.max(from,x.a)),0);
+      const dt = Math.max(0,a-from-pause);
       if (mi > 0) { moveMs += dt; legMiles += mi; }
-      legs.push({from: prev.place, to: l.place, at: a, mi, dt});
+      legs.push({from: prev.place, to: l.place, at: new Date(a), mi, dt});
     });
+    const coveredEnd = locs.length ? +ts(locs[locs.length-1].time) : +start;
+    const coveredStops = mergedStops.reduce((n,x) => n+Math.max(0,Math.min(coveredEnd,x.b)-Math.max(+start,x.a)),0);
+    moveMs = start ? Math.max(0,coveredEnd-(+start)-coveredStops) : moveMs;
     const avgSpeed = moveMs > 0 ? legMiles / (moveMs / 3600000) : null;
     const estimated = estLegs > 0;
 
@@ -303,7 +322,7 @@
       ["Fuel cost", s.fills.length ? money(s.cost) + ` · ${s.gal.toFixed(1)} gal` : "$0"],
       ["Avg price", s.gal ? money(s.cost / s.gal) + "/gal" : "—"],
       ["Cost per mile", s.cpm ? "$" + s.cpm.toFixed(3) : "—"],
-      ["Time on road", dur(s.elapsed)],
+      ["Trip elapsed (includes stops)", dur(s.elapsed)],
       ["Started", s.start ? whenZ(s.start) : "—"],
       s.end ? ["Finished", whenZ(s.end)] : null,
       ["Vehicle", t.vehicle || "—"],
@@ -351,4 +370,4 @@
 })();
 </script>
 </body>
-      </html>
+</html>
