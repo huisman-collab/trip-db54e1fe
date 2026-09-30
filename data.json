@@ -523,6 +523,22 @@
       "battery": 100,
       "leg_mi": 0,
       "note": "First fix after confirmed departure and odometer; small GPS gap not added as driving miles"
+    },
+    {
+      "time": "2026-09-30T02:11:09-04:00",
+      "lat": 43.0684017,
+      "lng": -79.0615533,
+      "place": "Unnamed Road, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 1.61
+    },
+    {
+      "time": "2026-09-30T02:14:51-04:00",
+      "lat": 43.0683488,
+      "lng": -79.0793488,
+      "place": "5201 Marineland Pkwy, Allanburg, ON, Canada",
+      "battery": 100,
+      "leg_mi": 1.12
     }
   ],
   "checkins": [
