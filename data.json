@@ -1275,6 +1275,14 @@
       "place": "I-96, Eagle, MI 48822, USA",
       "battery": 100,
       "leg_mi": 3.94
+    },
+    {
+      "time": "2026-09-30T08:01:31-04:00",
+      "lat": 42.8152816,
+      "lng": -84.7952531,
+      "place": "I-96, Eagle, MI 48822, USA",
+      "battery": 100,
+      "leg_mi": 3.52
     }
   ],
   "checkins": [
