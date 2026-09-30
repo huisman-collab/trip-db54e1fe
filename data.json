@@ -1147,6 +1147,14 @@
       "place": "I-69, Durand, MI 48429, USA",
       "battery": 100,
       "leg_mi": 3.71
+    },
+    {
+      "time": "2026-09-30T07:21:14-04:00",
+      "lat": 42.90164,
+      "lng": -84.0740826,
+      "place": "I-69, Bancroft, MI 48414, USA",
+      "battery": 100,
+      "leg_mi": 3.74
     }
   ],
   "checkins": [
