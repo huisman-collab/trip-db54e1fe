@@ -415,6 +415,15 @@
       "battery": 100,
       "leg_mi": 0,
       "note": "Location during confirmed sightseeing stop; no driving miles added"
+    },
+    {
+      "time": "2026-09-30T01:08:32-04:00",
+      "lat": 43.08667,
+      "lng": -79.06809,
+      "place": "Prospect St, Niagara Falls, NY",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during confirmed sightseeing stop; no driving miles added"
     }
   ],
   "checkins": [
