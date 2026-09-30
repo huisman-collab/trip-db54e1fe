@@ -899,6 +899,14 @@
       "place": "Michigan Welcome Center, Port Huron",
       "battery": 100,
       "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T05:57:21-04:00",
+      "lat": 42.9890081,
+      "lng": -82.4746979,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.0
     }
   ],
   "checkins": [
