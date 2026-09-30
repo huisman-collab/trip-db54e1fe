@@ -747,6 +747,22 @@
       "place": "ON-402, Adelaide Metcalfe, ON N0M 2B0, Canada",
       "battery": 100,
       "leg_mi": 4.09
+    },
+    {
+      "time": "2026-09-30T04:47:58-04:00",
+      "lat": 42.9923241,
+      "lng": -81.8730679,
+      "place": "Wisbeach, Warwick, ON, Canada",
+      "battery": 100,
+      "leg_mi": 6.11
+    },
+    {
+      "time": "2026-09-30T04:51:55-04:00",
+      "lat": 42.9922735,
+      "lng": -81.8883209,
+      "place": "Warwick, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0.96
     }
   ],
   "checkins": [
@@ -975,6 +991,20 @@
       "text": "Back on the road toward Wyoming, Michigan; user ETA 8 AM. Back-and-forth driving at the falls confirmed; exact driving/parked times during visit not supplied",
       "odo": 165803.0,
       "place": "Niagara Falls, ON, Canada",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T04:47:23-04:00",
+      "text": "Short roadside stretch break off ON-402; time is when the break was reported",
+      "odo": 165972.4,
+      "place": "Warwick, ON, Canada",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T04:50:15-04:00",
+      "text": "Back on the road after a short stretch break; heading toward the US border. Time is when restart was reported",
+      "odo": null,
+      "place": "Warwick, ON, Canada",
       "status": "on_road"
     }
   ],
