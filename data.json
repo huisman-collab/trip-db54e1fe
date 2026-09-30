@@ -1203,6 +1203,14 @@
       "place": "I-69, Haslett, MI 48840, USA",
       "battery": 100,
       "leg_mi": 0.29
+    },
+    {
+      "time": "2026-09-30T07:38:00-04:00",
+      "lat": 42.7950059,
+      "lng": -84.3664078,
+      "place": "I-69, Haslett, MI 48840, USA",
+      "battery": 100,
+      "leg_mi": 0.91
     }
   ],
   "checkins": [
