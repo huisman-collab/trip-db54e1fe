@@ -2219,6 +2219,22 @@
       "place": "Unnamed Road, Holland, MI 49423, USA",
       "battery": 89,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:04:56-04:00",
+      "lat": 42.7981049,
+      "lng": -86.0929183,
+      "place": "Unnamed Road, Holland, MI 49423, USA",
+      "battery": 88,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:07:25-04:00",
+      "lat": 42.7981829,
+      "lng": -86.0930194,
+      "place": "Unnamed Road, Holland, MI 49423, USA",
+      "battery": 88,
+      "leg_mi": 0
     }
   ],
   "checkins": [
