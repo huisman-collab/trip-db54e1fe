@@ -1923,6 +1923,22 @@
       "place": "188-192 S River Ave, Holland, MI 49423, USA",
       "battery": 100,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:25:18-04:00",
+      "lat": 42.7911822,
+      "lng": -86.1068166,
+      "place": "151 Central Ave, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:28:29-04:00",
+      "lat": 42.7909043,
+      "lng": -86.1064173,
+      "place": "Unnamed Road, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0
     }
   ],
   "checkins": [
