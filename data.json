@@ -252,6 +252,14 @@
       "place": "I-90, Farmington, NY",
       "battery": 100,
       "leg_mi": 6.36
+    },
+    {
+      "time": "2026-09-29T21:08:26-04:00",
+      "lat": 42.9957014,
+      "lng": -77.3666812,
+      "place": "I-90, Farmington, NY",
+      "battery": 100,
+      "leg_mi": 0.54
     }
   ],
   "checkins": [
