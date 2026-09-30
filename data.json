@@ -493,10 +493,10 @@
     },
     {
       "time": "2026-09-29T21:16:00-04:00",
-      "text": "Extended break",
+      "text": "Left I-90 for extended break",
       "odo": 165696.1,
       "place": null,
-      "status": "stopped"
+      "status": "on_road"
     },
     {
       "time": "2026-09-29T21:30:00-04:00",
