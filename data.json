@@ -1779,6 +1779,30 @@
       "place": "I-196, Hudsonville, MI 49426, USA",
       "battery": 100,
       "leg_mi": 3.42
+    },
+    {
+      "time": "2026-09-30T11:34:59-04:00",
+      "lat": 42.8213012,
+      "lng": -85.939726,
+      "place": "I-196, Zeeland, MI 49464, USA",
+      "battery": 100,
+      "leg_mi": 1.85
+    },
+    {
+      "time": "2026-09-30T11:37:24-04:00",
+      "lat": 42.8123854,
+      "lng": -85.9887628,
+      "place": "Byron Rd, Zeeland, MI 49464, USA",
+      "battery": 100,
+      "leg_mi": 2.56
+    },
+    {
+      "time": "2026-09-30T11:39:56-04:00",
+      "lat": 42.8055979,
+      "lng": -86.0173535,
+      "place": "I-196BL, Zeeland, MI 49464, USA",
+      "battery": 100,
+      "leg_mi": 1.52
     }
   ],
   "checkins": [
