@@ -503,6 +503,15 @@
       "battery": 100,
       "leg_mi": 0,
       "note": "Location during reported falls sightseeing stop; no departure reported, movement not counted as driving"
+    },
+    {
+      "time": "2026-09-30T01:59:03-04:00",
+      "lat": 43.0827842,
+      "lng": -79.0776412,
+      "place": "Niagara River Pkwy, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during reported falls sightseeing stop; no departure reported, movement not counted as driving"
     }
   ],
   "checkins": [
