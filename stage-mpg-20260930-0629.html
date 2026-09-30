@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:,">
+<title>Road trip</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  :root{--ink:#111827;--mute:#6b7280;--faint:#9ca3af;--line:#f0f1f3;--blue:#2563eb}
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:#fff;color:var(--ink);font:16px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  main{max-width:640px;margin:0 auto;padding:40px 22px 56px}
+  .title{margin:0 0 20px;font-size:14px;font-weight:600;color:var(--mute);letter-spacing:.01em}
+  .place{margin:0;font-size:30px;line-height:1.15;font-weight:700;letter-spacing:-.02em}
+  .meta{margin:10px 0 0;font-size:14px;color:var(--mute);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--faint);flex:none}
+  .dot.on_road{background:#16a34a}
+  .dot.stopped{background:#f59e0b}
+  .dot.finished{background:var(--ink)}
+  #map{height:170px;margin:24px 0 0;border-radius:14px;background:#f5f6f7;z-index:0}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 14px;margin:28px 0 0}
+  @media(min-width:560px){#map{height:220px}}
+  .stat{min-width:0}
+  .stat.wide{grid-column:span 2}
+  @media(max-width:359px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .stat .sub{font-size:12.5px;line-height:1.3;color:var(--mute);margin-top:2px;overflow-wrap:anywhere}
+  .stat .v{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+  .stat .k{font-size:13px;color:var(--mute);margin-top:4px}
+  .stat .v small{font-size:14px;font-weight:500;color:var(--mute);letter-spacing:0}
+  .milesnote{font-size:13.5px;color:var(--ink);margin:18px 0 0}
+  h3{margin:28px 0 6px;font-size:12px;font-weight:600;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+  .updates.tl li{font-size:14px;padding:8px 0}
+  .updates.tl span{white-space:normal}
+  h2{margin:48px 0 10px;font-size:13px;font-weight:600;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+  .updates{list-style:none;margin:0;padding:0}
+  .updates li{display:flex;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:15px;min-width:0}
+  .updates li:first-child{border-top:0}
+  .updates time{flex:none;width:78px;color:var(--mute);font-variant-numeric:tabular-nums}
+  .updates span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  details{margin:40px 0 0;border-top:1px solid var(--line);padding-top:14px}
+  summary{cursor:pointer;font-size:14px;color:var(--mute);list-style:none;user-select:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"▸";display:inline-block;width:16px;transition:transform .15s}
+  details[open] summary::before{transform:rotate(90deg)}
+  .kv{display:grid;grid-template-columns:1fr auto;gap:8px 16px;margin:18px 0 0;font-size:14px}
+  .kv dt{color:var(--mute)}.kv dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+  .tablewrap{overflow-x:auto;margin:24px 0 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;white-space:nowrap}
+  th{text-align:left;font-weight:500;color:var(--mute);padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
+  td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line)}
+  .n{text-align:right;font-variant-numeric:tabular-nums}
+  .note{font-size:13px;color:var(--faint);margin:10px 0 0}
+  .waiting{margin:0;font-size:15px;color:var(--mute);max-width:32em}
+  .err{font-size:13px;color:#b91c1c;margin:16px 0 0}
+  .pos{width:20px;height:20px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.15),0 0 0 7px rgba(37,99,235,.18)}
+  .start{width:10px;height:10px;border-radius:50%;background:#fff;border:2.5px solid var(--ink)}
+  .leaflet-container{font:inherit}
+</style>
+</head>
+<body>
+<main>
+  <p class="title" id="title">&nbsp;</p>
+  <h1 class="place" id="place">&nbsp;</h1>
+  <p class="meta"><span class="dot" id="dot"></span><span id="meta"></span></p>
+  <p class="err" id="err" hidden></p>
+
+  <section id="waiting" hidden>
+    <p class="waiting" style="margin-top:28px">Check back once we're on the road — this page updates on its own.</p>
+  </section>
+
+  <section id="live" hidden>
+    <div class="stats" id="stats"></div>
+
+    <div id="map"></div>
+
+    <h2 id="updatesH">Recent updates</h2>
+    <ul class="updates" id="updates"></ul>
+
+    <details id="details">
+      <summary>Details</summary>
+      <dl class="kv" id="kv"></dl>
+      <h3>Legs</h3>
+      <div class="tablewrap" id="legwrap" style="margin-top:6px"></div>
+      <h3>Fill-ups</h3>
+      <div class="tablewrap" id="fuelwrap" style="margin-top:6px"></div>
+      <h3>Timeline</h3>
+      <ul class="updates tl" id="timeline"></ul>
+    </details>
+  </section>
+</main>
+
+<script>
+(() => {
+  "use strict";
+  const TZ = "America/New_York";
+  const REFRESH_MS = 60000;
+  // ?data=file.json previews another data file in the same folder.
+  const qp = new URLSearchParams(location.search).get("data");
+  const DATA_URL = qp && /^[\w.-]+\.json$/.test(qp) ? qp : "data.json";
+  const STATUS = {not_started: "Not started", on_road: "On the road", stopped: "Stopped", finished: "Trip finished"};
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const num = v => (v === null || v === undefined || v === "" || isNaN(+v)) ? null : +v;
+  const ts = s => { const d = s ? new Date(s) : null; return d && !isNaN(d) ? d : null; };
+  const fmtTime = new Intl.DateTimeFormat("en-US", {timeZone: TZ, hour: "numeric", minute: "2-digit"});
+  const fmtTimeZ = new Intl.DateTimeFormat("en-US", {timeZone: TZ, hour: "numeric", minute: "2-digit", timeZoneName: "short"});
+  const fmtDay = new Intl.DateTimeFormat("en-US", {timeZone: TZ, weekday: "short", month: "short", day: "numeric"});
+  const dayKey = d => new Intl.DateTimeFormat("en-CA", {timeZone: TZ}).format(d);
+  const isToday = d => dayKey(d) === dayKey(new Date());
+  const whenZ = d => d ? (isToday(d) ? fmtTimeZ.format(d) : fmtDay.format(d) + ", " + fmtTimeZ.format(d)) : "—";
+  const whenShort = d => d ? (isToday(d) ? fmtTime.format(d) : new Intl.DateTimeFormat("en-US", {timeZone: TZ, month: "short", day: "numeric"}).format(d)) : "";
+  const n1 = v => v.toLocaleString("en-US", {maximumFractionDigits: 1, minimumFractionDigits: 1});
+  const n0 = v => v.toLocaleString("en-US", {maximumFractionDigits: 0});
+  const money = v => "$" + v.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  const dur = ms => {
+    if (ms == null || ms < 0) return "—";
+    const m = Math.round(ms / 60000), d = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mm = m % 60;
+    return d ? `${d}d ${h}h` : h ? `${h}h ${mm}m` : `${mm}m`;
+  };
+  const ago = d => {
+    const m = Math.round((Date.now() - d) / 60000);
+    if (m < 1) return "just now";
+    if (m < 60) return `${m} min ago`;
+    if (m < 1440) { const h = Math.floor(m / 60); return `${h} hr ${m % 60} min ago`; }
+    const days = Math.floor(m / 1440); return `${days} day${days > 1 ? "s" : ""} ago`;
+  };
+  const byTime = arr => [...(arr || [])].filter(x => x && ts(x.time)).sort((a, b) => ts(a.time) - ts(b.time));
+
+  let data = null, map = null, layer = null;
+  const arr = l => ts(l.arrived) || ts(l.time);
+  const FOCUS_ZOOM = 8;  // regional view around the last known location
+
+  function compute(d) {
+    const trip = d.trip || {};
+    const locs = byTime(d.locations).filter(l => num(l.lat) !== null && num(l.lng) !== null);
+    const checks = byTime(d.checkins), fuel = byTime(d.fuel);
+    const now = new Date(), start = ts(trip.start_time), end = ts(trip.end_time);
+    const until = end || (trip.status === "not_started" ? null : now);
+    const elapsed = start && until ? until - start : null;
+
+    // Confirmed stop intervals, not gaps between GPS samples.
+    const stopIntervals = [];
+    let open = null;
+    for (const c of checks) {
+      if (c.exclude_stop_time) continue;
+      const status = c.status || (c.text === "Back on the road" ? "on_road" : c.exclude_stop_time ? "stopped" : null);
+      if (status === "stopped") { if (!open) open = c; }
+      else if (status && open) {
+        stopIntervals.push({a: +ts(open.time), b: +ts(c.time), excluded: !!open.exclude_stop_time});
+        open = null;
+      }
+    }
+    if (open) stopIntervals.push({a: +ts(open.time), b: +(until || now), excluded: !!open.exclude_stop_time});
+    for (const l of locs) {
+      const a = +arr(l);
+      let b = +ts(l.time);
+      if (b > a) {
+        const resume = checks.find(c => +ts(c.time) > a && (c.status === "on_road" || c.text === "Back on the road"));
+        if (resume) b = +ts(resume.time);
+      }
+      if (b > a) stopIntervals.push({a, b, excluded: !!l.exclude_stop_time});
+    }
+    const mergedStops = [];
+    for (const interval of stopIntervals.sort((a,b) => a.a-b.a)) {
+      const last = mergedStops[mergedStops.length-1];
+      if (last && interval.a <= last.b) { last.b = Math.max(last.b, interval.b); last.excluded = last.excluded && interval.excluded; }
+      else mergedStops.push({...interval});
+    }
+    const stopped = mergedStops.filter(x => !x.excluded).reduce((n,x) => n+x.b-x.a,0);
+    const stops = mergedStops.length;
+
+    // Miles: latest odometer reading - start_odo, plus the leg miles stored in data.json
+    // (leg_mi) for legs after that reading. A leg that straddles the reading counts pro rata by time.
+    const startOdo = num(trip.start_odo);
+    const reads = [];
+    if (startOdo !== null && start) reads.push({t: start, o: startOdo, isStart: true});
+    for (const x of [...checks, ...fuel]) { const o = num(x.odo); if (o !== null) reads.push({t: ts(x.time), o}); }
+    reads.sort((a, b) => (a.t - b.t) || (a.o - b.o));
+    const lastRead = reads[reads.length - 1] || null;
+    const cur = lastRead ? lastRead.o : startOdo;
+    const odoMiles = startOdo !== null && cur !== null ? Math.max(0, cur - startOdo) : null;
+    const alocs = [...locs].sort((a, b) => arr(a) - arr(b));
+    let estSince = 0, estLegs = 0;
+    if (lastRead) for (let i = 1; i < alocs.length; i++) {
+      const leg = num(alocs[i].leg_mi) || 0, t0 = arr(alocs[i - 1]), t1 = arr(alocs[i]);
+      if (!leg || t1 <= lastRead.t) continue;
+      estSince += leg * (t0 >= lastRead.t ? 1 : (t1 - lastRead.t) / (t1 - t0));
+      estLegs++;
+    }
+    const miles = odoMiles !== null ? odoMiles + estSince : null;
+
+    // A GPS leg's time excludes any confirmed stop that overlaps it.
+    let moveMs = 0, stopMs = stopped, stopCount = stops, legMiles = 0;
+    const legs = [];
+    alocs.forEach((l, i) => {
+      if (i === 0) return;
+      const a = +arr(l), prev = alocs[i-1], from = +(ts(prev.time) || arr(prev));
+      const mi = num(l.leg_mi) || 0;
+      const pause = mergedStops.reduce((n,x) => n+Math.max(0,Math.min(a,x.b)-Math.max(from,x.a)),0);
+      const dt = Math.max(0,a-from-pause);
+      if (mi > 0) { moveMs += dt; legMiles += mi; }
+      legs.push({from: prev.place, to: l.place, at: new Date(a), mi, dt});
+    });
+    const coveredEnd = locs.length ? +ts(locs[locs.length-1].time) : +start;
+    const coveredStops = mergedStops.reduce((n,x) => n+Math.max(0,Math.min(coveredEnd,x.b)-Math.max(+start,x.a)),0);
+    moveMs = start ? Math.max(0,coveredEnd-(+start)-coveredStops) : moveMs;
+    const avgSpeed = moveMs > 0 ? legMiles / (moveMs / 3600000) : null;
+    const estimated = estLegs > 0;
+
+    // MPG, full-tank calculation.
+    let gal = 0, cost = 0, mMiles = 0, mGal = 0, acc = 0;
+    let anchor = trip.full_tank_start && startOdo !== null ? startOdo : null;
+    const fills = fuel.map(f => {
+      const g = num(f.gallons) || 0, c = num(f.total_cost) || 0, o = num(f.odo);
+      gal += g; cost += c; acc += g;
+      let mpg = null;
+      if (f.full && o !== null) {
+        if (anchor !== null && acc > 0 && o > anchor) { mpg = (o - anchor) / acc; mMiles += o - anchor; mGal += acc; }
+        anchor = o; acc = 0;
+      }
+      return {...f, g, c, o, mpg, ppg: num(f.price_per_gal) ?? (g ? c / g : null)};
+    });
+
+    const lastLoc = locs[locs.length - 1] || null;
+    const lastAny = [...locs, ...checks, ...fuel].map(x => ts(x.time)).sort((a, b) => b - a)[0] || null;
+    // MPG and cost per mile use odometer + fuel data only.
+    return {trip, locs, checks, fills, start, end, elapsed, stopped, stops, startOdo, cur, lastRead, odoMiles,
+      miles, estSince, estimated, gal, cost, moveMs, stopMs, stopCount, legs, legMiles, avgSpeed, fuel,
+      mpg: mGal ? mMiles / mGal : null, cpm: odoMiles ? cost / odoMiles : null, lastLoc, lastAny};
+  }
+
+  function drawMap(s) {
+    if (typeof L === "undefined") { $("map").hidden = true; return; }
+    $("map").hidden = !s.locs.length;
+    if (!s.locs.length) return;
+    if (!map) {
+      map = L.map("map", {attributionControl: true, zoomControl: false});
+      L.control.zoom({position: "bottomright"}).addTo(map);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+      map.attributionControl.setPrefix(false);
+      layer = L.layerGroup().addTo(map);
+    }
+    layer.clearLayers();
+    const ll = s.locs.map(p => [+p.lat, +p.lng]);
+    const dotIcon = cls => L.divIcon({className: "", html: `<div class="${cls}"></div>`, iconSize: [16, 16], iconAnchor: [8, 8]});
+    if (ll.length > 1) {
+      L.polyline(ll, {color: "#2563eb", weight: 4, opacity: .75, lineJoin: "round"}).addTo(layer);
+      L.marker(ll[0], {icon: dotIcon("start"), interactive: false, keyboard: false}).addTo(layer);
+    }
+    const last = ll[ll.length - 1], lp = s.locs[s.locs.length - 1];
+    L.marker(last, {icon: L.divIcon({className: "", html: '<div class="pos"></div>', iconSize: [20, 20], iconAnchor: [10, 10]}),
+      keyboard: false, zIndexOffset: 1000, title: "Last known location"})
+      .bindTooltip(`${esc(lp.place || "Last known location")} · ${esc(whenShort(ts(lp.time)))}`, {direction: "top", offset: [0, -12]})
+      .addTo(layer);
+    // Every load and every refresh: center + zoom on the last known location (ignores prior pan/zoom).
+    map.invalidateSize({pan: false});
+    map.setView(last, FOCUS_ZOOM, {animate: false});
+    setTimeout(() => { map.invalidateSize({pan: false}); map.setView(last, FOCUS_ZOOM, {animate: false}); }, 50);
+  }
+
+  function render() {
+    if (!data) return;
+    const s = compute(data), t = s.trip;
+    const st = STATUS[t.status] ? t.status : "not_started";
+    const title = t.title || "Road trip";
+    document.title = title;
+    $("title").textContent = title;
+    $("dot").className = "dot " + st;
+
+    const waiting = st === "not_started" && !s.locs.length && !s.checks.length && !s.fills.length;
+    $("waiting").hidden = !waiting;
+    $("live").hidden = waiting;
+    if (waiting) {
+      $("place").textContent = "Trip hasn't started yet";
+      $("meta").textContent = "Not started";
+      return;
+    }
+
+    const placeTxt = s.lastLoc ? (s.lastLoc.place || `${(+s.lastLoc.lat).toFixed(3)}, ${(+s.lastLoc.lng).toFixed(3)}`)
+      : ([...s.checks].reverse().find(c => c.place) || {}).place || "Location not shared yet";
+    $("place").textContent = placeTxt;
+    const upd = s.lastLoc ? ts(s.lastLoc.time) : s.lastAny;
+    $("meta").textContent = STATUS[st] + (upd ? ` · Updated ${ago(upd)}` : "");
+    $("meta").title = upd ? whenZ(upd) : "";
+
+    drawMap(s);
+
+    const stat = (v, k, sub, cls) => `<div class="stat${cls ? " " + cls : ""}"><div class="v">${v}</div>` +
+      `<div class="k">${esc(k)}</div>${sub ? `<div class="sub" title="${esc(sub)}">${esc(sub)}</div>` : ""}</div>`;
+    const batt = s.lastLoc && s.lastLoc.battery != null ? s.lastLoc.battery : null;
+    const estMiles = s.miles != null ? s.miles : (s.legs.length ? s.legMiles : null);
+    const milesV = estMiles == null ? "—" : `~${esc(n0(estMiles))} <small>mi (est.)</small>`;
+    $("stats").innerHTML =
+      stat(milesV, "Miles") +
+      stat(esc(s.locs.length > 1 ? dur(s.moveMs) : "—"), "Driving") +
+      stat(esc(s.locs.length ? dur(s.stopMs) : "—"), "Stopped") +
+      stat(s.avgSpeed ? `${esc(n0(s.avgSpeed))} <small>mph</small>` : "—", "Avg speed") +
+      stat(s.mpg ? esc(s.mpg.toFixed(1)) : "—", "MPG") +
+      stat(s.fills.length ? `${esc(n1(s.gal))} <small>gal</small>` : "—", "Trip fill-ups",
+        s.fills.length ? `${money(s.cost)} total` : "");
+
+    const recent = [...s.checks].reverse().slice(0, 3);
+    $("updatesH").hidden = $("updates").hidden = !recent.length;
+    $("updates").innerHTML = recent.map(c =>
+      `<li><time datetime="${esc(c.time)}" title="${esc(whenZ(ts(c.time)))}">${esc(whenShort(ts(c.time)))}</time><span>${esc(c.text)}</span></li>`).join("");
+
+    // ---- Details ----
+    const rows = [
+      ["MPG", s.mpg ? s.mpg.toFixed(1) : "—"],
+      ["Fuel cost", s.fills.length ? money(s.cost) + ` · ${s.gal.toFixed(1)} gal` : "$0"],
+      ["Avg price", s.gal ? money(s.cost / s.gal) + "/gal" : "—"],
+      ["Cost per mile", s.cpm ? "$" + s.cpm.toFixed(3) : "—"],
+      ["Trip elapsed (includes stops)", dur(s.elapsed)],
+      ["Started", s.start ? whenZ(s.start) : "—"],
+      s.end ? ["Finished", whenZ(s.end)] : null,
+      ["Vehicle", t.vehicle || "—"],
+      ["Start odometer", s.startOdo != null ? n1(s.startOdo) : "—"],
+    ].filter(Boolean);
+    $("kv").innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
+
+    $("legwrap").innerHTML = s.legs.length ? `<table><thead><tr><th>Arrived</th><th>To</th><th class="n">Miles</th><th class="n">Time</th></tr></thead><tbody>` +
+      [...s.legs].reverse().map(g => `<tr><td>${esc(whenShort(g.at))}</td><td>${esc(g.to || "")}</td>` +
+        `<td class="n">${esc(g.mi.toFixed(1))}</td><td class="n">${esc(dur(g.dt))}</td></tr>`).join("") +
+      `</tbody><tfoot><tr><td></td><td>Total</td><td class="n">${esc(s.legMiles.toFixed(1))}</td><td class="n">${esc(dur(s.moveMs))}</td></tr></tfoot></table>`
+      : `<p class="note">No legs yet.</p>`;
+
+    $("fuelwrap").innerHTML = s.fills.length ? `<table><thead><tr><th>When</th><th class="n">Odo</th><th class="n">Gal</th><th class="n">$/gal</th><th class="n">Total</th><th class="n">MPG</th><th>Station</th></tr></thead><tbody>` +
+      [...s.fills].reverse().map(f => `<tr><td>${esc(whenShort(ts(f.time)))}</td><td class="n">${f.o !== null ? esc(n1(f.o)) : "—"}</td>` +
+        `<td class="n">${esc(f.g.toFixed(2))}${f.full ? "" : "*"}</td><td class="n">${f.ppg != null ? esc(f.ppg.toFixed(3)) : "—"}</td>` +
+        `<td class="n">${esc(money(f.c))}</td><td class="n">${f.mpg ? esc(f.mpg.toFixed(1)) : "—"}</td><td>${esc(f.station || "")}</td></tr>`).join("") +
+      `</tbody></table>` + (s.fills.some(f => !f.full) ? `<p class="note">* partial fill</p>` : "") : `<p class="note">No fill-ups yet.</p>`;
+
+    const ev = [
+      ...s.checks.map(c => ({t: ts(c.time), txt: c.text +
+        (c.odo != null && !/odometer/i.test(c.text || "") ? ` · Odometer ${n1(+c.odo)}` : "") + (c.place ? ` · ${c.place}` : "")})),
+      ...s.fills.map(f => ({t: ts(f.time), txt: `Fill-up ${f.g.toFixed(1)} gal · ${money(f.c)}` + (f.station ? ` · ${f.station}` : "")})),
+      ...s.locs.map(l => ({t: arr(l), txt: l.place || `${(+l.lat).toFixed(3)}, ${(+l.lng).toFixed(3)}`})),
+    ].sort((a, b) => b.t - a.t);
+    $("timeline").innerHTML = ev.map(e => `<li><time title="${esc(whenZ(e.t))}">${esc(whenShort(e.t))}</time><span>${esc(e.txt)}</span></li>`).join("");
+  }
+
+  async function load() {
+    try {
+      const r = await fetch(`${DATA_URL}?t=${Date.now()}`, {cache: "no-store"});
+      if (!r.ok) throw new Error(r.status);
+      data = await r.json();
+      $("err").hidden = true;
+    } catch (e) {
+      $("err").textContent = data ? "Couldn't refresh — showing the last update." : "Couldn't load trip data. Trying again shortly.";
+      $("err").hidden = false;
+    }
+    render();
+  }
+
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
+  setInterval(load, REFRESH_MS);
+  load();
+})();
+</script>
+</body>
+</html>
