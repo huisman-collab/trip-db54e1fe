@@ -309,6 +309,14 @@
       "place": "I-90, West Henrietta, NY",
       "battery": 95,
       "leg_mi": 6.2
+    },
+    {
+      "time": "2026-09-29T23:31:40-04:00",
+      "lat": 43.0299937,
+      "lng": -77.8711937,
+      "place": "I-90, Churchville, NY",
+      "battery": 96,
+      "leg_mi": 8.26
     }
   ],
   "checkins": [
@@ -504,4 +512,4 @@
       "full": true
     }
   ]
-    }
+}
