@@ -683,6 +683,14 @@
       "place": "ON-401, Thames Centre, ON N0L 1V0, Canada",
       "battery": 100,
       "leg_mi": 7.2
+    },
+    {
+      "time": "2026-09-30T04:10:34-04:00",
+      "lat": 42.9472724,
+      "lng": -81.1058088,
+      "place": "ON-401, London, ON N6M 1H6, Canada",
+      "battery": 100,
+      "leg_mi": 9.29
     }
   ],
   "checkins": [
