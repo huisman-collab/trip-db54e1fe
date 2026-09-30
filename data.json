@@ -579,6 +579,14 @@
       "place": "Queen Elizabeth Wy, Grimsby, ON, Canada",
       "battery": 100,
       "leg_mi": 9.42
+    },
+    {
+      "time": "2026-09-30T02:51:39-04:00",
+      "lat": 43.2334895,
+      "lng": -79.7043876,
+      "place": "Queen Elizabeth Wy, Hamilton, ON L8E 5X8, Canada",
+      "battery": 100,
+      "leg_mi": 10.03
     }
   ],
   "checkins": [
