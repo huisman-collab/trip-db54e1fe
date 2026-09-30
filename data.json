@@ -2,14 +2,14 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
-    "status": "stopped",
+    "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
     "start_odo": 165179.2,
     "full_tank_start": true,
-    "destination": "Wyoming, Michigan",
-    "eta": "2026-09-30T08:00:00-04:00"
+    "destination": "Zeeland, Michigan",
+    "eta": "2026-09-30T11:40:40-04:00"
   },
   "locations": [
     {
@@ -1723,6 +1723,30 @@
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
       "leg_mi": 0.02
+    },
+    {
+      "time": "2026-09-30T10:29:00-04:00",
+      "lat": 42.9142589,
+      "lng": -85.733339,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T11:20:13-04:00",
+      "lat": 42.9137266,
+      "lng": -85.7397421,
+      "place": "Unnamed Road, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.33
+    },
+    {
+      "time": "2026-09-30T11:23:02-04:00",
+      "lat": 42.9141336,
+      "lng": -85.7646745,
+      "place": "M-11, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 1.26
     }
   ],
   "checkins": [
@@ -2022,6 +2046,12 @@
       "odo": 166189.2,
       "place": "Grandville, Michigan",
       "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T11:19:04-04:00",
+      "text": "On the road - Grandville",
+      "place": "Grandville, Michigan",
+      "status": "on_road"
     }
   ],
   "fuel": [
