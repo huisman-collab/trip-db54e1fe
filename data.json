@@ -373,6 +373,14 @@
       "place": "Youngmann Memorial Hwy, Buffalo, NY",
       "battery": 100,
       "leg_mi": 7.15
+    },
+    {
+      "time": "2026-09-30T00:27:16-04:00",
+      "lat": 43.01329,
+      "lng": -78.9674,
+      "place": "I-190, Grand Island, NY",
+      "battery": 100,
+      "leg_mi": 9.69
     }
   ],
   "checkins": [
