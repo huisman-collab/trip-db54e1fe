@@ -1011,6 +1011,22 @@
       "place": "I-69, Imlay City, MI 48444, USA",
       "battery": 100,
       "leg_mi": 1.83
+    },
+    {
+      "time": "2026-09-30T06:36:21-04:00",
+      "lat": 43.0092913,
+      "lng": -83.1706703,
+      "place": "I-69, Attica, MI 48412, USA",
+      "battery": 100,
+      "leg_mi": 3.5
+    },
+    {
+      "time": "2026-09-30T06:38:50-04:00",
+      "lat": 43.0100623,
+      "lng": -83.2324973,
+      "place": "I-69, Metamora, MI 48455, USA",
+      "battery": 100,
+      "leg_mi": 3.91
     }
   ],
   "checkins": [
