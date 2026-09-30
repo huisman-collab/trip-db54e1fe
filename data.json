@@ -1835,6 +1835,22 @@
       "place": "226-240 US-31 BUS, Holland, MI 49423, USA",
       "battery": 100,
       "leg_mi": 2.98
+    },
+    {
+      "time": "2026-09-30T11:55:09-04:00",
+      "lat": 42.7890837,
+      "lng": -86.1088257,
+      "place": "Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0.04
+    },
+    {
+      "time": "2026-09-30T11:57:31-04:00",
+      "lat": 42.7891217,
+      "lng": -86.1088878,
+      "place": "31 W 10th St, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0.0
     }
   ],
   "checkins": [
