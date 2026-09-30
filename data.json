@@ -811,6 +811,14 @@
       "place": "ON-402, Sarnia, ON N7S 0G4, Canada",
       "battery": 100,
       "leg_mi": 3.29
+    },
+    {
+      "time": "2026-09-30T05:14:44-04:00",
+      "lat": 42.9896045,
+      "lng": -82.4074792,
+      "place": "ON-402, Point Edward, ON N7T 7W7, Canada",
+      "battery": 100,
+      "leg_mi": 3.36
     }
   ],
   "checkins": [
@@ -1085,4 +1093,4 @@
       "full": true
     }
   ]
-    }
+}
