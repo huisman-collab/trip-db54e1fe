@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 · Road trip — destination open-ended",
-    "status": "on_road",
+    "status": "stopped",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -2675,6 +2675,38 @@
       "place": "I-96, Grand Ledge, MI 48837, USA",
       "battery": 95,
       "leg_mi": 5.43
+    },
+    {
+      "time": "2026-09-30T16:56:35-04:00",
+      "lat": 42.7388463,
+      "lng": -84.6270958,
+      "place": "Unnamed Road, Lansing, MI 48917, USA",
+      "battery": 96,
+      "leg_mi": 2.56
+    },
+    {
+      "time": "2026-09-30T17:00:25-04:00",
+      "lat": 42.7388338,
+      "lng": -84.627015,
+      "place": "5451 W Saginaw Hwy E, Lansing, MI 48917, USA",
+      "battery": 96,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T17:03:34-04:00",
+      "lat": 42.7388354,
+      "lng": -84.6270173,
+      "place": "5451 W Saginaw Hwy E, Lansing, MI 48917, USA",
+      "battery": 97,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T17:04:56-04:00",
+      "lat": 42.7388354,
+      "lng": -84.6270337,
+      "place": "Unnamed Road, Lansing, MI 48917, USA",
+      "battery": 97,
+      "leg_mi": 0
     }
   ],
   "checkins": [
@@ -2990,6 +3022,11 @@
       "time": "2026-09-30T15:31:18-04:00",
       "status": "on_road",
       "text": "Back on the road"
+    },
+    {
+      "time": "2026-09-30T17:03:34-04:00",
+      "status": "stopped",
+      "text": "Stopped - Chuck E. Cheese"
     }
   ],
   "fuel": [
