@@ -1,7 +1,7 @@
 {
   "trip": {
     "id": 28,
-    "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
+    "title": "Trip 28 · Road trip — destination open-ended",
     "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
@@ -850,7 +850,7 @@
       "lng": -82.4738007,
       "place": "Michigan Welcome Center, Port Huron",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T05:35:35-04:00",
@@ -858,7 +858,7 @@
       "lng": -82.4738079,
       "place": "Michigan Welcome Center, Port Huron",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T05:38:27-04:00",
@@ -866,7 +866,7 @@
       "lng": -82.473825,
       "place": "Michigan Welcome Center, Port Huron",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T05:42:32-04:00",
@@ -874,7 +874,7 @@
       "lng": -82.4738212,
       "place": "Michigan Welcome Center, Port Huron",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T05:46:17-04:00",
@@ -898,7 +898,7 @@
       "lng": -82.4746979,
       "place": "Michigan Welcome Center, Port Huron",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T05:57:21-04:00",
@@ -906,7 +906,7 @@
       "lng": -82.4746979,
       "place": "Michigan Welcome Center, Port Huron",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T06:00:57-04:00",
@@ -1450,7 +1450,7 @@
       "lng": -85.7623274,
       "place": "3960 28th St SW, Grandville, MI 49418, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T09:02:46-04:00",
@@ -1458,7 +1458,7 @@
       "lng": -85.7623734,
       "place": "Unnamed Road, Grandville, MI 49418, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T09:06:16-04:00",
@@ -1474,7 +1474,7 @@
       "lng": -85.7623816,
       "place": "3960 28th St SW, Grandville, MI 49418, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T09:11:22-04:00",
@@ -1482,7 +1482,7 @@
       "lng": -85.7623241,
       "place": "3960 28th St SW, Grandville, MI 49418, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T09:13:17-04:00",
@@ -1490,7 +1490,7 @@
       "lng": -85.7623412,
       "place": "3960 28th St SW, Grandville, MI 49418, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T09:15:54-04:00",
@@ -1530,7 +1530,7 @@
       "lng": -85.7626738,
       "place": "3960 28th St SW, Grandville, MI 49418, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T09:31:50-04:00",
@@ -1562,7 +1562,7 @@
       "lng": -85.7385189,
       "place": "2958-2954 M-11, Grandville, MI 49418, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T09:37:15-04:00",
@@ -1602,7 +1602,7 @@
       "lng": -85.733291,
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T09:47:52-04:00",
@@ -1610,7 +1610,7 @@
       "lng": -85.7332422,
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T09:50:22-04:00",
@@ -1642,7 +1642,7 @@
       "lng": -85.7332559,
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T10:00:47-04:00",
@@ -1650,7 +1650,7 @@
       "lng": -85.7332814,
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T10:03:38-04:00",
@@ -1682,7 +1682,7 @@
       "lng": -85.7331673,
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T10:15:23-04:00",
@@ -1690,7 +1690,7 @@
       "lng": -85.7331673,
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T10:18:14-04:00",
@@ -1698,7 +1698,7 @@
       "lng": -85.7330903,
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T10:21:14-04:00",
@@ -1706,7 +1706,7 @@
       "lng": -85.7331451,
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T10:23:43-04:00",
@@ -1730,7 +1730,7 @@
       "lng": -85.733339,
       "place": "2755 28th St SW, Wyoming, MI 49519, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T11:20:13-04:00",
@@ -1850,7 +1850,7 @@
       "lng": -86.1088878,
       "place": "31 W 10th St, Holland, MI 49423, USA",
       "battery": 100,
-      "leg_mi": 0.0
+      "leg_mi": 0
     },
     {
       "time": "2026-09-30T11:59:46-04:00",
@@ -2490,7 +2490,7 @@
       "lng": -85.7666256,
       "place": "Paul B. Henry Fwy, Grandville, MI 49418, USA",
       "battery": 82,
-      "leg_mi": 3.0
+      "leg_mi": 3
     },
     {
       "time": "2026-09-30T15:53:28-04:00",
@@ -2659,6 +2659,22 @@
       "place": "I-96, Eagle, MI 48822, USA",
       "battery": 93,
       "leg_mi": 3.05
+    },
+    {
+      "time": "2026-09-30T16:43:02-04:00",
+      "lat": 42.8041152,
+      "lng": -84.756909,
+      "place": "I-96, Eagle, MI 48822, USA",
+      "battery": 94,
+      "leg_mi": 3.21
+    },
+    {
+      "time": "2026-09-30T16:48:28-04:00",
+      "lat": 42.7605956,
+      "lng": -84.6678647,
+      "place": "I-96, Grand Ledge, MI 48837, USA",
+      "battery": 95,
+      "leg_mi": 5.43
     }
   ],
   "checkins": [
@@ -2671,19 +2687,19 @@
     },
     {
       "time": "2026-09-28T16:45:47-04:00",
-      "text": "Odometer 165,238.6 \u00b7 309 mi to empty",
+      "text": "Odometer 165,238.6 · 309 mi to empty",
       "odo": 165238.6,
       "place": null
     },
     {
       "time": "2026-09-28T17:08:40-04:00",
-      "text": "Turned around near New Paltz \u2014 heading back to Teaneck, will head out again later",
+      "text": "Turned around near New Paltz — heading back to Teaneck, will head out again later",
       "odo": null,
       "place": null
     },
     {
       "time": "2026-09-28T17:09:14-04:00",
-      "text": "Odometer 165,264.6 \u00b7 296 mi to empty",
+      "text": "Odometer 165,264.6 · 296 mi to empty",
       "odo": 165264.6,
       "place": null
     },
@@ -2715,7 +2731,7 @@
     },
     {
       "time": "2026-09-28T18:40:00-04:00",
-      "text": "Home in Teaneck \u2014 stopped, will head out again later",
+      "text": "Home in Teaneck — stopped, will head out again later",
       "odo": null,
       "place": "Teaneck, NJ",
       "exclude_stop_time": true
@@ -2803,7 +2819,7 @@
     {
       "time": "2026-09-29T21:30:00-04:00",
       "text": "Arrived for extended break",
-      "odo": 165709.0,
+      "odo": 165709,
       "place": "Brighton, NY",
       "status": "stopped"
     },
@@ -2836,7 +2852,7 @@
     {
       "time": "2026-09-30T00:02:02-04:00",
       "text": "Stopped",
-      "odo": 165767.0,
+      "odo": 165767,
       "place": null,
       "status": "stopped"
     },
@@ -2885,7 +2901,7 @@
     {
       "time": "2026-09-30T02:01:40-04:00",
       "text": "On the road - Niagara Falls",
-      "odo": 165803.0,
+      "odo": 165803,
       "place": "Niagara Falls, ON, Canada",
       "status": "on_road"
     },
@@ -2997,7 +3013,7 @@
     },
     {
       "time": "2026-09-30T00:04:10-04:00",
-      "odo": 165767.0,
+      "odo": 165767,
       "gallons": 8.439,
       "total_cost": 37.71,
       "price_per_gal": 4.469,
