@@ -1291,6 +1291,14 @@
       "place": "I-96, Portland, MI 48875, USA",
       "battery": 100,
       "leg_mi": 3.83
+    },
+    {
+      "time": "2026-09-30T08:06:46-04:00",
+      "lat": 42.8607116,
+      "lng": -84.8952559,
+      "place": "I-96, Portland, MI 48875, USA",
+      "battery": 100,
+      "leg_mi": 3.62
     }
   ],
   "checkins": [
