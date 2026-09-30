@@ -1459,6 +1459,14 @@
       "place": "Unnamed Road, Grandville, MI 49418, USA",
       "battery": 100,
       "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:06:16-04:00",
+      "lat": 42.9132949,
+      "lng": -85.7623528,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.01
     }
   ],
   "checkins": [
