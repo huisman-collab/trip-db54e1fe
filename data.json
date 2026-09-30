@@ -1075,6 +1075,14 @@
       "place": "I-69, Davison, MI 48423, USA",
       "battery": 100,
       "leg_mi": 3.35
+    },
+    {
+      "time": "2026-09-30T06:57:33-04:00",
+      "lat": 43.0141758,
+      "lng": -83.6297347,
+      "place": "Burton, MI, USA",
+      "battery": 100,
+      "leg_mi": 3.46
     }
   ],
   "checkins": [
