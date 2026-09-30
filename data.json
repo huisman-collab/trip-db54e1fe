@@ -923,6 +923,14 @@
       "place": "Unnamed Road, Port Huron, MI 48060, USA",
       "battery": 98,
       "leg_mi": 0.91
+    },
+    {
+      "time": "2026-09-30T06:07:31-04:00",
+      "lat": 42.9758619,
+      "lng": -82.5283514,
+      "place": "I-69, Smiths Creek, MI 48074, USA",
+      "battery": 98,
+      "leg_mi": 3.29
     }
   ],
   "checkins": [
