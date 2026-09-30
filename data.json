@@ -2507,6 +2507,22 @@
       "place": "Paul B. Henry Fwy, Grand Rapids, MI 49548, USA",
       "battery": 83,
       "leg_mi": 3.36
+    },
+    {
+      "time": "2026-09-30T15:58:02-04:00",
+      "lat": 42.8508644,
+      "lng": -85.6025549,
+      "place": "Paul B. Henry Fwy, Caledonia, MI 49316, USA",
+      "battery": 83,
+      "leg_mi": 3.36
+    },
+    {
+      "time": "2026-09-30T16:00:19-04:00",
+      "lat": 42.8510627,
+      "lng": -85.5380345,
+      "place": "Paul B. Henry Fwy, Grand Rapids, MI 49512, USA",
+      "battery": 84,
+      "leg_mi": 3.27
     }
   ],
   "checkins": [
