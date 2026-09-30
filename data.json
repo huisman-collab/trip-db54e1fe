@@ -819,6 +819,14 @@
       "place": "ON-402, Point Edward, ON N7T 7W7, Canada",
       "battery": 100,
       "leg_mi": 3.36
+    },
+    {
+      "time": "2026-09-30T05:17:38-04:00",
+      "lat": 42.998898,
+      "lng": -82.4236643,
+      "place": "Blue Water Brg, Port Huron, MI 48060, USA",
+      "battery": 100,
+      "leg_mi": 1.3
     }
   ],
   "checkins": [
@@ -1062,6 +1070,13 @@
       "odo": null,
       "place": "Warwick, ON, Canada",
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T05:16:00-04:00",
+      "text": "On Blue Water Bridge, about to cross into the US",
+      "odo": 166000.4,
+      "place": "Blue Water Bridge",
+      "status": "on_road"
     }
   ],
   "fuel": [
@@ -1093,4 +1108,4 @@
       "full": true
     }
   ]
-}
+    }
