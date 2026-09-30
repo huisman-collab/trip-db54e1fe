@@ -1,0 +1,2065 @@
+{
+  "trip": {
+    "id": 28,
+    "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
+    "status": "stopped",
+    "start_time": "2026-09-28T15:45:00-04:00",
+    "end_time": null,
+    "vehicle": "Ford Edge",
+    "start_odo": 165179.2,
+    "full_tank_start": true,
+    "destination": "Wyoming, Michigan",
+    "eta": "2026-09-30T08:00:00-04:00"
+  },
+  "locations": [
+    {
+      "time": "2026-09-28T15:45:00-04:00",
+      "lat": 40.8882064,
+      "lng": -74.0227727,
+      "place": "724 Chestnut Ave, Teaneck, NJ",
+      "battery": null,
+      "leg_mi": null
+    },
+    {
+      "time": "2026-09-28T15:48:22-04:00",
+      "lat": 40.914176,
+      "lng": -74.0104,
+      "place": "New Bridge Rd, Bergenfield, NJ",
+      "battery": 80,
+      "leg_mi": 2.65
+    },
+    {
+      "time": "2026-09-28T16:24:17-04:00",
+      "lat": 41.248562,
+      "lng": -74.167649,
+      "place": "NY State Thruway, Southfields, NY",
+      "battery": 88,
+      "leg_mi": 28.66
+    },
+    {
+      "time": "2026-09-28T16:51:00-04:00",
+      "lat": 41.691984,
+      "lng": -74.078005,
+      "place": "NY State Thruway, New Paltz, NY",
+      "battery": 94,
+      "leg_mi": 32.64
+    },
+    {
+      "time": "2026-09-28T17:29:17-04:00",
+      "lat": 41.708081,
+      "lng": -74.075907,
+      "place": "NY State Thruway, New Paltz, NY",
+      "battery": 100,
+      "leg_mi": 6.07
+    },
+    {
+      "time": "2026-09-28T17:57:21-04:00",
+      "lat": 41.261399,
+      "lng": -74.157968,
+      "place": "NY State Thruway, Southfields, NY",
+      "battery": 100,
+      "leg_mi": 32.76
+    },
+    {
+      "time": "2026-09-28T18:29:00-04:00",
+      "lat": 40.919228,
+      "lng": -74.066322,
+      "place": "Rte 4, Paramus, NJ",
+      "battery": 100,
+      "leg_mi": 26.65
+    },
+    {
+      "time": "2026-09-28T19:04:40-04:00",
+      "lat": 40.904775,
+      "lng": -73.994756,
+      "place": "Gramercy Place, Teaneck, NJ",
+      "battery": 100,
+      "leg_mi": 5.34
+    },
+    {
+      "time": "2026-09-28T19:21:34-04:00",
+      "lat": 40.889031,
+      "lng": -74.021897,
+      "place": "715 Linden Ave, Teaneck, NJ",
+      "battery": 97,
+      "leg_mi": 2.24
+    },
+    {
+      "time": "2026-09-28T19:55:23-04:00",
+      "lat": 40.887771,
+      "lng": -74.020895,
+      "place": "665 American Legion Dr, Teaneck, NJ",
+      "battery": 93,
+      "leg_mi": 0.12
+    },
+    {
+      "time": "2026-09-29T13:24:16-04:00",
+      "lat": 40.888497,
+      "lng": -74.02283,
+      "place": "715 Linden Ave, Teaneck, NJ",
+      "battery": 72,
+      "leg_mi": 0.2,
+      "arrived": "2026-09-28T20:32:42-04:00",
+      "exclude_stop_time": true
+    },
+    {
+      "time": "2026-09-29T14:07:37-04:00",
+      "lat": 41.029195,
+      "lng": -74.068882,
+      "place": "Garden State Pkwy, Woodcliff Lake, NJ",
+      "battery": 80,
+      "leg_mi": 12.02
+    },
+    {
+      "time": "2026-09-29T14:20:50-04:00",
+      "lat": 41.146585,
+      "lng": -74.187085,
+      "place": "NY State Thruway, Sloatsburg, NY",
+      "battery": 83,
+      "leg_mi": 39
+    },
+    {
+      "time": "2026-09-29T14:48:49-04:00",
+      "lat": 41.554874,
+      "lng": -74.080693,
+      "place": "NY State Thruway, Wallkill, NY",
+      "battery": 91,
+      "leg_mi": 38.41
+    },
+    {
+      "time": "2026-09-29T15:19:00-04:00",
+      "lat": 41.996429,
+      "lng": -74.09896,
+      "place": "NY-28, Glenford, NY",
+      "battery": 98,
+      "leg_mi": 41.45
+    },
+    {
+      "time": "2026-09-29T15:58:00-04:00",
+      "lat": 42.304359,
+      "lng": -74.417375,
+      "place": "NY-23A, Prattsville, NY",
+      "battery": 100,
+      "leg_mi": 39.28
+    },
+    {
+      "time": "2026-09-29T16:21:48-04:00",
+      "lat": 42.414564,
+      "lng": -74.622408,
+      "place": "NY-10, Stamford, NY",
+      "battery": 100,
+      "leg_mi": 14.6
+    },
+    {
+      "time": "2026-09-29T18:29:36-04:00",
+      "lat": 42.432248,
+      "lng": -74.597393,
+      "place": "146 Scotch Valley Rd, Stamford, NY",
+      "battery": 98,
+      "leg_mi": 2.11,
+      "arrived": "2026-09-29T16:22:00-04:00"
+    },
+    {
+      "time": "2026-09-29T19:46:30-04:00",
+      "lat": 43.1175624,
+      "lng": -75.6408299,
+      "place": "I-90, Oneida, NY",
+      "battery": 100,
+      "leg_mi": 107.16
+    },
+    {
+      "time": "2026-09-29T20:01:03-04:00",
+      "lat": 43.0937952,
+      "lng": -75.9804862,
+      "place": "I-90, Kirkville, NY",
+      "battery": 100,
+      "leg_mi": 17.6
+    },
+    {
+      "time": "2026-09-29T20:06:39-04:00",
+      "lat": 43.0924815,
+      "lng": -76.1117383,
+      "place": "I-90, Syracuse, NY",
+      "battery": 100,
+      "leg_mi": 6.66
+    },
+    {
+      "time": "2026-09-29T20:11:31-04:00",
+      "lat": 43.1182189,
+      "lng": -76.2329247,
+      "place": "I-90, Liverpool, NY",
+      "battery": 100,
+      "leg_mi": 6.63
+    },
+    {
+      "time": "2026-09-29T20:23:55-04:00",
+      "lat": 43.0754699,
+      "lng": -76.4935541,
+      "place": "I-90, Jordan, NY",
+      "battery": 100,
+      "leg_mi": 13.77
+    },
+    {
+      "time": "2026-09-29T20:29:41-04:00",
+      "lat": 43.0468983,
+      "lng": -76.6182972,
+      "place": "I-90, Port Byron, NY",
+      "battery": 100,
+      "leg_mi": 6.66
+    },
+    {
+      "time": "2026-09-29T20:34:55-04:00",
+      "lat": 42.9981588,
+      "lng": -76.7300326,
+      "place": "I-90, Cayuga, NY",
+      "battery": 100,
+      "leg_mi": 6.6
+    },
+    {
+      "time": "2026-09-29T20:40:39-04:00",
+      "lat": 42.9678144,
+      "lng": -76.8504258,
+      "place": "I-90, Waterloo, NY",
+      "battery": 100,
+      "leg_mi": 6.51
+    },
+    {
+      "time": "2026-09-29T20:45:48-04:00",
+      "lat": 42.954935,
+      "lng": -76.9771802,
+      "place": "I-90, Phelps, NY",
+      "battery": 100,
+      "leg_mi": 6.55
+    },
+    {
+      "time": "2026-09-29T20:51:25-04:00",
+      "lat": 42.9745431,
+      "lng": -77.1026888,
+      "place": "I-90, Clifton Springs, NY",
+      "battery": 100,
+      "leg_mi": 6.62
+    },
+    {
+      "time": "2026-09-29T20:57:01-04:00",
+      "lat": 42.9789031,
+      "lng": -77.2329732,
+      "place": "I-90, Shortsville, NY",
+      "battery": 100,
+      "leg_mi": 6.62
+    },
+    {
+      "time": "2026-09-29T21:02:37-04:00",
+      "lat": 42.9951573,
+      "lng": -77.3560524,
+      "place": "I-90, Farmington, NY",
+      "battery": 100,
+      "leg_mi": 6.36
+    },
+    {
+      "time": "2026-09-29T21:08:26-04:00",
+      "lat": 42.9957014,
+      "lng": -77.3666812,
+      "place": "I-90, Farmington, NY",
+      "battery": 100,
+      "leg_mi": 0.54
+    },
+    {
+      "time": "2026-09-29T21:14:53-04:00",
+      "lat": 42.9970867,
+      "lng": -77.393411,
+      "place": "I-90, Victor, NY",
+      "battery": 100,
+      "leg_mi": 1.35
+    },
+    {
+      "time": "2026-09-29T21:21:05-04:00",
+      "lat": 43.0563273,
+      "lng": -77.471084,
+      "place": "I-490, Pittsford, NY",
+      "battery": 100,
+      "leg_mi": 6.26
+    },
+    {
+      "time": "2026-09-29T21:25:14-04:00",
+      "lat": 43.1143454,
+      "lng": -77.5063169,
+      "place": "I-490, East Rochester, NY",
+      "battery": 100,
+      "leg_mi": 4.6
+    },
+    {
+      "time": "2026-09-29T21:31:19-04:00",
+      "lat": 43.1331436,
+      "lng": -77.5633503,
+      "place": "Brighton, NY",
+      "battery": 100,
+      "leg_mi": 4.56,
+      "arrived": "2026-09-29T21:30:51-04:00"
+    },
+    {
+      "time": "2026-09-29T23:20:02-04:00",
+      "lat": 43.081829,
+      "lng": -77.6138735,
+      "place": "I-390, Rochester, NY",
+      "battery": 94,
+      "leg_mi": 5.45
+    },
+    {
+      "time": "2026-09-29T23:25:26-04:00",
+      "lat": 43.0418713,
+      "lng": -77.7118161,
+      "place": "I-90, West Henrietta, NY",
+      "battery": 95,
+      "leg_mi": 6.2
+    },
+    {
+      "time": "2026-09-29T23:31:40-04:00",
+      "lat": 43.0299937,
+      "lng": -77.8711937,
+      "place": "I-90, Churchville, NY",
+      "battery": 96,
+      "leg_mi": 8.26
+    },
+    {
+      "time": "2026-09-29T23:34:59-04:00",
+      "lat": 43.029177,
+      "lng": -77.9689656,
+      "place": "I-90, Le Roy, NY",
+      "battery": 96,
+      "leg_mi": 4.95
+    },
+    {
+      "time": "2026-09-29T23:41:32-04:00",
+      "lat": 43.0212448,
+      "lng": -78.1262283,
+      "place": "I-90, Byron, NY",
+      "battery": 97,
+      "leg_mi": 8.27
+    },
+    {
+      "time": "2026-09-29T23:45:26-04:00",
+      "lat": 43.0185652,
+      "lng": -78.1915326,
+      "place": "I-90, Batavia, NY",
+      "battery": 97,
+      "leg_mi": 3.32
+    },
+    {
+      "time": "2026-09-29T23:54:18-04:00",
+      "lat": 43.0013395,
+      "lng": -78.4166263,
+      "place": "I-90, Corfu, NY",
+      "battery": 98,
+      "leg_mi": 11.56
+    },
+    {
+      "time": "2026-09-29T23:58:13-04:00",
+      "lat": 42.9771338,
+      "lng": -78.5082253,
+      "place": "I-90, Akron, NY",
+      "battery": 99,
+      "leg_mi": 4.99
+    },
+    {
+      "time": "2026-09-30T00:12:27-04:00",
+      "lat": 42.9508803,
+      "lng": -78.7260516,
+      "place": "I-90, Buffalo, NY",
+      "battery": 100,
+      "leg_mi": 11.39
+    },
+    {
+      "time": "2026-09-30T00:19:50-04:00",
+      "lat": 43.00234,
+      "lng": -78.81463,
+      "place": "Youngmann Memorial Hwy, Buffalo, NY",
+      "battery": 100,
+      "leg_mi": 7.15
+    },
+    {
+      "time": "2026-09-30T00:27:16-04:00",
+      "lat": 43.01329,
+      "lng": -78.9674,
+      "place": "I-190, Grand Island, NY",
+      "battery": 100,
+      "leg_mi": 9.69
+    },
+    {
+      "time": "2026-09-30T00:33:33-04:00",
+      "lat": 43.07877,
+      "lng": -79.01797,
+      "place": "Niagara Scenic Pkwy, Niagara Falls, NY",
+      "battery": 100,
+      "leg_mi": 6.49
+    },
+    {
+      "time": "2026-09-30T00:39:50-04:00",
+      "lat": 43.08767,
+      "lng": -79.0651,
+      "place": "Niagara Falls State Park, NY",
+      "battery": 100,
+      "leg_mi": 3.07
+    },
+    {
+      "time": "2026-09-30T00:44:51-04:00",
+      "lat": 43.08746,
+      "lng": -79.0664,
+      "place": "Niagara Falls State Park, NY",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during confirmed sightseeing stop; no driving miles added"
+    },
+    {
+      "time": "2026-09-30T01:03:36-04:00",
+      "lat": 43.08601,
+      "lng": -79.06759,
+      "place": "Niagara Falls State Park, NY",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during confirmed sightseeing stop; no driving miles added"
+    },
+    {
+      "time": "2026-09-30T01:08:32-04:00",
+      "lat": 43.08667,
+      "lng": -79.06809,
+      "place": "Prospect St, Niagara Falls, NY",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during confirmed sightseeing stop; no driving miles added"
+    },
+    {
+      "time": "2026-09-30T01:12:20-04:00",
+      "lat": 43.08718,
+      "lng": -79.06696,
+      "place": "Niagara Falls State Park, NY",
+      "battery": 99,
+      "leg_mi": 0,
+      "note": "Location during confirmed sightseeing stop; no driving miles added"
+    },
+    {
+      "time": "2026-09-30T01:15:23-04:00",
+      "lat": 43.08904,
+      "lng": -79.06316,
+      "place": "Niagara St, Niagara Falls, NY",
+      "battery": 99,
+      "leg_mi": 0,
+      "note": "First driving fix after sightseeing stop; walking gap not added to driving miles"
+    },
+    {
+      "time": "2026-09-30T01:18:07-04:00",
+      "lat": 43.08838,
+      "lng": -79.05985,
+      "place": "Niagara St, Niagara Falls, NY",
+      "battery": 99,
+      "leg_mi": 0.22
+    },
+    {
+      "time": "2026-09-30T01:25:30-04:00",
+      "lat": 43.0859914,
+      "lng": -79.0764744,
+      "place": "5208 Niagara River Pkwy, Niagara Falls, ON, Canada",
+      "battery": 99,
+      "leg_mi": 1.07
+    },
+    {
+      "time": "2026-09-30T01:28:24-04:00",
+      "lat": 43.0833221,
+      "lng": -79.0777714,
+      "place": "Falls viewpoint, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0.24,
+      "note": "First fix at reported roadside stop"
+    },
+    {
+      "time": "2026-09-30T01:34:56-04:00",
+      "lat": 43.0835468,
+      "lng": -79.0777957,
+      "place": "Queen Victoria Place, Niagara River Pkwy, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during reported falls viewpoint stop; walking or GPS jitter not counted as driving"
+    },
+    {
+      "time": "2026-09-30T01:39:47-04:00",
+      "lat": 43.0840024,
+      "lng": -79.0771928,
+      "place": "Niagara River Pkwy, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during reported falls viewpoint stop; walking or GPS jitter not counted as driving"
+    },
+    {
+      "time": "2026-09-30T01:45:00-04:00",
+      "lat": 43.0840677,
+      "lng": -79.0771413,
+      "place": "Falls viewpoint, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during reported falls viewpoint stop; Maps fix about 2 minutes old; walking or GPS jitter not counted as driving"
+    },
+    {
+      "time": "2026-09-30T01:52:49-04:00",
+      "lat": 43.0768004,
+      "lng": -79.0792451,
+      "place": "Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0.64,
+      "note": "Back-and-forth driving at the falls confirmed by user at 02:01:40; estimated GPS leg, exact driving/parked times not supplied"
+    },
+    {
+      "time": "2026-09-30T01:59:03-04:00",
+      "lat": 43.0827842,
+      "lng": -79.0776412,
+      "place": "Niagara River Pkwy, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0.53,
+      "note": "Back-and-forth driving at the falls confirmed by user at 02:01:40; estimated GPS leg, exact driving/parked times not supplied"
+    },
+    {
+      "time": "2026-09-30T02:02:31-04:00",
+      "lat": 43.0828501,
+      "lng": -79.0777525,
+      "place": "6342 Niagara River Pkwy, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "First fix after confirmed departure and odometer; small GPS gap not added as driving miles"
+    },
+    {
+      "time": "2026-09-30T02:11:09-04:00",
+      "lat": 43.0684017,
+      "lng": -79.0615533,
+      "place": "Unnamed Road, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 1.61
+    },
+    {
+      "time": "2026-09-30T02:14:51-04:00",
+      "lat": 43.0683488,
+      "lng": -79.0793488,
+      "place": "5201 Marineland Pkwy, Allanburg, ON, Canada",
+      "battery": 100,
+      "leg_mi": 1.12
+    },
+    {
+      "time": "2026-09-30T02:19:27-04:00",
+      "lat": 43.0704539,
+      "lng": -79.1182327,
+      "place": "Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 2.46
+    },
+    {
+      "time": "2026-09-30T02:25:49-04:00",
+      "lat": 43.1539189,
+      "lng": -79.155172,
+      "place": "Queen Elizabeth Wy, Niagara-on-the-Lake, ON, Canada",
+      "battery": 100,
+      "leg_mi": 7.58
+    },
+    {
+      "time": "2026-09-30T02:34:05-04:00",
+      "lat": 43.1802533,
+      "lng": -79.3203495,
+      "place": "Queen Elizabeth Wy, St. Catharines, ON, Canada",
+      "battery": 100,
+      "leg_mi": 10.65
+    },
+    {
+      "time": "2026-09-30T02:38:02-04:00",
+      "lat": 43.1868833,
+      "lng": -79.40426,
+      "place": "Queen Elizabeth Wy, Vineland Station, ON, Canada",
+      "battery": 100,
+      "leg_mi": 5.32
+    },
+    {
+      "time": "2026-09-30T02:44:28-04:00",
+      "lat": 43.196872,
+      "lng": -79.5531679,
+      "place": "Queen Elizabeth Wy, Grimsby, ON, Canada",
+      "battery": 100,
+      "leg_mi": 9.42
+    },
+    {
+      "time": "2026-09-30T02:51:39-04:00",
+      "lat": 43.2334895,
+      "lng": -79.7043876,
+      "place": "Queen Elizabeth Wy, Hamilton, ON L8E 5X8, Canada",
+      "battery": 100,
+      "leg_mi": 10.03
+    },
+    {
+      "time": "2026-09-30T02:58:30-04:00",
+      "lat": 43.3031277,
+      "lng": -79.7997195,
+      "place": "Burlington Bay James N. Allan Skyway, Burlington, ON L7S 1A1, Canada",
+      "battery": 100,
+      "leg_mi": 8.49
+    },
+    {
+      "time": "2026-09-30T03:02:54-04:00",
+      "lat": 43.3322734,
+      "lng": -79.83916,
+      "place": "ON-403, Burlington, ON L7P 0V1, Canada",
+      "battery": 100,
+      "leg_mi": 3.53
+    },
+    {
+      "time": "2026-09-30T03:08:44-04:00",
+      "lat": 43.2569675,
+      "lng": -79.9042586,
+      "place": "Unnamed Road, Hamilton, ON L8S 1A8, Canada",
+      "battery": 100,
+      "leg_mi": 7.68
+    },
+    {
+      "time": "2026-09-30T03:15:17-04:00",
+      "lat": 43.204768,
+      "lng": -79.9944092,
+      "place": "ON-403, Alberton, ON L0R 1A0, Canada",
+      "battery": 100,
+      "leg_mi": 7.25
+    },
+    {
+      "time": "2026-09-30T03:18:58-04:00",
+      "lat": 43.200991,
+      "lng": -80.0459385,
+      "place": "ON-403, Alberton, ON L0R 1A0, Canada",
+      "battery": 100,
+      "leg_mi": 3.26
+    },
+    {
+      "time": "2026-09-30T03:24:36-04:00",
+      "lat": 43.1681988,
+      "lng": -80.1891289,
+      "place": "ON-403, Brantford, ON, Canada",
+      "battery": 100,
+      "leg_mi": 9.45
+    },
+    {
+      "time": "2026-09-30T03:32:32-04:00",
+      "lat": 43.1689703,
+      "lng": -80.3309459,
+      "place": "ON-403, Brantford, ON N3V 1E7, Canada",
+      "battery": 100,
+      "leg_mi": 8.93
+    },
+    {
+      "time": "2026-09-30T03:37:49-04:00",
+      "lat": 43.1440449,
+      "lng": -80.4511745,
+      "place": "ON-403, Brant, ON N0J 1V0, Canada",
+      "battery": 100,
+      "leg_mi": 7.87
+    },
+    {
+      "time": "2026-09-30T03:44:55-04:00",
+      "lat": 43.1282237,
+      "lng": -80.6359506,
+      "place": "ON-403, Woodstock, ON N4S 7W3, Canada",
+      "battery": 100,
+      "leg_mi": 11.73
+    },
+    {
+      "time": "2026-09-30T03:56:02-04:00",
+      "lat": 43.0487198,
+      "lng": -80.8246344,
+      "place": "ON-401, South-West Oxford, ON N0J 1A0, Canada",
+      "battery": 100,
+      "leg_mi": 13.74
+    },
+    {
+      "time": "2026-09-30T03:58:58-04:00",
+      "lat": 43.0188356,
+      "lng": -80.8673103,
+      "place": "Ingersoll, ON, Canada",
+      "battery": 100,
+      "leg_mi": 3.73
+    },
+    {
+      "time": "2026-09-30T04:04:57-04:00",
+      "lat": 42.9740625,
+      "lng": -80.9634012,
+      "place": "ON-401, Thames Centre, ON N0L 1V0, Canada",
+      "battery": 100,
+      "leg_mi": 7.2
+    },
+    {
+      "time": "2026-09-30T04:10:34-04:00",
+      "lat": 42.9472724,
+      "lng": -81.1058088,
+      "place": "ON-401, London, ON N6M 1H6, Canada",
+      "battery": 100,
+      "leg_mi": 9.29
+    },
+    {
+      "time": "2026-09-30T04:13:33-04:00",
+      "lat": 42.9393449,
+      "lng": -81.1633139,
+      "place": "ON-401, London, ON, Canada",
+      "battery": 100,
+      "leg_mi": 3.7
+    },
+    {
+      "time": "2026-09-30T04:17:36-04:00",
+      "lat": 42.9083298,
+      "lng": -81.2294265,
+      "place": "ON-401, London, ON N6E 3X2, Canada",
+      "battery": 100,
+      "leg_mi": 4.97
+    },
+    {
+      "time": "2026-09-30T04:24:47-04:00",
+      "lat": 42.8980482,
+      "lng": -81.3761752,
+      "place": "Middlesex Centre, ON, Canada",
+      "battery": 100,
+      "leg_mi": 9.33
+    },
+    {
+      "time": "2026-09-30T04:30:29-04:00",
+      "lat": 42.9346328,
+      "lng": -81.4810976,
+      "place": "ON-402, Mount Brydges, ON N0L 1W0, Canada",
+      "battery": 100,
+      "leg_mi": 7.35
+    },
+    {
+      "time": "2026-09-30T04:38:05-04:00",
+      "lat": 42.9926705,
+      "lng": -81.6152239,
+      "place": "ON-402, Exeter, ON, Canada",
+      "battery": 100,
+      "leg_mi": 9.85
+    },
+    {
+      "time": "2026-09-30T04:40:40-04:00",
+      "lat": 42.9925701,
+      "lng": -81.7115833,
+      "place": "ON-402, Adelaide Metcalfe, ON N0M 2B0, Canada",
+      "battery": 100,
+      "leg_mi": 6.09
+    },
+    {
+      "time": "2026-09-30T04:43:52-04:00",
+      "lat": 42.9924553,
+      "lng": -81.7763564,
+      "place": "ON-402, Adelaide Metcalfe, ON N0M 2B0, Canada",
+      "battery": 100,
+      "leg_mi": 4.09
+    },
+    {
+      "time": "2026-09-30T04:47:58-04:00",
+      "lat": 42.9923241,
+      "lng": -81.8730679,
+      "place": "Wisbeach, Warwick, ON, Canada",
+      "battery": 100,
+      "leg_mi": 6.11
+    },
+    {
+      "time": "2026-09-30T04:51:55-04:00",
+      "lat": 42.9922735,
+      "lng": -81.8883209,
+      "place": "Warwick, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0.96
+    },
+    {
+      "time": "2026-09-30T04:54:48-04:00",
+      "lat": 42.9900485,
+      "lng": -81.9528412,
+      "place": "ON-402, Watford, ON N0M 2S0, Canada",
+      "battery": 100,
+      "leg_mi": 4.08
+    },
+    {
+      "time": "2026-09-30T04:58:56-04:00",
+      "lat": 42.9913854,
+      "lng": -82.049178,
+      "place": "ON-402, Wyoming, ON N0N 1T0, Canada",
+      "battery": 100,
+      "leg_mi": 6.09
+    },
+    {
+      "time": "2026-09-30T05:01:27-04:00",
+      "lat": 42.9914662,
+      "lng": -82.1083205,
+      "place": "ON-402, Plympton-Wyoming, ON N0N 1J5, Canada",
+      "battery": 100,
+      "leg_mi": 3.74
+    },
+    {
+      "time": "2026-09-30T05:05:29-04:00",
+      "lat": 42.9923249,
+      "lng": -82.1643981,
+      "place": "ON-402, Plympton-Wyoming, ON N0N 1E0, Canada",
+      "battery": 100,
+      "leg_mi": 3.54
+    },
+    {
+      "time": "2026-09-30T05:09:45-04:00",
+      "lat": 42.9900095,
+      "lng": -82.3023804,
+      "place": "ON-402, Brights Grove, ON N0N 1C0, Canada",
+      "battery": 100,
+      "leg_mi": 8.72
+    },
+    {
+      "time": "2026-09-30T05:12:11-04:00",
+      "lat": 42.9888273,
+      "lng": -82.3543707,
+      "place": "ON-402, Sarnia, ON N7S 0G4, Canada",
+      "battery": 100,
+      "leg_mi": 3.29
+    },
+    {
+      "time": "2026-09-30T05:14:44-04:00",
+      "lat": 42.9896045,
+      "lng": -82.4074792,
+      "place": "ON-402, Point Edward, ON N7T 7W7, Canada",
+      "battery": 100,
+      "leg_mi": 3.36
+    },
+    {
+      "time": "2026-09-30T05:17:38-04:00",
+      "lat": 42.998898,
+      "lng": -82.4236643,
+      "place": "Blue Water Brg, Port Huron, MI 48060, USA",
+      "battery": 100,
+      "leg_mi": 1.3
+    },
+    {
+      "time": "2026-09-30T05:24:44-04:00",
+      "lat": 42.9989276,
+      "lng": -82.4357472,
+      "place": "Blue Water Brg, Port Huron, MI 48060, USA",
+      "battery": 100,
+      "leg_mi": 0.76
+    },
+    {
+      "time": "2026-09-30T05:28:51-04:00",
+      "lat": 42.9888789,
+      "lng": -82.4738092,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 2.56
+    },
+    {
+      "time": "2026-09-30T05:32:33-04:00",
+      "lat": 42.988881,
+      "lng": -82.4738007,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T05:35:35-04:00",
+      "lat": 42.988876,
+      "lng": -82.4738079,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T05:38:27-04:00",
+      "lat": 42.9888589,
+      "lng": -82.473825,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T05:42:32-04:00",
+      "lat": 42.9888686,
+      "lng": -82.4738212,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T05:46:17-04:00",
+      "lat": 42.989069,
+      "lng": -82.4746543,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.06
+    },
+    {
+      "time": "2026-09-30T05:50:17-04:00",
+      "lat": 42.9890069,
+      "lng": -82.4746547,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T05:53:58-04:00",
+      "lat": 42.9890081,
+      "lng": -82.4746979,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T05:57:21-04:00",
+      "lat": 42.9890081,
+      "lng": -82.4746979,
+      "place": "Michigan Welcome Center, Port Huron",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T06:00:57-04:00",
+      "lat": 42.9872975,
+      "lng": -82.4696855,
+      "place": "3555, I-94, Port Huron, MI 48060, USA",
+      "battery": 99,
+      "leg_mi": 0.35
+    },
+    {
+      "time": "2026-09-30T06:04:00-04:00",
+      "lat": 42.9779556,
+      "lng": -82.4763446,
+      "place": "Unnamed Road, Port Huron, MI 48060, USA",
+      "battery": 98,
+      "leg_mi": 0.91
+    },
+    {
+      "time": "2026-09-30T06:07:31-04:00",
+      "lat": 42.9758619,
+      "lng": -82.5283514,
+      "place": "I-69, Smiths Creek, MI 48074, USA",
+      "battery": 98,
+      "leg_mi": 3.29
+    },
+    {
+      "time": "2026-09-30T06:10:35-04:00",
+      "lat": 42.9878822,
+      "lng": -82.5881679,
+      "place": "I-69, Smiths Creek, MI 48074, USA",
+      "battery": 99,
+      "leg_mi": 3.92
+    },
+    {
+      "time": "2026-09-30T06:13:48-04:00",
+      "lat": 42.9714371,
+      "lng": -82.6812556,
+      "place": "I-69, Goodells, MI 48027, USA",
+      "battery": 99,
+      "leg_mi": 6.05
+    },
+    {
+      "time": "2026-09-30T06:15:59-04:00",
+      "lat": 42.9723662,
+      "lng": -82.7135969,
+      "place": "I-69, Goodells, MI 48027, USA",
+      "battery": 99,
+      "leg_mi": 2.05
+    },
+    {
+      "time": "2026-09-30T06:18:36-04:00",
+      "lat": 42.9794497,
+      "lng": -82.7754902,
+      "place": "I-69, Memphis, MI 48041, USA",
+      "battery": 99,
+      "leg_mi": 3.96
+    },
+    {
+      "time": "2026-09-30T06:21:06-04:00",
+      "lat": 42.980006,
+      "lng": -82.8427941,
+      "place": "I-69, Memphis, MI 48041, USA",
+      "battery": 99,
+      "leg_mi": 4.25
+    },
+    {
+      "time": "2026-09-30T06:23:45-04:00",
+      "lat": 42.9870125,
+      "lng": -82.9080073,
+      "place": "I-69, Capac, MI 48014, USA",
+      "battery": 99,
+      "leg_mi": 4.16
+    },
+    {
+      "time": "2026-09-30T06:26:11-04:00",
+      "lat": 42.9941039,
+      "lng": -82.9701981,
+      "place": "I-69, Capac, MI 48014, USA",
+      "battery": 100,
+      "leg_mi": 3.98
+    },
+    {
+      "time": "2026-09-30T06:28:59-04:00",
+      "lat": 43.0006991,
+      "lng": -83.0295688,
+      "place": "I-69, Imlay City, MI 48444, USA",
+      "battery": 100,
+      "leg_mi": 3.79
+    },
+    {
+      "time": "2026-09-30T06:31:40-04:00",
+      "lat": 42.9989914,
+      "lng": -83.0889334,
+      "place": "I-69, Imlay City, MI 48444, USA",
+      "battery": 100,
+      "leg_mi": 3.75
+    },
+    {
+      "time": "2026-09-30T06:33:57-04:00",
+      "lat": 42.9970885,
+      "lng": -83.117817,
+      "place": "I-69, Imlay City, MI 48444, USA",
+      "battery": 100,
+      "leg_mi": 1.83
+    },
+    {
+      "time": "2026-09-30T06:36:21-04:00",
+      "lat": 43.0092913,
+      "lng": -83.1706703,
+      "place": "I-69, Attica, MI 48412, USA",
+      "battery": 100,
+      "leg_mi": 3.5
+    },
+    {
+      "time": "2026-09-30T06:38:50-04:00",
+      "lat": 43.0100623,
+      "lng": -83.2324973,
+      "place": "I-69, Metamora, MI 48455, USA",
+      "battery": 100,
+      "leg_mi": 3.91
+    },
+    {
+      "time": "2026-09-30T06:41:27-04:00",
+      "lat": 43.0172186,
+      "lng": -83.2904467,
+      "place": "I-69, Lapeer, MI 48446, USA",
+      "battery": 100,
+      "leg_mi": 3.71
+    },
+    {
+      "time": "2026-09-30T06:44:09-04:00",
+      "lat": 43.0304763,
+      "lng": -83.3453349,
+      "place": "I-69, Lapeer, MI 48446, USA",
+      "battery": 100,
+      "leg_mi": 3.65
+    },
+    {
+      "time": "2026-09-30T06:46:52-04:00",
+      "lat": 43.0221212,
+      "lng": -83.4089671,
+      "place": "I-69, Lapeer, MI 48446, USA",
+      "battery": 100,
+      "leg_mi": 4.08
+    },
+    {
+      "time": "2026-09-30T06:49:33-04:00",
+      "lat": 43.0164462,
+      "lng": -83.4667755,
+      "place": "I-69, Davison, MI 48423, USA",
+      "battery": 100,
+      "leg_mi": 3.68
+    },
+    {
+      "time": "2026-09-30T06:52:11-04:00",
+      "lat": 43.0115877,
+      "lng": -83.5228245,
+      "place": "I-69, Davison, MI 48423, USA",
+      "battery": 100,
+      "leg_mi": 3.56
+    },
+    {
+      "time": "2026-09-30T06:54:54-04:00",
+      "lat": 43.0180425,
+      "lng": -83.5752012,
+      "place": "I-69, Davison, MI 48423, USA",
+      "battery": 100,
+      "leg_mi": 3.35
+    },
+    {
+      "time": "2026-09-30T06:57:33-04:00",
+      "lat": 43.0141758,
+      "lng": -83.6297347,
+      "place": "Burton, MI, USA",
+      "battery": 100,
+      "leg_mi": 3.46
+    },
+    {
+      "time": "2026-09-30T07:00:25-04:00",
+      "lat": 43.0071395,
+      "lng": -83.6868361,
+      "place": "I-69, Flint, MI 48502, USA",
+      "battery": 100,
+      "leg_mi": 3.66
+    },
+    {
+      "time": "2026-09-30T07:02:58-04:00",
+      "lat": 42.9842621,
+      "lng": -83.7361112,
+      "place": "Unnamed Road, Flint, MI 48507, USA",
+      "battery": 100,
+      "leg_mi": 3.69
+    },
+    {
+      "time": "2026-09-30T07:05:28-04:00",
+      "lat": 42.9671856,
+      "lng": -83.7823877,
+      "place": "I-69, Swartz Creek, MI 48473, USA",
+      "battery": 100,
+      "leg_mi": 3.28
+    },
+    {
+      "time": "2026-09-30T07:08:00-04:00",
+      "lat": 42.9654149,
+      "lng": -83.8335231,
+      "place": "I-69, Swartz Creek, MI 48473, USA",
+      "battery": 100,
+      "leg_mi": 3.24
+    },
+    {
+      "time": "2026-09-30T07:10:34-04:00",
+      "lat": 42.9648611,
+      "lng": -83.8976326,
+      "place": "I-69, Lennon, MI 48449, USA",
+      "battery": 100,
+      "leg_mi": 4.05
+    },
+    {
+      "time": "2026-09-30T07:13:12-04:00",
+      "lat": 42.9644033,
+      "lng": -83.9287429,
+      "place": "I-69, Lennon, MI 48449, USA",
+      "battery": 100,
+      "leg_mi": 1.97
+    },
+    {
+      "time": "2026-09-30T07:15:54-04:00",
+      "lat": 42.9488354,
+      "lng": -83.976126,
+      "place": "I-69, Durand, MI 48429, USA",
+      "battery": 100,
+      "leg_mi": 3.28
+    },
+    {
+      "time": "2026-09-30T07:18:34-04:00",
+      "lat": 42.9218257,
+      "lng": -84.021732,
+      "place": "I-69, Durand, MI 48429, USA",
+      "battery": 100,
+      "leg_mi": 3.71
+    },
+    {
+      "time": "2026-09-30T07:21:14-04:00",
+      "lat": 42.90164,
+      "lng": -84.0740826,
+      "place": "I-69, Bancroft, MI 48414, USA",
+      "battery": 100,
+      "leg_mi": 3.74
+    },
+    {
+      "time": "2026-09-30T07:24:00-04:00",
+      "lat": 42.8736612,
+      "lng": -84.1305109,
+      "place": "I-69, Bancroft, MI 48414, USA",
+      "battery": 100,
+      "leg_mi": 4.31
+    },
+    {
+      "time": "2026-09-30T07:26:51-04:00",
+      "lat": 42.840565,
+      "lng": -84.2141026,
+      "place": "I-69, Perry, MI 48872, USA",
+      "battery": 100,
+      "leg_mi": 6.01
+    },
+    {
+      "time": "2026-09-30T07:29:47-04:00",
+      "lat": 42.8213107,
+      "lng": -84.2692509,
+      "place": "I-69, Perry, MI 48872, USA",
+      "battery": 100,
+      "leg_mi": 3.87
+    },
+    {
+      "time": "2026-09-30T07:32:14-04:00",
+      "lat": 42.8062444,
+      "lng": -84.3241595,
+      "place": "I-69, Laingsburg, MI 48848, USA",
+      "battery": 100,
+      "leg_mi": 3.71
+    },
+    {
+      "time": "2026-09-30T07:34:40-04:00",
+      "lat": 42.8001332,
+      "lng": -84.3488352,
+      "place": "I-69, Laingsburg, MI 48848, USA",
+      "battery": 100,
+      "leg_mi": 1.65
+    },
+    {
+      "time": "2026-09-30T07:35:42-04:00",
+      "lat": 42.7990337,
+      "lng": -84.3531292,
+      "place": "I-69, Haslett, MI 48840, USA",
+      "battery": 100,
+      "leg_mi": 0.29
+    },
+    {
+      "time": "2026-09-30T07:38:00-04:00",
+      "lat": 42.7950059,
+      "lng": -84.3664078,
+      "place": "I-69, Haslett, MI 48840, USA",
+      "battery": 100,
+      "leg_mi": 0.91
+    },
+    {
+      "time": "2026-09-30T07:40:24-04:00",
+      "lat": 42.7814831,
+      "lng": -84.404373,
+      "place": "I-69, East Lansing, MI 48823, USA",
+      "battery": 100,
+      "leg_mi": 2.67
+    },
+    {
+      "time": "2026-09-30T07:42:56-04:00",
+      "lat": 42.7928371,
+      "lng": -84.4281515,
+      "place": "I-69, Bath Township, MI 48808, USA",
+      "battery": 100,
+      "leg_mi": 1.8
+    },
+    {
+      "time": "2026-09-30T07:45:39-04:00",
+      "lat": 42.803337,
+      "lng": -84.4780609,
+      "place": "I-69, Bath Township, MI 48808, USA",
+      "battery": 100,
+      "leg_mi": 3.29
+    },
+    {
+      "time": "2026-09-30T07:48:07-04:00",
+      "lat": 42.8156798,
+      "lng": -84.5205659,
+      "place": "I-69, Lansing, MI 48906, USA",
+      "battery": 100,
+      "leg_mi": 2.9
+    },
+    {
+      "time": "2026-09-30T07:50:38-04:00",
+      "lat": 42.8147022,
+      "lng": -84.5795366,
+      "place": "I-69, DeWitt, MI 48820, USA",
+      "battery": 100,
+      "leg_mi": 3.74
+    },
+    {
+      "time": "2026-09-30T07:53:10-04:00",
+      "lat": 42.803409,
+      "lng": -84.6336173,
+      "place": "I-69, Lansing, MI 48906, USA",
+      "battery": 100,
+      "leg_mi": 3.56
+    },
+    {
+      "time": "2026-09-30T07:56:01-04:00",
+      "lat": 42.7933359,
+      "lng": -84.6818334,
+      "place": "I-96, Grand Ledge, MI 48837, USA",
+      "battery": 100,
+      "leg_mi": 3.18
+    },
+    {
+      "time": "2026-09-30T07:58:49-04:00",
+      "lat": 42.8012051,
+      "lng": -84.7430542,
+      "place": "I-96, Eagle, MI 48822, USA",
+      "battery": 100,
+      "leg_mi": 3.94
+    },
+    {
+      "time": "2026-09-30T08:01:31-04:00",
+      "lat": 42.8152816,
+      "lng": -84.7952531,
+      "place": "I-96, Eagle, MI 48822, USA",
+      "battery": 100,
+      "leg_mi": 3.52
+    },
+    {
+      "time": "2026-09-30T08:04:10-04:00",
+      "lat": 42.8392757,
+      "lng": -84.8461414,
+      "place": "I-96, Portland, MI 48875, USA",
+      "battery": 100,
+      "leg_mi": 3.83
+    },
+    {
+      "time": "2026-09-30T08:06:46-04:00",
+      "lat": 42.8607116,
+      "lng": -84.8952559,
+      "place": "I-96, Portland, MI 48875, USA",
+      "battery": 100,
+      "leg_mi": 3.62
+    },
+    {
+      "time": "2026-09-30T08:09:22-04:00",
+      "lat": 42.8659563,
+      "lng": -84.953346,
+      "place": "I-96, Portland, MI 48875, USA",
+      "battery": 100,
+      "leg_mi": 3.71
+    },
+    {
+      "time": "2026-09-30T08:12:00-04:00",
+      "lat": 42.8792268,
+      "lng": -85.003916,
+      "place": "I-96, Portland, MI 48875, USA",
+      "battery": 100,
+      "leg_mi": 3.4
+    },
+    {
+      "time": "2026-09-30T08:14:47-04:00",
+      "lat": 42.8794158,
+      "lng": -85.0607618,
+      "place": "I-96, Ionia, MI 48846, USA",
+      "battery": 100,
+      "leg_mi": 3.6
+    },
+    {
+      "time": "2026-09-30T08:17:21-04:00",
+      "lat": 42.8794741,
+      "lng": -85.1177014,
+      "place": "I-96, Ionia, MI 48846, USA",
+      "battery": 100,
+      "leg_mi": 3.6
+    },
+    {
+      "time": "2026-09-30T08:20:15-04:00",
+      "lat": 42.8795225,
+      "lng": -85.1727143,
+      "place": "I-96, Saranac, MI 48881, USA",
+      "battery": 100,
+      "leg_mi": 3.48
+    },
+    {
+      "time": "2026-09-30T08:23:09-04:00",
+      "lat": 42.8795336,
+      "lng": -85.229766,
+      "place": "I-96, Saranac, MI 48881, USA",
+      "battery": 100,
+      "leg_mi": 3.61
+    },
+    {
+      "time": "2026-09-30T08:25:50-04:00",
+      "lat": 42.8795854,
+      "lng": -85.286223,
+      "place": "I-96, Lowell, MI 49331, USA",
+      "battery": 100,
+      "leg_mi": 2.86
+    },
+    {
+      "time": "2026-09-30T08:28:25-04:00",
+      "lat": 42.8768316,
+      "lng": -85.3437575,
+      "place": "I-96, Lowell, MI 49331, USA",
+      "battery": 100,
+      "leg_mi": 2.92
+    },
+    {
+      "time": "2026-09-30T08:31:10-04:00",
+      "lat": 42.8787253,
+      "lng": -85.3973369,
+      "place": "I-96, Lowell, MI 49331, USA",
+      "battery": 100,
+      "leg_mi": 2.72
+    },
+    {
+      "time": "2026-09-30T08:34:04-04:00",
+      "lat": 42.8784236,
+      "lng": -85.4512885,
+      "place": "I-96, Ada, MI 49301, USA",
+      "battery": 100,
+      "leg_mi": 2.73
+    },
+    {
+      "time": "2026-09-30T08:36:33-04:00",
+      "lat": 42.8933094,
+      "lng": -85.5072644,
+      "place": "I-96, Grand Rapids, MI 49546, USA",
+      "battery": 100,
+      "leg_mi": 3.01
+    },
+    {
+      "time": "2026-09-30T08:39:12-04:00",
+      "lat": 42.9230865,
+      "lng": -85.5508291,
+      "place": "I-96, Grand Rapids, MI 49546, USA",
+      "battery": 100,
+      "leg_mi": 3.02
+    },
+    {
+      "time": "2026-09-30T08:42:02-04:00",
+      "lat": 42.961197,
+      "lng": -85.5763741,
+      "place": "I-96, Grand Rapids, MI 49546, USA",
+      "battery": 100,
+      "leg_mi": 2.93
+    },
+    {
+      "time": "2026-09-30T08:45:03-04:00",
+      "lat": 42.9762457,
+      "lng": -85.6262587,
+      "place": "I-196, Grand Rapids, MI 49503, USA",
+      "battery": 100,
+      "leg_mi": 2.73
+    },
+    {
+      "time": "2026-09-30T08:47:26-04:00",
+      "lat": 42.9728255,
+      "lng": -85.6760891,
+      "place": "537-529 Scribner Ave NW, Grand Rapids, MI 49504, USA",
+      "battery": 100,
+      "leg_mi": 2.53
+    },
+    {
+      "time": "2026-09-30T08:50:10-04:00",
+      "lat": 42.9575322,
+      "lng": -85.7063534,
+      "place": "I-196, Grand Rapids, MI 49504, USA",
+      "battery": 100,
+      "leg_mi": 1.86
+    },
+    {
+      "time": "2026-09-30T08:52:42-04:00",
+      "lat": 42.9295434,
+      "lng": -85.7404222,
+      "place": "I-196, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 2.59
+    },
+    {
+      "time": "2026-09-30T08:55:20-04:00",
+      "lat": 42.9134432,
+      "lng": -85.7623962,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 1.57
+    },
+    {
+      "time": "2026-09-30T08:56:36-04:00",
+      "lat": 42.9133998,
+      "lng": -85.7623274,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:02:46-04:00",
+      "lat": 42.9134173,
+      "lng": -85.7623734,
+      "place": "Unnamed Road, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:06:16-04:00",
+      "lat": 42.9132949,
+      "lng": -85.7623528,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T09:08:33-04:00",
+      "lat": 42.9132896,
+      "lng": -85.7623816,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:11:22-04:00",
+      "lat": 42.9132909,
+      "lng": -85.7623241,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:13:17-04:00",
+      "lat": 42.9133194,
+      "lng": -85.7623412,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:15:54-04:00",
+      "lat": 42.9130941,
+      "lng": -85.7626704,
+      "place": "2828-2800 Wilson Ave SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.02
+    },
+    {
+      "time": "2026-09-30T09:18:28-04:00",
+      "lat": 42.9134659,
+      "lng": -85.7623773,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.03
+    },
+    {
+      "time": "2026-09-30T09:20:47-04:00",
+      "lat": 42.9131126,
+      "lng": -85.7626132,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.03
+    },
+    {
+      "time": "2026-09-30T09:26:06-04:00",
+      "lat": 42.9133744,
+      "lng": -85.7626706,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.02
+    },
+    {
+      "time": "2026-09-30T09:29:44-04:00",
+      "lat": 42.9133808,
+      "lng": -85.7626738,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:31:50-04:00",
+      "lat": 42.913454,
+      "lng": -85.7618319,
+      "place": "2801-2813 Church Ave SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.04
+    },
+    {
+      "time": "2026-09-30T09:32:37-04:00",
+      "lat": 42.9135327,
+      "lng": -85.7521117,
+      "place": "East Grandville, Grandville, MI, USA",
+      "battery": 100,
+      "leg_mi": 0.49
+    },
+    {
+      "time": "2026-09-30T09:34:38-04:00",
+      "lat": 42.9136631,
+      "lng": -85.7385189,
+      "place": "2958-2954 M-11, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.69
+    },
+    {
+      "time": "2026-09-30T09:35:21-04:00",
+      "lat": 42.9136631,
+      "lng": -85.7385189,
+      "place": "2958-2954 M-11, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:37:15-04:00",
+      "lat": 42.9137148,
+      "lng": -85.7335368,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.25
+    },
+    {
+      "time": "2026-09-30T09:39:14-04:00",
+      "lat": 42.9142197,
+      "lng": -85.7332355,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.04
+    },
+    {
+      "time": "2026-09-30T09:41:12-04:00",
+      "lat": 42.9140801,
+      "lng": -85.7333278,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T09:42:43-04:00",
+      "lat": 42.9141664,
+      "lng": -85.733291,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T09:45:23-04:00",
+      "lat": 42.9141664,
+      "lng": -85.733291,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:47:52-04:00",
+      "lat": 42.9142143,
+      "lng": -85.7332422,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:50:22-04:00",
+      "lat": 42.9141145,
+      "lng": -85.733288,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T09:52:48-04:00",
+      "lat": 42.9142429,
+      "lng": -85.7331648,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T09:55:30-04:00",
+      "lat": 42.9141409,
+      "lng": -85.7333441,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T09:57:58-04:00",
+      "lat": 42.9141232,
+      "lng": -85.7332559,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T10:00:47-04:00",
+      "lat": 42.9141058,
+      "lng": -85.7332814,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T10:03:38-04:00",
+      "lat": 42.9142751,
+      "lng": -85.7331876,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T10:06:32-04:00",
+      "lat": 42.9142074,
+      "lng": -85.7330821,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T10:09:32-04:00",
+      "lat": 42.9142674,
+      "lng": -85.7331865,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T10:12:44-04:00",
+      "lat": 42.9142449,
+      "lng": -85.7331673,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T10:15:23-04:00",
+      "lat": 42.9142449,
+      "lng": -85.7331673,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T10:18:14-04:00",
+      "lat": 42.9142627,
+      "lng": -85.7330903,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T10:21:14-04:00",
+      "lat": 42.9142667,
+      "lng": -85.7331451,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T10:23:43-04:00",
+      "lat": 42.9140963,
+      "lng": -85.7330772,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.01
+    },
+    {
+      "time": "2026-09-30T10:26:28-04:00",
+      "lat": 42.9142589,
+      "lng": -85.733339,
+      "place": "2755 28th St SW, Wyoming, MI 49519, USA",
+      "battery": 100,
+      "leg_mi": 0.02
+    }
+  ],
+  "checkins": [
+    {
+      "time": "2026-09-28T15:45:00-04:00",
+      "text": "Trip started",
+      "odo": 165179.2,
+      "place": "724 Chestnut Ave, Teaneck, NJ",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-28T16:45:47-04:00",
+      "text": "Odometer 165,238.6 \u00b7 309 mi to empty",
+      "odo": 165238.6,
+      "place": null
+    },
+    {
+      "time": "2026-09-28T17:08:40-04:00",
+      "text": "Turned around near New Paltz \u2014 heading back to Teaneck, will head out again later",
+      "odo": null,
+      "place": null
+    },
+    {
+      "time": "2026-09-28T17:09:14-04:00",
+      "text": "Odometer 165,264.6 \u00b7 296 mi to empty",
+      "odo": 165264.6,
+      "place": null
+    },
+    {
+      "time": "2026-09-28T18:00:00-04:00",
+      "text": "Short break",
+      "odo": 165324.6,
+      "place": null
+    },
+    {
+      "time": "2026-09-28T18:00:59-04:00",
+      "text": "Stopped",
+      "odo": null,
+      "place": "NY State Thruway, Southfields, NY",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-28T18:06:00-04:00",
+      "text": "Back on the road",
+      "odo": null,
+      "place": null
+    },
+    {
+      "time": "2026-09-28T18:06:54-04:00",
+      "text": "On the road",
+      "odo": null,
+      "place": "NY State Thruway, Southfields, NY",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-28T18:40:00-04:00",
+      "text": "Home in Teaneck \u2014 stopped, will head out again later",
+      "odo": null,
+      "place": "Teaneck, NJ",
+      "exclude_stop_time": true
+    },
+    {
+      "time": "2026-09-28T18:50:54-04:00",
+      "text": "Stopped",
+      "odo": null,
+      "place": "Rte 4, Paramus, NJ",
+      "status": "stopped",
+      "exclude_stop_time": true
+    },
+    {
+      "time": "2026-09-29T13:38:00-04:00",
+      "text": "Back on the road",
+      "odo": null,
+      "place": null
+    },
+    {
+      "time": "2026-09-29T13:46:55-04:00",
+      "text": "On the road",
+      "odo": null,
+      "place": "715 Linden Ave, Teaneck, NJ",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-29T16:22:00-04:00",
+      "text": "Stopped",
+      "odo": 165495.1,
+      "place": "Stamford, NY",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-29T17:54:00-04:00",
+      "text": "On the road",
+      "odo": null,
+      "place": "146 Scotch Valley Rd, Stamford, NY",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-29T17:54:00-04:00",
+      "text": "Back on the road",
+      "odo": null,
+      "place": "Stamford, NY"
+    },
+    {
+      "time": "2026-09-29T18:29:40-04:00",
+      "text": "Stopped",
+      "odo": null,
+      "place": "146 Scotch Valley Rd, Stamford, NY",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-29T18:49:00-04:00",
+      "text": "Stopping for gas",
+      "odo": 165539.1,
+      "place": null
+    },
+    {
+      "time": "2026-09-29T18:52:00-04:00",
+      "text": "Back on the road",
+      "odo": null,
+      "place": null,
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-29T19:45:00-04:00",
+      "text": "On the road",
+      "odo": 165601,
+      "place": "I-90, Oneida, NY"
+    },
+    {
+      "time": "2026-09-29T20:15:00-04:00",
+      "text": "On the road",
+      "odo": 165636.7,
+      "place": null
+    },
+    {
+      "time": "2026-09-29T21:16:00-04:00",
+      "text": "Left I-90 for extended break",
+      "odo": 165696.1,
+      "place": null,
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-29T21:30:00-04:00",
+      "text": "Arrived for extended break",
+      "odo": 165709.0,
+      "place": "Brighton, NY",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-29T23:10:54-04:00",
+      "text": "Back on the road",
+      "odo": null,
+      "place": null,
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-29T23:15:00-04:00",
+      "text": "Travel checkpoint",
+      "odo": 165711.7,
+      "place": null
+    },
+    {
+      "time": "2026-09-29T23:16:52-04:00",
+      "text": "Travel checkpoint",
+      "odo": 165712.6,
+      "place": null
+    },
+    {
+      "time": "2026-09-29T23:20:00-04:00",
+      "text": "Back on I-90 West",
+      "odo": 165716.8,
+      "place": "I-90 / I-390 interchange, Henrietta, NY",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T00:02:02-04:00",
+      "text": "Stopped",
+      "odo": 165767.0,
+      "place": null,
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T00:05:04-04:00",
+      "text": "On the road",
+      "odo": null,
+      "place": null,
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T00:32:41-04:00",
+      "text": "Niagara Falls",
+      "odo": null,
+      "place": null
+    },
+    {
+      "time": "2026-09-30T00:39:50-04:00",
+      "text": "Stopped - Niagara Falls State Park",
+      "odo": 165797.3,
+      "place": "Niagara Falls State Park, NY",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T01:14:46-04:00",
+      "text": "On the road - Niagara Falls",
+      "odo": null,
+      "place": "Niagara Falls, NY",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T01:27:54-04:00",
+      "text": "Stopped - Niagara Falls viewpoint",
+      "odo": null,
+      "place": "Falls viewpoint, Niagara Falls, ON, Canada",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T01:45:00-04:00",
+      "text": "On the road - Niagara Falls (time estimated)",
+      "odo": null,
+      "place": "Niagara Falls, ON, Canada",
+      "status": "on_road",
+      "estimated": true
+    },
+    {
+      "time": "2026-09-30T02:01:40-04:00",
+      "text": "On the road - Niagara Falls",
+      "odo": 165803.0,
+      "place": "Niagara Falls, ON, Canada",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T04:47:23-04:00",
+      "text": "Stopped - Warwick",
+      "odo": 165972.4,
+      "place": "Warwick, ON, Canada",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T04:50:15-04:00",
+      "text": "On the road - Warwick",
+      "odo": null,
+      "place": "Warwick, ON, Canada",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T05:16:00-04:00",
+      "text": "On the road - Blue Water Bridge",
+      "odo": 166000.4,
+      "place": "Blue Water Bridge",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T05:18:55-04:00",
+      "text": "Border crossing - stopped",
+      "odo": null,
+      "place": "Blue Water Bridge, Port Huron, Michigan",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T05:28:55-04:00",
+      "text": "Border crossing - on the road",
+      "odo": null,
+      "place": "Port Huron, Michigan",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T05:28:55-04:00",
+      "text": "Stopped - Michigan Welcome Center",
+      "odo": 166003.5,
+      "place": "Michigan Welcome Center, Port Huron",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T05:57:00-04:00",
+      "text": "On the road - Michigan Welcome Center",
+      "odo": null,
+      "place": "Michigan Welcome Center, Port Huron",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T08:55:48-04:00",
+      "text": "Stopped - Grandville",
+      "odo": 166187.6,
+      "place": "Grandville, Michigan",
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T09:31:28-04:00",
+      "text": "On the road - Grandville",
+      "odo": 166187.7,
+      "place": "Grandville, Michigan",
+      "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T09:34:25-04:00",
+      "text": "Stopped - Grandville",
+      "odo": 166189.2,
+      "place": "Grandville, Michigan",
+      "status": "stopped"
+    }
+  ],
+  "fuel": [
+    {
+      "time": "2026-09-29T13:38:00-04:00",
+      "odo": 165347.6,
+      "gallons": 6.385,
+      "total_cost": 26.17,
+      "price_per_gal": 4.099,
+      "station": null,
+      "full": true
+    },
+    {
+      "time": "2026-09-29T18:52:00-04:00",
+      "odo": 165539.1,
+      "gallons": 7.258,
+      "total_cost": 32.15,
+      "price_per_gal": 4.43,
+      "station": null,
+      "full": true
+    },
+    {
+      "time": "2026-09-30T00:04:10-04:00",
+      "odo": 165767.0,
+      "gallons": 8.439,
+      "total_cost": 37.71,
+      "price_per_gal": 4.469,
+      "station": null,
+      "full": true
+    },
+    {
+      "time": "2026-09-30T09:01:44-04:00",
+      "odo": 166187.6,
+      "gallons": 14.456,
+      "total_cost": 66.92,
+      "price_per_gal": 4.629,
+      "station": null,
+      "full": true
+    }
+  ]
+}
