@@ -357,6 +357,14 @@
       "place": "I-90, Akron, NY",
       "battery": 99,
       "leg_mi": 4.99
+    },
+    {
+      "time": "2026-09-30T00:12:27-04:00",
+      "lat": 42.9508803,
+      "lng": -78.7260516,
+      "place": "I-90, Buffalo, NY",
+      "battery": 100,
+      "leg_mi": 11.39
     }
   ],
   "checkins": [
