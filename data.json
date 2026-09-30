@@ -603,6 +603,14 @@
       "place": "ON-403, Burlington, ON L7P 0V1, Canada",
       "battery": 100,
       "leg_mi": 3.53
+    },
+    {
+      "time": "2026-09-30T03:08:44-04:00",
+      "lat": 43.2569675,
+      "lng": -79.9042586,
+      "place": "Unnamed Road, Hamilton, ON L8S 1A8, Canada",
+      "battery": 100,
+      "leg_mi": 7.68
     }
   ],
   "checkins": [
