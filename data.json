@@ -2395,6 +2395,22 @@
       "place": "Unnamed Road, Holland, MI 49423, USA",
       "battery": 80,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:55:51-04:00",
+      "lat": 42.7925751,
+      "lng": -86.0991012,
+      "place": "145 Columbia Ave, Holland, MI 49423, USA",
+      "battery": 79,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:58:15-04:00",
+      "lat": 42.7893016,
+      "lng": -86.100141,
+      "place": "144 9th St, Holland, MI 49423, USA",
+      "battery": 79,
+      "leg_mi": 0
     }
   ],
   "checkins": [
