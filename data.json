@@ -1235,6 +1235,14 @@
       "place": "I-69, Bath Township, MI 48808, USA",
       "battery": 100,
       "leg_mi": 3.29
+    },
+    {
+      "time": "2026-09-30T07:48:07-04:00",
+      "lat": 42.8156798,
+      "lng": -84.5205659,
+      "place": "I-69, Lansing, MI 48906, USA",
+      "battery": 100,
+      "leg_mi": 2.9
     }
   ],
   "checkins": [
