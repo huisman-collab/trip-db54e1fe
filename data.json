@@ -1483,6 +1483,22 @@
       "place": "3960 28th St SW, Grandville, MI 49418, USA",
       "battery": 100,
       "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:13:17-04:00",
+      "lat": 42.9133194,
+      "lng": -85.7623412,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:15:54-04:00",
+      "lat": 42.9130941,
+      "lng": -85.7626704,
+      "place": "2828-2800 Wilson Ave SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.02
     }
   ],
   "checkins": [
