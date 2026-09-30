@@ -675,6 +675,14 @@
       "place": "Ingersoll, ON, Canada",
       "battery": 100,
       "leg_mi": 3.73
+    },
+    {
+      "time": "2026-09-30T04:04:57-04:00",
+      "lat": 42.9740625,
+      "lng": -80.9634012,
+      "place": "ON-401, Thames Centre, ON N0L 1V0, Canada",
+      "battery": 100,
+      "leg_mi": 7.2
     }
   ],
   "checkins": [
