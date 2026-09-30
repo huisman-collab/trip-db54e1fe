@@ -2707,6 +2707,22 @@
       "place": "Unnamed Road, Lansing, MI 48917, USA",
       "battery": 97,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T17:07:18-04:00",
+      "lat": 42.7388492,
+      "lng": -84.6269991,
+      "place": "Unnamed Road, Lansing, MI 48917, USA",
+      "battery": 97,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T17:10:00-04:00",
+      "lat": 42.7388101,
+      "lng": -84.6268598,
+      "place": "5451 W Saginaw Hwy E, Lansing, MI 48917, USA",
+      "battery": 98,
+      "leg_mi": 0.01
     }
   ],
   "checkins": [
