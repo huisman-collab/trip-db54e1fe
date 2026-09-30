@@ -1883,6 +1883,30 @@
       "place": "Holland, MI 49423, USA",
       "battery": 100,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:12:59-04:00",
+      "lat": 42.790358,
+      "lng": -86.1071223,
+      "place": "1 W 8th St, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:15:32-04:00",
+      "lat": 42.790269,
+      "lng": -86.1082744,
+      "place": "36-2 W 8th St, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:17:30-04:00",
+      "lat": 42.7902195,
+      "lng": -86.1086259,
+      "place": "36-2 W 8th St, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 0
     }
   ],
   "checkins": [
