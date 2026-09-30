@@ -180,6 +180,14 @@
       "place": "I-90, Syracuse, NY",
       "battery": 100,
       "leg_mi": 6.66
+    },
+    {
+      "time": "2026-09-29T20:11:31-04:00",
+      "lat": 43.1182189,
+      "lng": -76.2329247,
+      "place": "I-90, Liverpool, NY",
+      "battery": 100,
+      "leg_mi": 6.63
     }
   ],
   "checkins": [
