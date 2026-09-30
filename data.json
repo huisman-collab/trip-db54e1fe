@@ -447,6 +447,18 @@
       "odo": null,
       "place": null,
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-29T23:15:00-04:00",
+      "text": "Travel checkpoint",
+      "odo": 165711.7,
+      "place": null
+    },
+    {
+      "time": "2026-09-29T23:16:52-04:00",
+      "text": "Travel checkpoint",
+      "odo": 165712.6,
+      "place": null
     }
   ],
   "fuel": [
