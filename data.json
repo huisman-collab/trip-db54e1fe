@@ -2019,6 +2019,22 @@
       "place": "Holland, MI 49423, USA",
       "battery": 96,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:59:44-04:00",
+      "lat": 42.7973204,
+      "lng": -86.0929654,
+      "place": "De Zwaan Path, Holland, MI 49423, USA",
+      "battery": 96,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T13:02:51-04:00",
+      "lat": 42.7975589,
+      "lng": -86.0937225,
+      "place": "De Zwaan Path, Holland, MI 49423, USA",
+      "battery": 95,
+      "leg_mi": 0
     }
   ],
   "checkins": [
