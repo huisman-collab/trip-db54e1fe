@@ -707,6 +707,14 @@
       "place": "ON-401, London, ON N6E 3X2, Canada",
       "battery": 100,
       "leg_mi": 4.97
+    },
+    {
+      "time": "2026-09-30T04:24:47-04:00",
+      "lat": 42.8980482,
+      "lng": -81.3761752,
+      "place": "Middlesex Centre, ON, Canada",
+      "battery": 100,
+      "leg_mi": 9.33
     }
   ],
   "checkins": [
