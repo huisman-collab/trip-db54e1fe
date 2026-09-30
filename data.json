@@ -1187,6 +1187,22 @@
       "place": "I-69, Laingsburg, MI 48848, USA",
       "battery": 100,
       "leg_mi": 3.71
+    },
+    {
+      "time": "2026-09-30T07:34:40-04:00",
+      "lat": 42.8001332,
+      "lng": -84.3488352,
+      "place": "I-69, Laingsburg, MI 48848, USA",
+      "battery": 100,
+      "leg_mi": 1.65
+    },
+    {
+      "time": "2026-09-30T07:35:42-04:00",
+      "lat": 42.7990337,
+      "lng": -84.3531292,
+      "place": "I-69, Haslett, MI 48840, USA",
+      "battery": 100,
+      "leg_mi": 0.29
     }
   ],
   "checkins": [
