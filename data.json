@@ -2347,6 +2347,22 @@
       "place": "133 Lincoln Ave, Holland, MI 49423, USA",
       "battery": 81,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:42:01-04:00",
+      "lat": 42.7939616,
+      "lng": -86.094106,
+      "place": "136 Lincoln Ave, Holland, MI 49423, USA",
+      "battery": 81,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:44:16-04:00",
+      "lat": 42.7938185,
+      "lng": -86.0949696,
+      "place": "136 Lincoln Ave, Holland, MI 49423, USA",
+      "battery": 81,
+      "leg_mi": 0
     }
   ],
   "checkins": [
