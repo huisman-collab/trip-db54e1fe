@@ -1747,6 +1747,22 @@
       "place": "M-11, Grandville, MI 49418, USA",
       "battery": 100,
       "leg_mi": 1.26
+    },
+    {
+      "time": "2026-09-30T11:25:31-04:00",
+      "lat": 42.9122151,
+      "lng": -85.7685683,
+      "place": "Unnamed Road, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.24
+    },
+    {
+      "time": "2026-09-30T11:27:51-04:00",
+      "lat": 42.8742012,
+      "lng": -85.7869714,
+      "place": "I-196, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 2.79
     }
   ],
   "checkins": [
