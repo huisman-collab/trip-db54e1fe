@@ -530,6 +530,20 @@
       "odo": 165716.8,
       "place": "I-90 / I-390 interchange, Henrietta, NY",
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T00:02:02-04:00",
+      "text": "Stopping for gas",
+      "odo": 165767.0,
+      "place": null,
+      "status": "stopped"
+    },
+    {
+      "time": "2026-09-30T00:05:04-04:00",
+      "text": "Back on the road",
+      "odo": null,
+      "place": null,
+      "status": "on_road"
     }
   ],
   "fuel": [
@@ -548,6 +562,15 @@
       "gallons": 7.258,
       "total_cost": 32.15,
       "price_per_gal": 4.43,
+      "station": null,
+      "full": true
+    },
+    {
+      "time": "2026-09-30T00:04:10-04:00",
+      "odo": 165767.0,
+      "gallons": 8.439,
+      "total_cost": 37.71,
+      "price_per_gal": 4.469,
       "station": null,
       "full": true
     }
