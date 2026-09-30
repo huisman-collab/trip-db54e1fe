@@ -651,6 +651,30 @@
       "place": "ON-403, Brant, ON N0J 1V0, Canada",
       "battery": 100,
       "leg_mi": 7.87
+    },
+    {
+      "time": "2026-09-30T03:44:55-04:00",
+      "lat": 43.1282237,
+      "lng": -80.6359506,
+      "place": "ON-403, Woodstock, ON N4S 7W3, Canada",
+      "battery": 100,
+      "leg_mi": 11.73
+    },
+    {
+      "time": "2026-09-30T03:56:02-04:00",
+      "lat": 43.0487198,
+      "lng": -80.8246344,
+      "place": "ON-401, South-West Oxford, ON N0J 1A0, Canada",
+      "battery": 100,
+      "leg_mi": 13.74
+    },
+    {
+      "time": "2026-09-30T03:58:58-04:00",
+      "lat": 43.0188356,
+      "lng": -80.8673103,
+      "place": "Ingersoll, ON, Canada",
+      "battery": 100,
+      "leg_mi": 3.73
     }
   ],
   "checkins": [
