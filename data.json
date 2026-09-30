@@ -467,6 +467,15 @@
       "battery": 100,
       "leg_mi": 0.24,
       "note": "First fix at reported roadside stop"
+    },
+    {
+      "time": "2026-09-30T01:34:56-04:00",
+      "lat": 43.0835468,
+      "lng": -79.0777957,
+      "place": "Queen Victoria Place, Niagara River Pkwy, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during reported falls viewpoint stop; walking or GPS jitter not counted as driving"
     }
   ],
   "checkins": [
