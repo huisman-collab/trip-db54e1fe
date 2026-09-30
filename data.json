@@ -1171,6 +1171,14 @@
       "place": "I-69, Perry, MI 48872, USA",
       "battery": 100,
       "leg_mi": 6.01
+    },
+    {
+      "time": "2026-09-30T07:29:47-04:00",
+      "lat": 42.8213107,
+      "lng": -84.2692509,
+      "place": "I-69, Perry, MI 48872, USA",
+      "battery": 100,
+      "leg_mi": 3.87
     }
   ],
   "checkins": [
