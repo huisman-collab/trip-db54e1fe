@@ -172,6 +172,14 @@
       "place": "I-90, Kirkville, NY",
       "battery": 100,
       "leg_mi": 17.6
+    },
+    {
+      "time": "2026-09-29T20:06:39-04:00",
+      "lat": 43.0924815,
+      "lng": -76.1117383,
+      "place": "I-90, Syracuse, NY",
+      "battery": 100,
+      "leg_mi": 6.66
     }
   ],
   "checkins": [
