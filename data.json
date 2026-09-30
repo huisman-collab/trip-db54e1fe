@@ -1827,6 +1827,14 @@
       "place": "I-196BL, Zeeland, MI 49464, USA",
       "battery": 100,
       "leg_mi": 0.55
+    },
+    {
+      "time": "2026-09-30T11:52:59-04:00",
+      "lat": 42.7885664,
+      "lng": -86.1090009,
+      "place": "226-240 US-31 BUS, Holland, MI 49423, USA",
+      "battery": 100,
+      "leg_mi": 2.98
     }
   ],
   "checkins": [
