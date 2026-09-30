@@ -1259,6 +1259,14 @@
       "place": "I-69, Lansing, MI 48906, USA",
       "battery": 100,
       "leg_mi": 3.56
+    },
+    {
+      "time": "2026-09-30T07:56:01-04:00",
+      "lat": 42.7933359,
+      "lng": -84.6818334,
+      "place": "I-96, Grand Ledge, MI 48837, USA",
+      "battery": 100,
+      "leg_mi": 3.18
     }
   ],
   "checkins": [
