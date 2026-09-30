@@ -280,7 +280,6 @@
 
     const stat = (v, k, sub, cls) => `<div class="stat${cls ? " " + cls : ""}"><div class="v">${v}</div>` +
       `<div class="k">${esc(k)}</div>${sub ? `<div class="sub" title="${esc(sub)}">${esc(sub)}</div>` : ""}</div>`;
-    const lastFill = s.fills[s.fills.length - 1];
     const batt = s.lastLoc && s.lastLoc.battery != null ? s.lastLoc.battery : null;
     const estMiles = s.miles != null ? s.miles : (s.legs.length ? s.legMiles : null);
     const milesV = estMiles == null ? "—" : `~${esc(n0(estMiles))} <small>mi (est.)</small>`;
@@ -290,8 +289,8 @@
       stat(esc(s.locs.length ? dur(s.stopMs) : "—"), "Stopped") +
       stat(s.avgSpeed ? `${esc(n0(s.avgSpeed))} <small>mph</small>` : "—", "Avg speed") +
       stat(batt != null ? `${esc(batt)}<small>%</small>` : "—", "Battery") +
-      stat(lastFill ? `${esc(lastFill.g.toFixed(1))} <small>gal</small>` : "—", "Last fill-up",
-        lastFill ? [whenShort(ts(lastFill.time)), lastFill.station].filter(Boolean).join(" · ") : "");
+      stat(s.fills.length ? `${esc(n1(s.gal))} <small>gal</small>` : "—", "Trip fill-ups",
+        s.fills.length ? `${money(s.cost)} total` : "");
 
     const recent = [...s.checks].reverse().slice(0, 3);
     $("updatesH").hidden = $("updates").hidden = !recent.length;
@@ -352,4 +351,4 @@
 })();
 </script>
 </body>
-</html>
+      </html>
