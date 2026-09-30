@@ -333,6 +333,14 @@
       "place": "I-90, Byron, NY",
       "battery": 97,
       "leg_mi": 8.27
+    },
+    {
+      "time": "2026-09-29T23:45:26-04:00",
+      "lat": 43.0185652,
+      "lng": -78.1915326,
+      "place": "I-90, Batavia, NY",
+      "battery": 97,
+      "leg_mi": 3.32
     }
   ],
   "checkins": [
@@ -528,4 +536,4 @@
       "full": true
     }
   ]
-    }
+}
