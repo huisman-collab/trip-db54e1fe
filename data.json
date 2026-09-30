@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
-    "status": "stopped",
+    "status": "on_road",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -2427,6 +2427,46 @@
       "place": "Anderson-Werkman Financial Center, 100 E 8th St, Holland, MI 49423, USA",
       "battery": 79,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T15:05:32-04:00",
+      "lat": 42.789637,
+      "lng": -86.1045581,
+      "place": "Holland, MI 49423, USA",
+      "battery": 78,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T15:07:56-04:00",
+      "lat": 42.7893306,
+      "lng": -86.1049284,
+      "place": "Holland, MI 49423, USA",
+      "battery": 78,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T15:10:25-04:00",
+      "lat": 42.7893224,
+      "lng": -86.1067302,
+      "place": "Holland, MI 49423, USA",
+      "battery": 78,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T15:18:51-04:00",
+      "lat": 42.7887581,
+      "lng": -86.1083085,
+      "place": "Central Ave, Holland, MI 49423, USA",
+      "battery": 77,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T15:31:18-04:00",
+      "lat": 42.7903371,
+      "lng": -86.0937999,
+      "place": "Holland, MI 49423, USA",
+      "battery": 77,
+      "leg_mi": 0.74
     }
   ],
   "checkins": [
@@ -2737,6 +2777,11 @@
       "time": "2026-09-30T11:52:59-04:00",
       "status": "stopped",
       "text": "Stopped - Holland"
+    },
+    {
+      "time": "2026-09-30T15:31:18-04:00",
+      "status": "on_road",
+      "text": "Back on the road"
     }
   ],
   "fuel": [
