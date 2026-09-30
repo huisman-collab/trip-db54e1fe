@@ -731,6 +731,14 @@
       "place": "ON-402, Exeter, ON, Canada",
       "battery": 100,
       "leg_mi": 9.85
+    },
+    {
+      "time": "2026-09-30T04:40:40-04:00",
+      "lat": 42.9925701,
+      "lng": -81.7115833,
+      "place": "ON-402, Adelaide Metcalfe, ON N0M 2B0, Canada",
+      "battery": 100,
+      "leg_mi": 6.09
     }
   ],
   "checkins": [
