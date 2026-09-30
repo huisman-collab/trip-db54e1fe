@@ -2555,6 +2555,30 @@
       "place": "I-96, Lowell, MI 49331, USA",
       "battery": 85,
       "leg_mi": 1.58
+    },
+    {
+      "time": "2026-09-30T16:12:14-04:00",
+      "lat": 42.8744009,
+      "lng": -85.3209326,
+      "place": "I-96, Lowell, MI 49331, USA",
+      "battery": 86,
+      "leg_mi": 2.98
+    },
+    {
+      "time": "2026-09-30T16:14:36-04:00",
+      "lat": 42.8791338,
+      "lng": -85.2647856,
+      "place": "I-96, Clarksville, MI 48815, USA",
+      "battery": 87,
+      "leg_mi": 2.86
+    },
+    {
+      "time": "2026-09-30T16:17:07-04:00",
+      "lat": 42.8792712,
+      "lng": -85.2083328,
+      "place": "I-96, Saranac, MI 48881, USA",
+      "battery": 87,
+      "leg_mi": 2.86
     }
   ],
   "checkins": [
@@ -2910,4 +2934,4 @@
       "full": true
     }
   ]
-    }
+}
