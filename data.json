@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
-    "status": "on_road",
+    "status": "stopped",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -458,6 +458,15 @@
       "place": "5208 Niagara River Pkwy, Niagara Falls, ON, Canada",
       "battery": 99,
       "leg_mi": 1.07
+    },
+    {
+      "time": "2026-09-30T01:28:24-04:00",
+      "lat": 43.0833221,
+      "lng": -79.0777714,
+      "place": "Falls viewpoint, Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0.24,
+      "note": "First fix at reported roadside stop"
     }
   ],
   "checkins": [
@@ -665,6 +674,13 @@
       "odo": null,
       "place": "Niagara Falls, NY",
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T01:27:54-04:00",
+      "text": "Short roadside stop at a falls viewpoint; time is when the stop was reported",
+      "odo": null,
+      "place": "Falls viewpoint, Niagara Falls, ON, Canada",
+      "status": "stopped"
     }
   ],
   "fuel": [
