@@ -188,6 +188,14 @@
       "place": "I-90, Liverpool, NY",
       "battery": 100,
       "leg_mi": 6.63
+    },
+    {
+      "time": "2026-09-29T20:23:55-04:00",
+      "lat": 43.0754699,
+      "lng": -76.4935541,
+      "place": "I-90, Jordan, NY",
+      "battery": 100,
+      "leg_mi": 13.77
     }
   ],
   "checkins": [
