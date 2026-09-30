@@ -494,6 +494,15 @@
       "battery": 100,
       "leg_mi": 0,
       "note": "Location during reported falls viewpoint stop; Maps fix about 2 minutes old; walking or GPS jitter not counted as driving"
+    },
+    {
+      "time": "2026-09-30T01:52:49-04:00",
+      "lat": 43.0768004,
+      "lng": -79.0792451,
+      "place": "Niagara Falls, ON, Canada",
+      "battery": 100,
+      "leg_mi": 0,
+      "note": "Location during reported falls sightseeing stop; no departure reported, movement not counted as driving"
     }
   ],
   "checkins": [
