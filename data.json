@@ -1987,6 +1987,22 @@
       "place": "152 Lincoln Ave, Holland, MI 49423, USA",
       "battery": 98,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:47:39-04:00",
+      "lat": 42.7935865,
+      "lng": -86.0963269,
+      "place": "Holland, MI 49423, USA",
+      "battery": 97,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T12:50:42-04:00",
+      "lat": 42.7937132,
+      "lng": -86.0959805,
+      "place": "Holland, MI 49423, USA",
+      "battery": 97,
+      "leg_mi": 0
     }
   ],
   "checkins": [
