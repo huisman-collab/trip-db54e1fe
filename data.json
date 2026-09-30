@@ -467,6 +467,13 @@
       "text": "Travel checkpoint",
       "odo": 165712.6,
       "place": null
+    },
+    {
+      "time": "2026-09-29T23:20:00-04:00",
+      "text": "Back on I-90 West",
+      "odo": 165716.8,
+      "place": "I-90 / I-390 interchange, Henrietta, NY",
+      "status": "on_road"
     }
   ],
   "fuel": [
