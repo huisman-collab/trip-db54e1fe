@@ -2307,6 +2307,22 @@
       "place": "Holland, MI 49423, USA",
       "battery": 85,
       "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:30:26-04:00",
+      "lat": 42.7968889,
+      "lng": -86.0926169,
+      "place": "Holland, MI 49423, USA",
+      "battery": 84,
+      "leg_mi": 0
+    },
+    {
+      "time": "2026-09-30T14:32:46-04:00",
+      "lat": 42.7968554,
+      "lng": -86.0926242,
+      "place": "Holland, MI 49423, USA",
+      "battery": 84,
+      "leg_mi": 0
     }
   ],
   "checkins": [
