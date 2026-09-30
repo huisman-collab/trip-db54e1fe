@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
-    "status": "on_road",
+    "status": "stopped",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -1435,6 +1435,30 @@
       "place": "I-196, Grandville, MI 49418, USA",
       "battery": 100,
       "leg_mi": 2.59
+    },
+    {
+      "time": "2026-09-30T08:55:20-04:00",
+      "lat": 42.9134432,
+      "lng": -85.7623962,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 1.57
+    },
+    {
+      "time": "2026-09-30T08:56:36-04:00",
+      "lat": 42.9133998,
+      "lng": -85.7623274,
+      "place": "3960 28th St SW, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
+    },
+    {
+      "time": "2026-09-30T09:02:46-04:00",
+      "lat": 42.9134173,
+      "lng": -85.7623734,
+      "place": "Unnamed Road, Grandville, MI 49418, USA",
+      "battery": 100,
+      "leg_mi": 0.0
     }
   ],
   "checkins": [
@@ -1713,6 +1737,13 @@
       "odo": null,
       "place": "Michigan Welcome Center, Port Huron",
       "status": "on_road"
+    },
+    {
+      "time": "2026-09-30T08:55:48-04:00",
+      "text": "Stopped - Grandville",
+      "odo": 166187.6,
+      "place": "Grandville, Michigan",
+      "status": "stopped"
     }
   ],
   "fuel": [
@@ -1740,6 +1771,15 @@
       "gallons": 8.439,
       "total_cost": 37.71,
       "price_per_gal": 4.469,
+      "station": null,
+      "full": true
+    },
+    {
+      "time": "2026-09-30T09:01:44-04:00",
+      "odo": 166187.6,
+      "gallons": 14.456,
+      "total_cost": 66.92,
+      "price_per_gal": 4.629,
       "station": null,
       "full": true
     }
