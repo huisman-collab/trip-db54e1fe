@@ -114,7 +114,7 @@
       "lng": -74.187085,
       "place": "NY State Thruway, Sloatsburg, NY",
       "battery": 83,
-      "leg_mi": 39.0
+      "leg_mi": 39
     },
     {
       "time": "2026-09-29T14:48:49-04:00",
@@ -204,6 +204,14 @@
       "place": "I-90, Port Byron, NY",
       "battery": 100,
       "leg_mi": 6.66
+    },
+    {
+      "time": "2026-09-29T20:34:55-04:00",
+      "lat": 42.9981588,
+      "lng": -76.7300326,
+      "place": "I-90, Cayuga, NY",
+      "battery": 100,
+      "leg_mi": 6.6
     }
   ],
   "checkins": [
