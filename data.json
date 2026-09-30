@@ -555,6 +555,14 @@
       "place": "Queen Elizabeth Wy, Niagara-on-the-Lake, ON, Canada",
       "battery": 100,
       "leg_mi": 7.58
+    },
+    {
+      "time": "2026-09-30T02:34:05-04:00",
+      "lat": 43.1802533,
+      "lng": -79.3203495,
+      "place": "Queen Elizabeth Wy, St. Catharines, ON, Canada",
+      "battery": 100,
+      "leg_mi": 10.65
     }
   ],
   "checkins": [
