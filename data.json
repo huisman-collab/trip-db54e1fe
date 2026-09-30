@@ -2,7 +2,7 @@
   "trip": {
     "id": 28,
     "title": "Trip 28 \u00b7 Road trip \u2014 destination open-ended",
-    "status": "on_road",
+    "status": "stopped",
     "start_time": "2026-09-28T15:45:00-04:00",
     "end_time": null,
     "vehicle": "Ford Edge",
@@ -389,6 +389,14 @@
       "place": "Niagara Scenic Pkwy, Niagara Falls, NY",
       "battery": 100,
       "leg_mi": 6.49
+    },
+    {
+      "time": "2026-09-30T00:39:50-04:00",
+      "lat": 43.08767,
+      "lng": -79.0651,
+      "place": "Niagara Falls State Park, NY",
+      "battery": 100,
+      "leg_mi": 3.07
     }
   ],
   "checkins": [
@@ -582,6 +590,13 @@
       "text": "Heading to Niagara Falls to see the illuminated falls",
       "odo": null,
       "place": null
+    },
+    {
+      "time": "2026-09-30T00:39:50-04:00",
+      "text": "Arrived at Niagara Falls State Park to see the illuminated falls",
+      "odo": 165797.3,
+      "place": "Niagara Falls State Park, NY",
+      "status": "stopped"
     }
   ],
   "fuel": [
