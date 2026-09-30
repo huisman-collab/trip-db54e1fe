@@ -771,6 +771,14 @@
       "place": "ON-402, Watford, ON N0M 2S0, Canada",
       "battery": 100,
       "leg_mi": 4.08
+    },
+    {
+      "time": "2026-09-30T04:58:56-04:00",
+      "lat": 42.9913854,
+      "lng": -82.049178,
+      "place": "ON-402, Wyoming, ON N0N 1T0, Canada",
+      "battery": 100,
+      "leg_mi": 6.09
     }
   ],
   "checkins": [
