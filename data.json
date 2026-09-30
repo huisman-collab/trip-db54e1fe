@@ -442,6 +442,14 @@
       "battery": 99,
       "leg_mi": 0,
       "note": "First driving fix after sightseeing stop; walking gap not added to driving miles"
+    },
+    {
+      "time": "2026-09-30T01:18:07-04:00",
+      "lat": 43.08838,
+      "lng": -79.05985,
+      "place": "Niagara St, Niagara Falls, NY",
+      "battery": 99,
+      "leg_mi": 0.22
     }
   ],
   "checkins": [
