@@ -107,7 +107,7 @@
   const REFRESH_MS = 60000;
   // ?data=file.json previews another data file in the same folder.
   const qp = new URLSearchParams(location.search).get("data");
-  const DATA_URL = qp && /^[\w.-]+\.json$/.test(qp) ? qp : "data.json";
+  const DATA_URL = "https://trip28-pipeline-lab.huisman.workers.dev/automatic/data";
   const STATUS = {not_started: "Not started", on_road: "On the road", stopped: "Stopped", finished: "Trip finished"};
 
   const $ = id => document.getElementById(id);
@@ -143,108 +143,13 @@
   const FOCUS_ZOOM = 8;  // regional view around the last known location
 
   function compute(d) {
-    const trip = d.trip || {};
-    const locs = byTime(d.locations).filter(l => num(l.lat) !== null && num(l.lng) !== null);
-    const checks = byTime(d.checkins), fuel = byTime(d.fuel);
-    const now = new Date(), start = ts(trip.start_time), end = ts(trip.end_time);
-    const until = end || (trip.status === "not_started" ? null : now);
-    const elapsed = start && until ? until - start : null;
-
-    // Confirmed stop intervals, not gaps between GPS samples.
-    const stopIntervals = [];
-    let open = null;
-    for (const c of checks) {
-      if (c.exclude_stop_time) continue;
-      const status = c.status || (c.text === "Back on the road" ? "on_road" : c.exclude_stop_time ? "stopped" : null);
-      if (status === "stopped") { if (!open) open = c; }
-      else if (status && open) {
-        stopIntervals.push({a: +ts(open.time), b: +ts(c.time), excluded: !!open.exclude_stop_time});
-        open = null;
-      }
-    }
-    if (open) stopIntervals.push({a: +ts(open.time), b: +(until || now), excluded: !!open.exclude_stop_time});
-    for (const l of locs) {
-      const a = +arr(l);
-      let b = +ts(l.time);
-      if (b > a) {
-        const resume = checks.find(c => +ts(c.time) > a && (c.status === "on_road" || c.text === "Back on the road"));
-        if (resume) b = +ts(resume.time);
-      }
-      if (b > a) stopIntervals.push({a, b, excluded: !!l.exclude_stop_time});
-    }
-    const mergedStops = [];
-    for (const interval of stopIntervals.sort((a,b) => a.a-b.a)) {
-      const last = mergedStops[mergedStops.length-1];
-      if (last && interval.a <= last.b) { last.b = Math.max(last.b, interval.b); last.excluded = last.excluded && interval.excluded; }
-      else mergedStops.push({...interval});
-    }
-    const stopped = mergedStops.filter(x => !x.excluded).reduce((n,x) => n+x.b-x.a,0);
-    const stops = mergedStops.length;
-
-    // Miles: latest odometer reading - start_odo, plus the leg miles stored in data.json
-    // (leg_mi) for legs after that reading. A leg that straddles the reading counts pro rata by time.
-    const startOdo = num(trip.start_odo);
-    const reads = [];
-    if (startOdo !== null && start) reads.push({t: start, o: startOdo, isStart: true});
-    for (const x of [...checks, ...fuel]) { const o = num(x.odo); if (o !== null) reads.push({t: ts(x.time), o}); }
-    reads.sort((a, b) => (a.t - b.t) || (a.o - b.o));
-    const lastRead = reads[reads.length - 1] || null;
-    const cur = lastRead ? lastRead.o : startOdo;
-    const odoMiles = startOdo !== null && cur !== null ? Math.max(0, cur - startOdo) : null;
-    const alocs = [...locs].sort((a, b) => arr(a) - arr(b));
-    let estSince = 0, estLegs = 0;
-    if (lastRead) for (let i = 1; i < alocs.length; i++) {
-      const leg = num(alocs[i].leg_mi) || 0, t0 = arr(alocs[i - 1]), t1 = arr(alocs[i]);
-      if (!leg || t1 <= lastRead.t) continue;
-      estSince += leg * (t0 >= lastRead.t ? 1 : (t1 - lastRead.t) / (t1 - t0));
-      estLegs++;
-    }
-    const miles = odoMiles !== null ? odoMiles + estSince : null;
-
-    // A GPS leg's time excludes any confirmed stop that overlaps it.
-    let moveMs = 0, stopMs = stopped, stopCount = stops, legMiles = 0;
-    const legs = [];
-    alocs.forEach((l, i) => {
-      if (i === 0) return;
-      const a = +arr(l), prev = alocs[i-1], from = +(ts(prev.time) || arr(prev));
-      const mi = num(l.leg_mi) || 0;
-      const pause = mergedStops.reduce((n,x) => n+Math.max(0,Math.min(a,x.b)-Math.max(from,x.a)),0);
-      const dt = Math.max(0,a-from-pause);
-      if (mi > 0) { moveMs += dt; legMiles += mi; }
-      legs.push({from: prev.place, to: l.place, at: new Date(a), mi, dt});
-    });
-    const coveredEnd = locs.length ? +ts(locs[locs.length-1].time) : +start;
-    const coveredStops = mergedStops.reduce((n,x) => n+Math.max(0,Math.min(coveredEnd,x.b)-Math.max(+start,x.a)),0);
-    moveMs = start ? Math.max(0,coveredEnd-(+start)-coveredStops) : moveMs;
-    const avgSpeed = moveMs > 0 ? legMiles / (moveMs / 3600000) : null;
-    const estimated = estLegs > 0;
-
-    // MPG, full-tank calculation.
-    let gal = 0, cost = 0, mMiles = 0, mGal = 0, acc = 0;
-    let anchor = trip.full_tank_start && startOdo !== null ? startOdo : null;
-    const fills = fuel.map(f => {
-      const g = num(f.gallons) || 0, c = num(f.total_cost) || 0, o = num(f.odo);
-      gal += g; cost += c; acc += g;
-      let mpg = null;
-      if (f.full && o !== null) {
-        if (anchor !== null && acc > 0 && o > anchor) { mpg = (o - anchor) / acc; mMiles += o - anchor; mGal += acc; }
-        anchor = o; acc = 0;
-      }
-      return {...f, g, c, o, mpg, ppg: num(f.price_per_gal) ?? (g ? c / g : null)};
-    });
-
-    const lastLoc = locs[locs.length - 1] || null;
-    const lastAny = [...locs, ...checks, ...fuel].map(x => ts(x.time)).sort((a, b) => b - a)[0] || null;
-    // MPG and cost per mile use odometer + fuel data only.
-    return {trip, locs, checks, fills, start, end, elapsed, stopped, stops, startOdo, cur, lastRead, odoMiles,
-      miles, estSince, estimated, gal, cost, moveMs, stopMs, stopCount, legs, legMiles, avgSpeed, fuel,
-      mpg: mGal ? mMiles / mGal : null, cpm: odoMiles ? cost / odoMiles : null, lastLoc, lastAny};
+    const points=byTime(d.locations),locs=points.filter(p=>num(p.lat)!==null&&num(p.lng)!==null),t=d.approved_totals||{};
+    return {trip:d.trip||{},points,locs,checks:[],fills:[],legs:[],lastLoc:points.at(-1)||null,lastAny:points.length?ts(points.at(-1).time):null,miles:t.miles,moveMs:t.driving_ms,stopMs:t.stopped_ms,avgSpeed:t.avg_speed,mpg:t.mpg,gal:t.fuel_gallons,cost:t.fuel_total};
   }
-
   function drawMap(s) {
-    if (typeof L === "undefined") { $("map").hidden = true; return; }
-    $("map").hidden = !s.locs.length;
-    if (!s.locs.length) return;
+    if (typeof L === "undefined" || location.protocol === "file:") { $("map").hidden = true; return; }
+    $("map").hidden = !s.locs.length || num(s.lastLoc?.lat)===null;
+    if (!s.locs.length || num(s.lastLoc?.lat)===null) return;
     if (!map) {
       map = L.map("map", {attributionControl: true, zoomControl: false});
       L.control.zoom({position: "bottomright"}).addTo(map);
@@ -256,9 +161,10 @@
     }
     layer.clearLayers();
     const ll = s.locs.map(p => [+p.lat, +p.lng]);
+    const segments=[];let segment=[];for(const p of s.points){if(p.route_break||num(p.lat)===null||num(p.lng)===null){if(segment.length>1)segments.push(segment);segment=[];}if(num(p.lat)!==null&&num(p.lng)!==null)segment.push([+p.lat,+p.lng]);}if(segment.length>1)segments.push(segment);
     const dotIcon = cls => L.divIcon({className: "", html: `<div class="${cls}"></div>`, iconSize: [16, 16], iconAnchor: [8, 8]});
     if (ll.length > 1) {
-      L.polyline(ll, {color: "#2563eb", weight: 4, opacity: .75, lineJoin: "round"}).addTo(layer);
+      for(const line of segments)L.polyline(line, {color: "#2563eb", weight: 4, opacity: .75, lineJoin: "round"}).addTo(layer);
       L.marker(ll[0], {icon: dotIcon("start"), interactive: false, keyboard: false}).addTo(layer);
     }
     const last = ll[ll.length - 1], lp = s.locs[s.locs.length - 1];
@@ -281,7 +187,7 @@
     $("title").textContent = title;
     $("dot").className = "dot " + st;
 
-    const waiting = st === "not_started" && !s.locs.length && !s.checks.length && !s.fills.length;
+    const waiting = !s.points.length;
     $("waiting").hidden = !waiting;
     $("live").hidden = waiting;
     if (waiting) {
@@ -302,7 +208,7 @@
     const stat = (v, k, sub, cls) => `<div class="stat${cls ? " " + cls : ""}"><div class="v">${v}</div>` +
       `<div class="k">${esc(k)}</div>${sub ? `<div class="sub" title="${esc(sub)}">${esc(sub)}</div>` : ""}</div>`;
     const batt = s.lastLoc && s.lastLoc.battery != null ? s.lastLoc.battery : null;
-    const estMiles = s.miles != null ? s.miles : (s.legs.length ? s.legMiles : null);
+    const estMiles = s.miles ?? null;
     const milesV = estMiles == null ? "—" : `~${esc(n0(estMiles))} <small>mi (est.)</small>`;
     $("stats").innerHTML =
       stat(milesV, "Miles") +
@@ -310,52 +216,16 @@
       stat(esc(s.locs.length ? dur(s.stopMs) : "—"), "Stopped") +
       stat(s.avgSpeed ? `${esc(n0(s.avgSpeed))} <small>mph</small>` : "—", "Avg speed") +
       stat(s.mpg ? esc(s.mpg.toFixed(1)) : "—", "MPG") +
-      stat(s.fills.length ? `${esc(n1(s.gal))} <small>gal</small>` : "—", "Trip fill-ups",
-        s.fills.length ? `${money(s.cost)} total` : "");
+      stat(s.gal!=null ? `${esc(n1(s.gal))} <small>gal</small>` : "—", "Trip fill-ups",
+        s.cost!=null ? `${money(s.cost)} total` : "");
 
-    const recent = [...s.checks].reverse().slice(0, 3);
-    $("updatesH").hidden = $("updates").hidden = !recent.length;
-    $("updates").innerHTML = recent.map(c =>
-      `<li><time datetime="${esc(c.time)}" title="${esc(whenZ(ts(c.time)))}">${esc(whenShort(ts(c.time)))}</time><span>${esc(c.text)}</span></li>`).join("");
-
-    // ---- Details ----
-    const rows = [
-      ["MPG", s.mpg ? s.mpg.toFixed(1) : "—"],
-      ["Fuel cost", s.fills.length ? money(s.cost) + ` · ${s.gal.toFixed(1)} gal` : "$0"],
-      ["Avg price", s.gal ? money(s.cost / s.gal) + "/gal" : "—"],
-      ["Cost per mile", s.cpm ? "$" + s.cpm.toFixed(3) : "—"],
-      ["Trip elapsed (includes stops)", dur(s.elapsed)],
-      ["Started", s.start ? whenZ(s.start) : "—"],
-      s.end ? ["Finished", whenZ(s.end)] : null,
-      ["Vehicle", t.vehicle || "—"],
-      ["Start odometer", s.startOdo != null ? n1(s.startOdo) : "—"],
-    ].filter(Boolean);
-    $("kv").innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
-
-    $("legwrap").innerHTML = s.legs.length ? `<table><thead><tr><th>Arrived</th><th>To</th><th class="n">Miles</th><th class="n">Time</th></tr></thead><tbody>` +
-      [...s.legs].reverse().map(g => `<tr><td>${esc(whenShort(g.at))}</td><td>${esc(g.to || "")}</td>` +
-        `<td class="n">${esc(g.mi.toFixed(1))}</td><td class="n">${esc(dur(g.dt))}</td></tr>`).join("") +
-      `</tbody><tfoot><tr><td></td><td>Total</td><td class="n">${esc(s.legMiles.toFixed(1))}</td><td class="n">${esc(dur(s.moveMs))}</td></tr></tfoot></table>`
-      : `<p class="note">No legs yet.</p>`;
-
-    $("fuelwrap").innerHTML = s.fills.length ? `<table><thead><tr><th>When</th><th class="n">Odo</th><th class="n">Gal</th><th class="n">$/gal</th><th class="n">Total</th><th class="n">MPG</th><th>Station</th></tr></thead><tbody>` +
-      [...s.fills].reverse().map(f => `<tr><td>${esc(whenShort(ts(f.time)))}</td><td class="n">${f.o !== null ? esc(n1(f.o)) : "—"}</td>` +
-        `<td class="n">${esc(f.g.toFixed(2))}${f.full ? "" : "*"}</td><td class="n">${f.ppg != null ? esc(f.ppg.toFixed(3)) : "—"}</td>` +
-        `<td class="n">${esc(money(f.c))}</td><td class="n">${f.mpg ? esc(f.mpg.toFixed(1)) : "—"}</td><td>${esc(f.station || "")}</td></tr>`).join("") +
-      `</tbody></table>` + (s.fills.some(f => !f.full) ? `<p class="note">* partial fill</p>` : "") : `<p class="note">No fill-ups yet.</p>`;
-
-    const ev = [
-      ...s.checks.map(c => ({t: ts(c.time), txt: c.text +
-        (c.odo != null && !/odometer/i.test(c.text || "") ? ` · Odometer ${n1(+c.odo)}` : "") + (c.place ? ` · ${c.place}` : "")})),
-      ...s.fills.map(f => ({t: ts(f.time), txt: `Fill-up ${f.g.toFixed(1)} gal · ${money(f.c)}` + (f.station ? ` · ${f.station}` : "")})),
-      ...s.locs.map(l => ({t: arr(l), txt: l.place || `${(+l.lat).toFixed(3)}, ${(+l.lng).toFixed(3)}`})),
-    ].sort((a, b) => b.t - a.t);
-    $("timeline").innerHTML = ev.map(e => `<li><time title="${esc(whenZ(e.t))}">${esc(whenShort(e.t))}</time><span>${esc(e.txt)}</span></li>`).join("");
+    $("updatesH").hidden = $("updates").hidden = true;
+    for(const id of ["kv","legwrap","fuelwrap","timeline"]){const e=$(id);if(e){const details=e.closest('details');if(details)details.hidden=true;e.replaceChildren();}}
   }
 
   async function load() {
     try {
-      const r = await fetch(`${DATA_URL}?t=${Date.now()}`, {cache: "no-store"});
+      const r = await fetch(DATA_URL, {cache: "no-store"});
       if (!r.ok) throw new Error(r.status);
       data = await r.json();
       $("err").hidden = true;
@@ -371,5 +241,5 @@
   load();
 })();
 </script>
-</body>
+<footer style="text-align:center;font-size:12px;padding:12px">Nearby place names: <a href="https://www.geonames.org/">GeoNames</a>, CC BY4.0. Nearest town, not a street address.</footer></body>
 </html>
