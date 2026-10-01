@@ -90,11 +90,11 @@
     <details id="details">
       <summary>Details</summary>
       <dl class="kv" id="kv"></dl>
-      <h3>Legs (GPS estimates)</h3><div class="tablewrap" id="legwrap" style="margin-top:6px"></div>
+      <p class="note">Trip calculations start Tuesday, September 29, 1:38 PM EDT at 165,347.6 miles. Earlier entries stay visible in the route and timeline but are excluded from calculations. The departure fill-up is the full-tank baseline and does not count toward trip fuel or cost.</p><h3>Legs (GPS estimates)</h3><div class="tablewrap" id="legwrap" style="margin-top:6px"></div>
       <h3>Fill-ups</h3><div class="tablewrap" id="fuelwrap" style="margin-top:6px"></div><p class="note">Reported fuel entries through October 1, 7:01 AM EDT. Updated separately from GPS.</p>
       <h3>Reported odometer intervals</h3><div class="tablewrap" id="odowrap" style="margin-top:6px"></div><p class="note">Intervals are between reported readings, not confirmed driving legs. Elapsed time may include stops. Blank pump price means not recorded.</p>
       <h3>Stops</h3><div class="tablewrap" id="stopwrap" style="margin-top:6px"></div>
-      <p class="note">GPS miles are estimates, not odometer readings. Earlier route points have no public stop status, so old stop times cannot be recovered here. Leg elapsed spans can include unclassified stops. Private route gaps are excluded from distance.</p>
+      <p class="note">GPS miles are estimates, not odometer readings. Historical route points have no public stop status, so old leg elapsed spans may include stops. Leg elapsed spans can include unclassified stops. Private route gaps are excluded from distance.</p>
       <h3>Timeline (all shared points)</h3>
       <ul class="updates tl" id="timeline"></ul>
     </details>
@@ -109,6 +109,7 @@
 function townLabel(value){if(typeof value!=='string'||!value)return value;const m=value.match(/(?:^|,\s*)([^,]+),\s*([A-Z]{2})(?:\s+[A-Z0-9 -]+)?(?:,\s*(?:USA|Canada))?$/);if(m){let city=m[1].trim().replace(/^Near\s+/,'');if(/\d|\b(?:Rd|Road|Ave|St|Street|Hwy|Pkwy|Path|Drive|Dr|Fwy|Thruway|Bridge|Brg)\b/i.test(city))return 'Location unavailable';return 'Near '+city+', '+m[2];}if(/\d|\b(?:Rd|Road|Ave|St|Street|Hwy|Pkwy|Path|Drive|Dr|Fwy|Thruway)\b/i.test(value))return 'Location unavailable';return value;}
 function publicTownLabels(v){if(Array.isArray(v))return v.map(publicTownLabels);if(v&&typeof v==='object'){const o={};for(const [k,x]of Object.entries(v))o[k]=['place','public_place','address','location','from','to'].includes(k)&&typeof x==='string'?townLabel(x):publicTownLabels(x);return o;}return v;}
 
+  const CALC_TRIP={"start_time":"2026-09-29T13:38:00-04:00","start_odo":165347.6,"excluded_miles":168.4,"excluded_driving_ms":16961000,"excluded_stopped_ms":301000,"excluded_gps_miles":119.66553388524065};
   const TZ = "America/New_York";
   const REFRESH_MS = 60000;
   // ?data=file.json previews another data file in the same folder.
@@ -151,7 +152,13 @@ function publicTownLabels(v){if(Array.isArray(v))return v.map(publicTownLabels);
   function compute(d) {
     d=publicTownLabels(d);
     const points=byTime(d.locations),locs=points.filter(p=>num(p.lat)!==null&&num(p.lng)!==null),t=d.approved_totals||{};
-    return {trip:d.trip||{},points,locs,checks:[],fills:[],legs:[],lastLoc:points.at(-1)||null,lastAny:points.length?ts(points.at(-1).time):null,miles:t.miles,moveMs:t.driving_ms,stopMs:t.stopped_ms,avgSpeed:t.avg_speed,mpg:(+LEGACY_PUBLIC.fuel.at(-1).odo-LEGACY_PUBLIC.start_odo)/LEGACY_PUBLIC.fuel.reduce((n,f)=>n+(+f.gallons),0),gal:LEGACY_PUBLIC.fuel.reduce((n,f)=>n+(+f.gallons),0),cost:LEGACY_PUBLIC.fuel.reduce((n,f)=>n+(+f.total_cost),0)};
+    const calcStart=ts(CALC_TRIP.start_time),includedFuel=LEGACY_PUBLIC.fuel.filter(f=>ts(f.time)>calcStart);
+    const gal=includedFuel.reduce((n,f)=>n+(+f.gallons),0),cost=includedFuel.reduce((n,f)=>n+(+f.total_cost),0);
+    const moveMs=Math.max(0,(t.driving_ms||0)-CALC_TRIP.excluded_driving_ms),stopMs=Math.max(0,(t.stopped_ms||0)-CALC_TRIP.excluded_stopped_ms);
+    const avgSpeed=moveMs?Math.max(0,(t.avg_speed||0)*(t.driving_ms||0)/3600000-CALC_TRIP.excluded_gps_miles)/(moveMs/3600000):null;
+    const calcPoints=points.filter(p=>ts(p.time)>=calcStart),anchor=points.filter(p=>ts(p.time)<calcStart&&num(p.lat)!==null&&num(p.lng)!==null).at(-1);
+    if(!calcPoints.length||ts(calcPoints[0].time)>calcStart)calcPoints.unshift({...anchor,time:CALC_TRIP.start_time,place:'Near Teaneck, NJ',status:'moving',route_break:true});
+    return {trip:d.trip||{},points,calcPoints,locs,checks:[],fills:[],legs:[],lastLoc:points.at(-1)||null,lastAny:points.length?ts(points.at(-1).time):null,miles:Math.max(0,(t.miles||0)-CALC_TRIP.excluded_miles),moveMs,stopMs,avgSpeed,mpg:gal?(+LEGACY_PUBLIC.fuel.at(-1).odo-CALC_TRIP.start_odo)/gal:null,gal,cost};
   }
   function drawMap(s) {
     if (typeof L === "undefined" || location.protocol === "file:") { $("map").hidden = true; return; }
@@ -245,7 +252,7 @@ function publicTownLabels(v){if(Array.isArray(v))return v.map(publicTownLabels);
 
     const publicEvents=s.points.filter((p,i,points)=>i===0||p.manual_event||p.status!==points[i-1].status||p.place!==points[i-1].place);
     const eventLine=p=>`${p.status==='stopped'?'Stopped':p.status==='moving'?'On the road':'Location update'}${p.place?' - '+p.place:''}`;
-    const li=p=>`<li><time title="${esc(whenZ(ts(p.time)))}">${esc(whenShort(ts(p.time)))}</time><span>${esc(eventLine(p))}</span></li>`;
+    const li=p=>`<li><time title="${esc(whenZ(ts(p.time)))}">${esc(whenShort(ts(p.time)))}</time><span>${esc(eventLine(p))}${ts(p.time)<ts(CALC_TRIP.start_time)?' <small>(Excluded from calculations)</small>':''}</span></li>`;
     $("updatesH").hidden = $("updates").hidden = !publicEvents.length;
     $("updates").innerHTML=publicEvents.slice(-5).reverse().map(li).join("");
     $("details").hidden=false;
@@ -257,21 +264,21 @@ function publicTownLabels(v){if(Array.isArray(v))return v.map(publicTownLabels);
       ["Cost per estimated mile",s.miles>0&&s.cost!=null?money(s.cost/s.miles):"Unavailable"],
       ["Driving",dur(s.moveMs)],["Stopped",dur(s.stopMs)],
       ["Tracked driving + stops",dur((s.moveMs||0)+(s.stopMs||0))],
-      ["Elapsed since first shared point",s.points.length?dur((s.lastAny||new Date())-ts(s.points[0].time)):"Unavailable"],
+      ["Elapsed since trip start",s.points.length?dur((s.lastAny||new Date())-ts(CALC_TRIP.start_time)):"Unavailable"],
       ["Shared route points",String(s.points.length)],
-      ["Started",whenZ(ts(LEGACY_PUBLIC.start_time))],
-      ["Start odometer",n1(+LEGACY_PUBLIC.start_odo)+" mi"],
+      ["Started",whenZ(ts(CALC_TRIP.start_time))],
+      ["Start odometer",n1(CALC_TRIP.start_odo)+" mi"],
       ["Latest reported odometer",n1(+LEGACY_PUBLIC.odometer.at(-1).odo)+" mi"],
-      ["Miles from reported odometers",n1(+LEGACY_PUBLIC.odometer.at(-1).odo-LEGACY_PUBLIC.start_odo)+" mi"],
+      ["Miles from reported odometers",n1(+LEGACY_PUBLIC.odometer.at(-1).odo-CALC_TRIP.start_odo)+" mi"],
       ["Vehicle",LEGACY_PUBLIC.vehicle],
       ["First shared location",s.points.length?whenZ(ts(s.points[0].time)):"Unavailable"],
       ["Last shared update",s.lastAny?whenZ(s.lastAny):"Unavailable"]
     ];
     $("kv").innerHTML=rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
-    $("fuelwrap").innerHTML='<table><thead><tr><th>When</th><th class="n">Odo</th><th class="n">Gal</th><th class="n">$/gal</th><th class="n">Total</th><th class="n">MPG</th></tr></thead><tbody>'+LEGACY_PUBLIC.fuel.map((f,i)=>({...f,mpg:f.full?(f.odo-(i?LEGACY_PUBLIC.fuel[i-1].odo:LEGACY_PUBLIC.start_odo))/f.gallons:null})).reverse().map(f=>`<tr><td>${esc(whenZ(ts(f.time)))}</td><td class="n">${esc(f.odo)}</td><td class="n">${esc(f.gallons)}</td><td class="n">${f.price_per_gal?esc(f.price_per_gal):'Not recorded'}</td><td class="n">${esc(money(+f.total_cost))}</td><td class="n">${f.mpg?esc(f.mpg.toFixed(1)):''}</td></tr>`).join('')+'</tbody></table>';
-    const odos=LEGACY_PUBLIC.odometer;
-    $("odowrap").innerHTML='<table><thead><tr><th>When</th><th class="n">Odometer</th><th class="n">Miles since prior</th><th>Elapsed</th></tr></thead><tbody>'+odos.map((o,i)=>`<tr><td>${esc(whenZ(ts(o.time)))}</td><td class="n">${esc(o.odo)}</td><td class="n">${i?esc(n1(+o.odo-odos[i-1].odo)):''}</td><td>${i?esc(dur(ts(o.time)-ts(odos[i-1].time))):''}</td></tr>`).reverse().join('')+'</tbody></table>';
-    const detail=publicLegDetails(s.points);
+    $("fuelwrap").innerHTML='<table><thead><tr><th>When</th><th class="n">Odo</th><th class="n">Gal</th><th class="n">$/gal</th><th class="n">Total</th><th class="n">MPG</th></tr></thead><tbody>'+LEGACY_PUBLIC.fuel.map((f,i)=>({...f,excluded:ts(f.time)<=ts(CALC_TRIP.start_time),mpg:f.full&&ts(f.time)>ts(CALC_TRIP.start_time)?(f.odo-(i?LEGACY_PUBLIC.fuel[i-1].odo:CALC_TRIP.start_odo))/f.gallons:null})).reverse().map(f=>`<tr><td>${esc(whenZ(ts(f.time)))}${f.excluded?'<br><small>Excluded: start-tank baseline</small>':''}</td><td class="n">${esc(f.odo)}</td><td class="n">${esc(f.gallons)}</td><td class="n">${f.price_per_gal?esc(f.price_per_gal):'Not recorded'}</td><td class="n">${esc(money(+f.total_cost))}</td><td class="n">${f.mpg?esc(f.mpg.toFixed(1)):''}</td></tr>`).join('')+'</tbody></table>';
+    const odos=LEGACY_PUBLIC.odometer;const odoIncluded=(o,i)=>i>0&&ts(o.time)>ts(CALC_TRIP.start_time)&&ts(odos[i-1].time)>=ts(CALC_TRIP.start_time);
+    $("odowrap").innerHTML='<table><thead><tr><th>When</th><th class="n">Odometer</th><th class="n">Miles since prior</th><th>Elapsed</th></tr></thead><tbody>'+odos.map((o,i)=>`<tr><td>${esc(whenZ(ts(o.time)))}${ts(o.time)<ts(CALC_TRIP.start_time)?'<br><small>Excluded from calculations</small>':ts(o.time).getTime()===ts(CALC_TRIP.start_time).getTime()?'<br><small>Trip start baseline</small>':''}</td><td class="n">${esc(o.odo)}</td><td class="n">${odoIncluded(o,i)?esc(n1(+o.odo-odos[i-1].odo)):''}</td><td>${odoIncluded(o,i)?esc(dur(ts(o.time)-ts(odos[i-1].time))):''}</td></tr>`).reverse().join('')+'</tbody></table>';
+    const detail=publicLegDetails(s.calcPoints);
     const timeRange=g=>`${whenZ(g.start)} to ${g.open?'latest update':g.end?whenZ(g.end):'ongoing'}`;
     $("legwrap").innerHTML=detail.legs.length?'<table><thead><tr><th>From / To</th><th>Started driving</th><th>Stopped</th><th class="n">Miles (est.)</th><th class="n">Elapsed span</th></tr></thead><tbody>'+detail.legs.slice().reverse().map(g=>`<tr><td>${esc(g.from)}<br>${esc(g.to)}</td><td>${esc(whenZ(g.start))}</td><td>${g.open?'Still on the road':esc(whenZ(g.end))}</td><td class="n">${esc(n1(g.miles))}${g.hidden?'*':''}</td><td class="n">${esc(dur(g.end-g.start))}</td></tr>`).join('')+'</tbody></table>':'<p class="note">No public legs available.</p>';
     $("stopwrap").innerHTML=detail.stops.length?'<table><thead><tr><th>Place</th><th>Stopped</th><th>Started driving</th><th class="n">Duration</th></tr></thead><tbody>'+detail.stops.slice().reverse().map(g=>`<tr><td>${esc(g.place)}</td><td>${esc(whenZ(g.start))}</td><td>${g.end?esc(whenZ(g.end)):'Not yet resumed'}</td><td class="n">${esc(dur((g.end||s.lastAny||new Date())-g.start))}</td></tr>`).join('')+'</tbody></table>':'<p class="note">No public stop times available.</p>';
