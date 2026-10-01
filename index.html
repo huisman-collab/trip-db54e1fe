@@ -188,8 +188,8 @@ function publicTownLabels(v){if(Array.isArray(v))return v.map(publicTownLabels);
       .addTo(layer);
     // Every load and every refresh: center + zoom on the last known location (ignores prior pan/zoom).
     map.invalidateSize({pan: false});
-    map.fitBounds(L.latLngBounds(ll), {padding:[14,14],animate:false});
-    setTimeout(() => { map.invalidateSize({pan: false}); map.fitBounds(L.latLngBounds(ll), {padding:[14,14],animate:false}); }, 50);
+    map.fitBounds(L.latLngBounds(ll), {paddingTopLeft:[14,14],paddingBottomRight:[90,14],animate:false});
+    setTimeout(() => { map.invalidateSize({pan: false}); map.fitBounds(L.latLngBounds(ll), {paddingTopLeft:[14,14],paddingBottomRight:[90,14],animate:false}); }, 50);
   }
 
   function publicLegDetails(points) {
