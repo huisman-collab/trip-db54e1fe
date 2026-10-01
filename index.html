@@ -57,6 +57,7 @@
   table{width:100%;border-collapse:collapse;font-size:13.5px;white-space:nowrap}
   th{text-align:left;font-weight:500;color:var(--mute);padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
   td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line)}
+  #legwrap table,#stopwrap table{white-space:normal;table-layout:fixed}#legwrap td,#stopwrap td{overflow-wrap:anywhere}#legwrap th:nth-child(1){width:28%}#legwrap th:nth-child(2){width:40%}#legwrap th:nth-child(3){width:17%}#legwrap th:nth-child(4){width:15%}
   .n{text-align:right;font-variant-numeric:tabular-nums}
   .note{font-size:13px;color:var(--faint);margin:10px 0 0}
   .waiting{margin:0;font-size:15px;color:var(--mute);max-width:32em}
@@ -91,8 +92,9 @@
       <dl class="kv" id="kv"></dl>
       <h3>Legs (GPS estimates)</h3><div class="tablewrap" id="legwrap" style="margin-top:6px"></div>
       <h3>Fill-ups</h3><div class="tablewrap" id="fuelwrap" style="margin-top:6px"></div><p class="note">Reported fuel entries through September 30, 10:55 PM EDT. Updated separately from GPS.</p>
+      <h3>Reported odometer intervals</h3><div class="tablewrap" id="odowrap" style="margin-top:6px"></div><p class="note">Intervals are between reported readings, not confirmed driving legs. Elapsed time may include stops. Blank pump price means not recorded.</p>
       <h3>Stops</h3><div class="tablewrap" id="stopwrap" style="margin-top:6px"></div>
-      <p class="note">GPS miles are estimates, not odometer readings. Earlier route points have no public stop status, so old stop times cannot be recovered here. Private route gaps are excluded from distance.</p>
+      <p class="note">GPS miles are estimates, not odometer readings. Earlier route points have no public stop status, so old stop times cannot be recovered here. Leg elapsed spans can include unclassified stops. Private route gaps are excluded from distance.</p>
       <h3>Timeline (all shared points)</h3>
       <ul class="updates tl" id="timeline"></ul>
     </details>
@@ -103,7 +105,7 @@
 <script>
 (() => {
   "use strict";
-  const LEGACY_PUBLIC={"start_time":"2026-09-28T15:45:00-04:00","start_odo":165179.2,"fuel":[{"time":"2026-09-29T13:38:00-04:00","odo":165347.6,"gallons":6.385,"total_cost":26.17,"price_per_gal":4.099,"station":null,"full":true},{"time":"2026-09-29T18:52:00-04:00","odo":165539.1,"gallons":7.258,"total_cost":32.15,"price_per_gal":4.43,"station":null,"full":true},{"time":"2026-09-30T00:04:10-04:00","odo":165767,"gallons":8.439,"total_cost":37.71,"price_per_gal":4.469,"station":null,"full":true},{"time":"2026-09-30T09:01:44-04:00","odo":166187.6,"gallons":14.456,"total_cost":66.92,"price_per_gal":4.629,"station":null,"full":true},{"time":"2026-09-30T22:55:46-04:00","odo":166442.8,"gallons":9.78,"total_cost":40.48,"price_per_gal":null,"station":null,"full":true}]};
+  const LEGACY_PUBLIC={"start_time":"2026-09-28T15:45:00-04:00","start_odo":"165179.2","vehicle":"Ford Edge","fuel":[{"time":"2026-09-29T13:38:00-04:00","odo":"165347.6","gallons":"6.385","total_cost":"26.17","price_per_gal":null,"place":"Teaneck, NJ","full":true},{"time":"2026-09-29T18:52:00-04:00","odo":"165539.1","gallons":"7.258","total_cost":"32.15","price_per_gal":"4.43","place":"","full":true},{"time":"2026-09-30T00:04:10-04:00","odo":"165767.0","gallons":"8.439","total_cost":"37.71","price_per_gal":"4.469","place":"","full":true},{"time":"2026-09-30T09:01:44-04:00","odo":"166187.6","gallons":"14.456","total_cost":"66.92","price_per_gal":null,"place":"Grandville, MI","full":true},{"time":"2026-09-30T22:55:46-04:00","odo":"166442.8","gallons":"9.780","total_cost":"40.48","price_per_gal":null,"place":"","full":true}],"odometer":[{"time":"2026-09-28T15:45:00-04:00","odo":"165179.2"},{"time":"2026-09-28T16:45:00-04:00","odo":"165238.6"},{"time":"2026-09-28T17:09:00-04:00","odo":"165264.6"},{"time":"2026-09-28T18:00:00-04:00","odo":"165324.6"},{"time":"2026-09-29T13:38:00-04:00","odo":"165347.6"},{"time":"2026-09-29T13:38:00-04:00","odo":"165347.6"},{"time":"2026-09-29T16:22:00-04:00","odo":"165495.1"},{"time":"2026-09-29T18:49:00-04:00","odo":"165539.1"},{"time":"2026-09-29T18:52:00-04:00","odo":"165539.1"},{"time":"2026-09-29T19:45:00-04:00","odo":"165601"},{"time":"2026-09-29T20:15:00-04:00","odo":"165636.7"},{"time":"2026-09-29T21:16:00-04:00","odo":"165696.1"},{"time":"2026-09-29T21:30:00-04:00","odo":"165709.0"},{"time":"2026-09-29T23:15:00-04:00","odo":"165711.7"},{"time":"2026-09-29T23:16:52-04:00","odo":"165712.6"},{"time":"2026-09-29T23:20:00-04:00","odo":"165716.8"},{"time":"2026-09-30T00:02:02-04:00","odo":"165767.0"},{"time":"2026-09-30T00:04:10-04:00","odo":"165767.0"},{"time":"2026-09-30T00:39:50-04:00","odo":"165797.3"},{"time":"2026-09-30T02:01:40-04:00","odo":"165803"},{"time":"2026-09-30T04:47:23-04:00","odo":"165972.4"},{"time":"2026-09-30T05:16:00-04:00","odo":"166000.4"},{"time":"2026-09-30T05:28:55-04:00","odo":"166003.5"},{"time":"2026-09-30T08:55:48-04:00","odo":"166187.6"},{"time":"2026-09-30T09:01:44-04:00","odo":"166187.6"},{"time":"2026-09-30T09:21:42-04:00","odo":"166187.7"},{"time":"2026-09-30T09:31:28-04:00","odo":"166187.7"},{"time":"2026-09-30T09:34:25-04:00","odo":"166189.2"},{"time":"2026-09-30T20:45:56-04:00","odo":"166307.3"},{"time":"2026-09-30T22:51:00-04:00","odo":"166441.0"},{"time":"2026-09-30T22:55:46-04:00","odo":"166442.8"},{"time":"2026-10-01T00:28:00-04:00","odo":"166507.1"},{"time":"2026-10-01T03:01:00-04:00","odo":"166640.0"},{"time":"2026-10-01T03:18:33-04:00","odo":"166640.0"}]};
   const TZ = "America/New_York";
   const REFRESH_MS = 60000;
   // ?data=file.json previews another data file in the same folder.
@@ -254,16 +256,20 @@
       ["Elapsed since first shared point",s.points.length?dur((s.lastAny||new Date())-ts(s.points[0].time)):"Unavailable"],
       ["Shared route points",String(s.points.length)],
       ["Started",whenZ(ts(LEGACY_PUBLIC.start_time))],
-      ["Start odometer",n1(LEGACY_PUBLIC.start_odo)+" mi"],
-      ["Last fuel odometer",n1(LEGACY_PUBLIC.fuel.at(-1).odo)+" mi"],
+      ["Start odometer",n1(+LEGACY_PUBLIC.start_odo)+" mi"],
+      ["Latest reported odometer",n1(+LEGACY_PUBLIC.odometer.at(-1).odo)+" mi"],
+      ["Miles from reported odometers",n1(+LEGACY_PUBLIC.odometer.at(-1).odo-LEGACY_PUBLIC.start_odo)+" mi"],
+      ["Vehicle",LEGACY_PUBLIC.vehicle],
       ["First shared location",s.points.length?whenZ(ts(s.points[0].time)):"Unavailable"],
       ["Last shared update",s.lastAny?whenZ(s.lastAny):"Unavailable"]
     ];
     $("kv").innerHTML=rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
-    $("fuelwrap").innerHTML='<table><thead><tr><th>When</th><th class="n">Odo</th><th class="n">Gal</th><th class="n">$/gal</th><th class="n">Total</th><th class="n">MPG</th></tr></thead><tbody>'+LEGACY_PUBLIC.fuel.map((f,i)=>({...f,mpg:f.full?(f.odo-(i?LEGACY_PUBLIC.fuel[i-1].odo:LEGACY_PUBLIC.start_odo))/f.gallons:null})).reverse().map(f=>`<tr><td>${esc(whenZ(ts(f.time)))}</td><td class="n">${esc(n1(f.odo))}</td><td class="n">${esc(f.gallons.toFixed(3))}</td><td class="n">${esc((f.price_per_gal??f.total_cost/f.gallons).toFixed(3))}</td><td class="n">${esc(money(f.total_cost))}</td><td class="n">${f.mpg?esc(f.mpg.toFixed(1)):''}</td></tr>`).join('')+'</tbody></table>';
+    $("fuelwrap").innerHTML='<table><thead><tr><th>When</th><th class="n">Odo</th><th class="n">Gal</th><th class="n">$/gal</th><th class="n">Total</th><th class="n">MPG</th></tr></thead><tbody>'+LEGACY_PUBLIC.fuel.map((f,i)=>({...f,mpg:f.full?(f.odo-(i?LEGACY_PUBLIC.fuel[i-1].odo:LEGACY_PUBLIC.start_odo))/f.gallons:null})).reverse().map(f=>`<tr><td>${esc(whenZ(ts(f.time)))}</td><td class="n">${esc(f.odo)}</td><td class="n">${esc(f.gallons)}</td><td class="n">${f.price_per_gal?esc(f.price_per_gal):'Not recorded'}</td><td class="n">${esc(money(+f.total_cost))}</td><td class="n">${f.mpg?esc(f.mpg.toFixed(1)):''}</td></tr>`).join('')+'</tbody></table>';
+    const odos=LEGACY_PUBLIC.odometer;
+    $("odowrap").innerHTML='<table><thead><tr><th>When</th><th class="n">Odometer</th><th class="n">Miles since prior</th><th>Elapsed</th></tr></thead><tbody>'+odos.map((o,i)=>`<tr><td>${esc(whenZ(ts(o.time)))}</td><td class="n">${esc(o.odo)}</td><td class="n">${i?esc(n1(+o.odo-odos[i-1].odo)):''}</td><td>${i?esc(dur(ts(o.time)-ts(odos[i-1].time))):''}</td></tr>`).reverse().join('')+'</tbody></table>';
     const detail=publicLegDetails(s.points);
     const timeRange=g=>`${whenZ(g.start)} to ${g.open?'latest update':g.end?whenZ(g.end):'ongoing'}`;
-    $("legwrap").innerHTML=detail.legs.length?'<table><thead><tr><th>From / To</th><th>Timing</th><th class="n">Miles (est.)</th><th class="n">Time</th></tr></thead><tbody>'+detail.legs.slice().reverse().map(g=>`<tr><td>${esc(g.from)}<br>${esc(g.to)}</td><td>${esc(timeRange(g))}</td><td class="n">${esc(n1(g.miles))}${g.hidden?'*':''}</td><td class="n">${esc(dur(g.end-g.start))}</td></tr>`).join('')+'</tbody></table>':'<p class="note">No public legs available.</p>';
+    $("legwrap").innerHTML=detail.legs.length?'<table><thead><tr><th>From / To</th><th>Timing</th><th class="n">Miles (est.)</th><th class="n">Elapsed span</th></tr></thead><tbody>'+detail.legs.slice().reverse().map(g=>`<tr><td>${esc(g.from)}<br>${esc(g.to)}</td><td>${esc(timeRange(g))}</td><td class="n">${esc(n1(g.miles))}${g.hidden?'*':''}</td><td class="n">${esc(dur(g.end-g.start))}</td></tr>`).join('')+'</tbody></table>':'<p class="note">No public legs available.</p>';
     $("stopwrap").innerHTML=detail.stops.length?'<table><thead><tr><th>Place</th><th>Timing</th><th class="n">Duration</th></tr></thead><tbody>'+detail.stops.slice().reverse().map(g=>`<tr><td>${esc(g.place)}</td><td>${esc(timeRange(g))}</td><td class="n">${esc(dur((g.end||s.lastAny||new Date())-g.start))}</td></tr>`).join('')+'</tbody></table>':'<p class="note">No public stop times available.</p>';
     $("timeline").innerHTML=s.points.slice().reverse().map(li).join("");
   }
