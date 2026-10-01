@@ -89,10 +89,6 @@
     <details id="details">
       <summary>Details</summary>
       <dl class="kv" id="kv"></dl>
-      <h3>Legs</h3>
-      <div class="tablewrap" id="legwrap" style="margin-top:6px"></div>
-      <h3>Fill-ups</h3>
-      <div class="tablewrap" id="fuelwrap" style="margin-top:6px"></div>
       <h3>Timeline</h3>
       <ul class="updates tl" id="timeline"></ul>
     </details>
@@ -219,8 +215,24 @@
       stat(s.gal!=null ? `${esc(n1(s.gal))} <small>gal</small>` : "—", "Trip fill-ups",
         s.cost!=null ? `${money(s.cost)} total` : "");
 
-    $("updatesH").hidden = $("updates").hidden = true;
-    for(const id of ["kv","legwrap","fuelwrap","timeline"]){const e=$(id);if(e){const details=e.closest('details');if(details)details.hidden=true;e.replaceChildren();}}
+    const publicEvents=s.points.filter((p,i,points)=>i===0||p.manual_event||p.status!==points[i-1].status||p.place!==points[i-1].place);
+    const eventLine=p=>`${p.status==='stopped'?'Stopped':p.status==='moving'?'On the road':'Location update'}${p.place?' - '+p.place:''}`;
+    const li=p=>`<li><time title="${esc(whenZ(ts(p.time)))}">${esc(whenShort(ts(p.time)))}</time><span>${esc(eventLine(p))}</span></li>`;
+    $("updatesH").hidden = $("updates").hidden = !publicEvents.length;
+    $("updates").innerHTML=publicEvents.slice(-5).reverse().map(li).join("");
+    $("details").hidden=false;
+    const rows=[
+      ["MPG",s.mpg?s.mpg.toFixed(1):"Unavailable"],
+      ["Fuel cost (trip total)",s.cost!=null?money(s.cost):"Unavailable"],
+      ["Fuel (trip total)",s.gal!=null?n1(s.gal)+" gal":"Unavailable"],
+      ["Avg price",s.gal>0&&s.cost!=null?money(s.cost/s.gal)+"/gal":"Unavailable"],
+      ["Cost per estimated mile",s.miles>0&&s.cost!=null?money(s.cost/s.miles):"Unavailable"],
+      ["Driving",dur(s.moveMs)],["Stopped",dur(s.stopMs)],
+      ["First shared location",s.points.length?whenZ(ts(s.points[0].time)):"Unavailable"],
+      ["Last shared update",s.lastAny?whenZ(s.lastAny):"Unavailable"]
+    ];
+    $("kv").innerHTML=rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
+    $("timeline").innerHTML=publicEvents.slice(-100).reverse().map(li).join("");
   }
 
   async function load() {
