@@ -89,7 +89,10 @@
     <details id="details">
       <summary>Details</summary>
       <dl class="kv" id="kv"></dl>
-      <h3>Timeline</h3>
+      <h3>Legs (GPS estimates)</h3><div class="tablewrap" id="legwrap" style="margin-top:6px"></div>
+      <h3>Stops</h3><div class="tablewrap" id="stopwrap" style="margin-top:6px"></div>
+      <p class="note">GPS miles are estimates, not odometer readings. Earlier route points have no public stop status, so old stop times cannot be recovered here. Private route gaps are excluded from distance.</p>
+      <h3>Timeline (all shared points)</h3>
       <ul class="updates tl" id="timeline"></ul>
     </details>
   </section>
@@ -174,6 +177,23 @@
     setTimeout(() => { map.invalidateSize({pan: false}); map.setView(last, FOCUS_ZOOM, {animate: false}); }, 50);
   }
 
+  function publicLegDetails(points) {
+    const dist=(a,b)=>{if(num(a.lat)===null||num(a.lng)===null||num(b.lat)===null||num(b.lng)===null)return 0;const r=x=>x*Math.PI/180,dl=r(+b.lat-a.lat),dn=r(+b.lng-a.lng);return 3958.7613*2*Math.asin(Math.min(1,Math.sqrt(Math.sin(dl/2)**2+Math.cos(r(+a.lat))*Math.cos(r(+b.lat))*Math.sin(dn/2)**2)));};
+    const legs=[],stops=[];let leg=null,stop=null,prior=null;
+    for(const p of points){const at=ts(p.time);if(!at)continue;const state=p.status==='stopped'?'stopped':'moving';
+      if(state==='stopped'){
+        if(leg){legs.push({...leg,end:at,to:p.place||'Not shared'});leg=null;}
+        if(!stop)stop={start:at,end:null,place:p.place||'Stopped'};
+      }else{
+        if(stop){stop.end=at;stops.push(stop);stop=null;}
+        if(!leg)leg={start:at,end:null,from:p.place||'Not shared',to:p.place||'Not shared',miles:0,hidden:false};
+        leg.to=p.place||'Not shared';if(prior&&prior.status!=='stopped'&&!p.route_break&&num(p.lat)!==null&&num(prior.lat)!==null)leg.miles+=dist(prior,p);else if(prior&&num(p.lat)===null)leg.hidden=true;
+      }prior=p;
+    }
+    if(stop)stops.push(stop);if(leg)legs.push({...leg,end:ts(points.at(-1)?.time),open:true});
+    return {legs,stops};
+  }
+
   function render() {
     if (!data) return;
     const s = compute(data), t = s.trip;
@@ -228,11 +248,18 @@
       ["Avg price",s.gal>0&&s.cost!=null?money(s.cost/s.gal)+"/gal":"Unavailable"],
       ["Cost per estimated mile",s.miles>0&&s.cost!=null?money(s.cost/s.miles):"Unavailable"],
       ["Driving",dur(s.moveMs)],["Stopped",dur(s.stopMs)],
+      ["Tracked driving + stops",dur((s.moveMs||0)+(s.stopMs||0))],
+      ["Elapsed since first shared point",s.points.length?dur((s.lastAny||new Date())-ts(s.points[0].time)):"Unavailable"],
+      ["Shared route points",String(s.points.length)],
       ["First shared location",s.points.length?whenZ(ts(s.points[0].time)):"Unavailable"],
       ["Last shared update",s.lastAny?whenZ(s.lastAny):"Unavailable"]
     ];
     $("kv").innerHTML=rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
-    $("timeline").innerHTML=publicEvents.slice(-100).reverse().map(li).join("");
+    const detail=publicLegDetails(s.points);
+    const timeRange=g=>`${whenZ(g.start)} to ${g.open?'latest update':g.end?whenZ(g.end):'ongoing'}`;
+    $("legwrap").innerHTML=detail.legs.length?'<table><thead><tr><th>From / To</th><th>Timing</th><th class="n">Miles (est.)</th><th class="n">Time</th></tr></thead><tbody>'+detail.legs.slice().reverse().map(g=>`<tr><td>${esc(g.from)}<br>${esc(g.to)}</td><td>${esc(timeRange(g))}</td><td class="n">${esc(n1(g.miles))}${g.hidden?'*':''}</td><td class="n">${esc(dur(g.end-g.start))}</td></tr>`).join('')+'</tbody></table>':'<p class="note">No public legs available.</p>';
+    $("stopwrap").innerHTML=detail.stops.length?'<table><thead><tr><th>Place</th><th>Timing</th><th class="n">Duration</th></tr></thead><tbody>'+detail.stops.slice().reverse().map(g=>`<tr><td>${esc(g.place)}</td><td>${esc(timeRange(g))}</td><td class="n">${esc(dur((g.end||s.lastAny||new Date())-g.start))}</td></tr>`).join('')+'</tbody></table>':'<p class="note">No public stop times available.</p>';
+    $("timeline").innerHTML=s.points.slice().reverse().map(li).join("");
   }
 
   async function load() {
