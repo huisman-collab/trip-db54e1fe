@@ -165,7 +165,7 @@ function publicTownLabels(v){if(Array.isArray(v))return v.map(publicTownLabels);
     $("map").hidden = !s.locs.length || num(s.lastLoc?.lat)===null;
     if (!s.locs.length || num(s.lastLoc?.lat)===null) return;
     if (!map) {
-      map = L.map("map", {attributionControl: true, zoomControl: false});
+      map = L.map("map", {attributionControl: true, zoomControl: false, zoomSnap: 0.25});
       L.control.zoom({position: "bottomright"}).addTo(map);
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -188,8 +188,8 @@ function publicTownLabels(v){if(Array.isArray(v))return v.map(publicTownLabels);
       .addTo(layer);
     // Every load and every refresh: center + zoom on the last known location (ignores prior pan/zoom).
     map.invalidateSize({pan: false});
-    map.fitBounds(L.latLngBounds(ll), {paddingTopLeft:[14,14],paddingBottomRight:[90,14],animate:false});
-    setTimeout(() => { map.invalidateSize({pan: false}); map.fitBounds(L.latLngBounds(ll), {paddingTopLeft:[14,14],paddingBottomRight:[90,14],animate:false}); }, 50);
+    map.fitBounds(L.latLngBounds(ll), {paddingTopLeft:[8,8],paddingBottomRight:[84,8],animate:false});
+    setTimeout(() => { map.invalidateSize({pan: false}); map.fitBounds(L.latLngBounds(ll), {paddingTopLeft:[8,8],paddingBottomRight:[84,8],animate:false}); }, 50);
   }
 
   function publicLegDetails(points) {
